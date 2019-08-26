@@ -3,7 +3,8 @@
     <div class="col-lg-6 col-md-6 col-sm-12 col-12 left-side">
       <div id="wave" class="w-100 p-5">
         <h4><span class="bolder">CETAK.ID</span> akan segera hadir untuk memudahkan proses cetak dokumen kamu!</h4>
-        <h6><span class="bolder">SUBSCRIBE</span> now for more info and updates!</h6>
+        <h6 class="mt-2"><span class="bolder">SUBSCRIBE</span> now for more info and updates!</h6>
+        <h6><span class="bolder">ORDER</span> untuk cetak dokumen via whatsapp</h6>
         <img src="../assets/undraw_printing_invoices_5r4r.png" alt="landing-page" class="my-4 w-75 d-block">
         <span class="text-white font-weight-bold">Contact Info : cetak.info@gmail.com</span>
       </div>
@@ -14,7 +15,26 @@
         <input type="text" class="form-control" placeholder="Nama" v-model="name" />
         <input type="email" class="form-control" placeholder="Email" v-model="email" />
         <input type="button" class="form-control button-subscribe" value="Subscribe" @click="subscribe" />
-        <input type="button" class="form-control button-order" value="Order Now" @click="orderNow" />
+        <input type="button" class="form-control button-order" data-toggle="modal" data-target="#orderModal" value="Order Now" />
+        
+        <div class="modal fade" id="orderModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Cara Order Cetak Dokumen</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <img src="../assets/undraw_payments_21w6.png" class="img-fluid" alt="Cara Order">
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="form-control button-order" @click="orderNow">Order Sekarang</button>
+              </div>
+            </div>
+          </div>
+        </div>
 
         <span class="text-secondary text-center display-block">And don’t worry, we hate spam too!</span>
         <span class="text-secondary text-center display-block">You can unsubscribe at anytime.</span>
@@ -108,7 +128,6 @@ export default {
     font-weight: 600;
     width: 60%;
     margin: 0 auto;
-    margin-top: 20px;
   }
 
   .bolder {
