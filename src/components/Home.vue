@@ -6,7 +6,7 @@
         <h6 class="mt-2"><span class="bolder">SUBSCRIBE</span> now for more info and updates!</h6>
         <h6><span class="bolder">ORDER</span> untuk cetak dokumen via whatsapp</h6>
         <img src="../assets/undraw_printing_invoices_5r4r.png" alt="landing-page" class="my-4 w-75 d-block">
-        <span class="text-white font-weight-bold">Contact Info : cetak.info@gmail.com</span>
+        <span class="text-white font-weight-bold">Contact Info : cetakid.info@gmail.com</span>
       </div>
     </div>
     <div class="col-lg-6 col-md-6 col-sm-12 col-12 right-side p-lg-5">
@@ -27,7 +27,12 @@
                 </button>
               </div>
               <div class="modal-body">
-                <img src="../assets/undraw_payments_21w6.png" class="img-fluid" alt="Cara Order">
+                <ul class="text-left mx-auto">
+                  <li>Pilih tombol order</li>
+                  <li>Isi form yang disediakan</li>
+                  <li>Upload atau kirim file kamu</li>
+                  <li>Lakukan pembayaran</li>
+                </ul>
               </div>
               <div class="modal-footer">
                 <button type="button" class="form-control button-order" @click="orderNow">Order Sekarang</button>
@@ -79,7 +84,9 @@ export default {
     },
 
     orderNow() {
-        return null
+      window.open(
+        'https://wa.me/6282390243711?text=Maaf%20sebelumnya%2C%20jika%20ingin%20melakukan%20pesanan%20cetak%20dokumen.%20Kamu%20harus%20mengisi%20form%20dibawah%20ini%20terlebih%20dahulu.%0A%0AHalo%2C%20saya%20mau%20titip%20dokumen%20saya%20untuk%20di%20print.%0ANama%20%3A%0AJenis%20dokumen%20%3A%0AJumlah%20halaman%20%3A%0AUkuran%20kertas%20%3A%0AJilid%20%3A%20y%2Fn%20%28tambahkan%20keterangan%20jilid%20spt%20cover%20%2B%20warna%29%0AJasa%20Antar%20%3A%20y%2Fn%20%28alamat%20kamu%29%0A%0ATerima%20Kasih'
+      )
     }
   }
 }
