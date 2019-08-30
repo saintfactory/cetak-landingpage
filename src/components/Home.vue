@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-lg-6 col-md-6 col-sm-12 col-12 left-side">
       <div id="wave" class="w-100 p-5">
-        <h4><span class="bolder">CETAK.ID</span> akan segera hadir untuk memudahkan proses cetak dokumen kamu!</h4>
+        <h4><span class="bolder">CETAKK.ID</span> akan segera hadir untuk memudahkan proses cetak dokumen kamu!</h4>
         <h6 class="mt-2"><span class="bolder">SUBSCRIBE</span> now for more info and updates!</h6>
         <h6><span class="bolder">ORDER</span> untuk cetak dokumen via whatsapp</h6>
         <img src="../assets/undraw_printing_invoices_5r4r.png" alt="landing-page" class="my-4 w-75 d-block">
@@ -10,45 +10,19 @@
       </div>
     </div>
     <div class="col-lg-6 col-md-6 col-sm-12 col-12 right-side p-lg-5">
-      <h4 class="logo mt-5">CETAK.ID</h4>
+      <h4 class="logo mt-5">CETAKK.ID</h4>
       <form class="form-group w-75">
-        <input type="text" class="form-control" placeholder="Nama" v-model="name" />
-        <input type="email" class="form-control" placeholder="Email" v-model="email" />
+        <input type="text" class="form-control" placeholder="Nama" v-model="name" required />
+        <input type="email" class="form-control" placeholder="Email" v-model="email" required />
         <input type="button" class="form-control button-subscribe" value="Subscribe" @click="subscribe" />
-        <input type="button" class="form-control button-order" data-toggle="modal" data-target="#orderModal" value="Order Now" />
-        
-        <div class="modal fade" id="orderModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Cara Order Cetak Dokumen</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                <ul class="text-left mx-auto">
-                  <li>Pilih tombol order</li>
-                  <li>Isi form yang disediakan</li>
-                  <li>Upload atau kirim file kamu</li>
-                  <li>Lakukan pembayaran</li>
-                </ul>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="form-control button-order" @click="orderNow">Order Sekarang</button>
-              </div>
-            </div>
-          </div>
-        </div>
+        <input type="button" id="order" class="form-control button-order" data-toggle="modal" data-target="#orderModal" value="Order Now" @click="orderNow" />
 
         <span class="text-secondary text-center display-block">And don’t worry, we hate spam too!</span>
         <span class="text-secondary text-center display-block">You can unsubscribe at anytime.</span>
       </form>
       <div>
-        <a href="https://instagram.com"><img src="../assets/instagram.png" alt="instagram" class="social-media"></a>
-        <a href="https://linked.in"><img src="../assets/linkedin.png" alt="linkedin" class="social-media"></a>
-        <a href="https://twitter.com"><img src="../assets/twitter.png" alt="twitter" class="social-media"></a>
-        <a href="https://web.whatsapp.com"><img src="../assets/whatsapp.png" alt="whatsapp" class="social-media"></a>
+        <a href="https://www.instagram.com/cetakk/"><img src="../assets/instagram.png" alt="instagram" class="social-media"></a>
+        <a href="https://medium.com/cetakk-id"><img src="../assets/medium.png" alt="medium" class="social-media"></a>
       </div>
     </div>
   </div>
@@ -74,13 +48,16 @@ export default {
 
   methods: {
     subscribe() {
-      subscribeRef.push({
-        name: this.name,
-        email: this.email
-      })
-      this.name = ''
-      this.email = ''
-      alert('Terima Kasih sudah subscribe! Tunggu release kami selanjutnya ya!')
+      if(this.name != '' && this.email != ''){
+        subscribeRef.push({
+          name: this.name,
+          email: this.email
+        })
+        alert('Terima Kasih telah subscribe! Pilih tombol "Order Now" untuk proses cetak filemu !')
+        document.querySelector("#order").style.visibility = "visible";
+      } else {
+        alert('Nama & email tidak boleh kosong!')
+      }
     },
 
     orderNow() {
@@ -102,14 +79,14 @@ export default {
     background-image: url('../assets/background_biru_2.png');
     background-repeat: no-repeat;
     min-height: 100vh;
-    z-index: 1;
+    z-index: -1;
   }
 
   #wave {
     position: absolute;
     background-image: url('../assets/background_biru.png');
     background-repeat: no-repeat;
-    z-index: 1;
+    z-index: -1;
     min-height: 100vh;
     left: 0;
   }
@@ -117,6 +94,7 @@ export default {
   .right-side {
     background-color: #F6F6F6;
     min-height: 100vh;
+    z-index: 1;
   }
 
   h4 {
@@ -174,6 +152,7 @@ export default {
     color: #fff;
     font-weight: bold;
     margin-bottom: 30px;
+    visibility: hidden;
   }
 
   .button-order:hover {
