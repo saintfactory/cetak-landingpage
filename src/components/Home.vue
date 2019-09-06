@@ -1,28 +1,30 @@
 <template>
   <div class="row">
     <div class="col-lg-6 col-md-6 col-sm-12 col-12 left-side">
-      <div id="wave" class="w-100 p-5">
-        <h4><span class="bolder">CETAKK.ID</span> akan segera hadir untuk memudahkan proses cetak dokumen kamu!</h4>
-        <h6 class="mt-2"><span class="bolder">SUBSCRIBE</span> now for more info and updates!</h6>
-        <h6><span class="bolder">ORDER</span> untuk cetak dokumen via whatsapp</h6>
-        <img src="../assets/undraw_printing_invoices_5r4r.png" alt="landing-page" class="my-4 w-75 d-block">
-        <span class="text-white font-weight-bold">Contact Info : cetakid.info@gmail.com</span>
+      <div id="wave" class="p-5">
+        <h3>Dikejar <span class="bolder">Deadline?</span></h3>
+        <h3>Tenang, Ada <span class="bolder">Cetakk.id</span></h3>
+        <h6 class="my-3"><span class="bolder">Cetakk.id</span> akan segera hadir untuk memudahkan proses cetak dokumen kamu!</h6>
+        <img src="../assets/Asset1.png" alt="landing-page" class="mt-5 pt-5 ml-4 w-75 d-block">
       </div>
     </div>
-    <div class="col-lg-6 col-md-6 col-sm-12 col-12 right-side p-lg-5">
-      <h4 class="logo mt-5">CETAKK.ID</h4>
+    <div class="col-lg-6 col-md-6 col-sm-12 col-12 right-side p-lg-5 ">
+      <img src="../assets/Logo.png" alt="Logo Cetak" class="img-fluid logo mt-5" />
       <form class="form-group w-75">
         <input type="text" class="form-control" placeholder="Nama" v-model="name" required />
-        <input type="email" class="form-control" placeholder="Email" v-model="email" required />
+        <input type="email" class="form-control email" id="email" placeholder="Email" v-model="email" required />
         <input type="button" class="form-control button-subscribe" value="Subscribe" @click="subscribe" />
         <input type="button" id="order" class="form-control button-order" data-toggle="modal" data-target="#orderModal" value="Order Now" @click="orderNow" />
+        <!-- <input type="button" class="form-control button-subscribe" value="Order Sekarang" @click="orderNow" /> -->
 
-        <span class="text-secondary text-center display-block">And don’t worry, we hate spam too!</span>
-        <span class="text-secondary text-center display-block">You can unsubscribe at anytime.</span>
+        <!-- <span class="text-secondary text-center display-block">Langganan sekarang untuk informasi lebih lanjut dan pembaruan</span> -->
+        <span class="text-secondary text-center display-block">Order sekarang untuk mencoba layanan jasa percetakan dokumen kami</span>
       </form>
       <div>
         <a href="https://www.instagram.com/cetakk/"><img src="../assets/instagram.png" alt="instagram" class="social-media"></a>
         <a href="https://medium.com/cetakk-id"><img src="../assets/medium.png" alt="medium" class="social-media"></a>
+        <a href="https://www.linkedin.com/company/cetakk-id/"><img src="../assets/linkedin.png" alt="linkedin" class="social-media"></a>
+        <a href="mailto:cetakid.info@gmail.com?"><img src="../assets/gmail.png" alt="gmail" class="social-media"></a>
       </div>
     </div>
   </div>
@@ -32,11 +34,16 @@
 /* eslint-disable */
 import subscribeRef from '../firebase'
 
+let regex =  /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 export default {
   name: 'Home',
 
   data() {
     return {
+      // payload: {
+      //   name: '',
+      //   email: ''
+      // }
       name: '',
       email: ''
     }
@@ -46,25 +53,95 @@ export default {
     subscribe: subscribeRef
   },
 
+  // created() {
+  //   let getData = function(){
+  //     let ref = subscribeRef
+  //     ref.on('value', function(snapshot){
+  //       snapshot.forEach(function(childSnapshot){
+  //         var childData = {
+  //           name: childSnapshot.val().name,
+  //           email: childSnapshot.val().email
+  //         }
+  //         console.log(childData)
+  //       })
+  //     })
+  //   }
+
+  //   getData()
+  //},
+
   methods: {
     subscribe() {
-      if(this.name != '' && this.email != ''){
-        subscribeRef.push({
-          name: this.name,
-          email: this.email
-        })
-        alert('Terima Kasih telah subscribe! Pilih tombol "Order Now" untuk proses cetak filemu !')
-        document.querySelector("#order").style.visibility = "visible";
-      } else {
+      // let getData = function(childData){
+      //   let ref = subscribeRef
+      //   ref.on('value', function(snapshot){
+      //     snapshot.forEach(function(childSnapshot){
+      //       var childData = childSnapshot.val()
+      //     })
+      //   })
+      // }
+
+      let validate = function(e) {
+        var email = document.querySelector("#email").value
+        var regex =  /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        
+        if(regex.test(email)){
+          return true;
+        } else {
+          alert("Masukkan alamat email yang benar");
+          return false;
+        }
+      }
+
+      if(this.name != '' && this.email != '' && validate(this.email)){
+        // if(getData.name != this.name && getData.email != this.email){
+          subscribeRef.push({
+            name: this.name,
+            email: this.email
+          })
+          alert('Terima Kasih telah subscribe! Pilih tombol "Order Now" untuk proses cetak filemu !')
+          // document.querySelector("#order").style.visibility = "visible";
+        // } else {
+        //   alert('Nama & Email sudah terdaftar :)')
+        // }
+      }
+      else {
         alert('Nama & email tidak boleh kosong!')
       }
     },
 
     orderNow() {
       window.open(
-        'https://wa.me/6282390243711?text=Maaf%20sebelumnya%2C%20jika%20ingin%20melakukan%20pesanan%20cetak%20dokumen.%20Kamu%20harus%20mengisi%20form%20dibawah%20ini%20terlebih%20dahulu.%0A%0AHalo%2C%20saya%20mau%20titip%20dokumen%20saya%20untuk%20di%20print.%0ANama%20%3A%0AJenis%20dokumen%20%3A%0AJumlah%20halaman%20%3A%0AUkuran%20kertas%20%3A%0AJilid%20%3A%20y%2Fn%20%28tambahkan%20keterangan%20jilid%20spt%20cover%20%2B%20warna%29%0AJasa%20Antar%20%3A%20y%2Fn%20%28alamat%20kamu%29%0A%0ATerima%20Kasih'
+        'https://wa.me/6282390243711?text=Halo%2C%20aku%20tertarik%20untuk%20melakukan%20pencetakan%20dokumen.%20Mohon%20dibantu%20ya%20kak.%0ANama%20%3A%0AJenis%20dokumen%20%3A%0AJumlah%20halaman%20%3A%0AUkuran%20kertas%20%3A%0AJilid%20%3A%20y%2Fn%20%28tambahkan%20keterangan%20jilid%20spt%20cover%20%2B%20warna%29%0AJasa%20Antar%20%3A%20y%2Fn%20%28alamat%20kamu%29%0A%0ATerima%20Kasih'
       )
     }
+
+    // orderNow() {
+    //   let validate = function(e) {
+    //     var email = document.querySelector("#email").value
+    //     var regex =  /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        
+    //     if(regex.test(email)){
+    //       return true;
+    //     } else {
+    //       alert("Masukkan alamat email yang benar");
+    //       return false;
+    //     }
+    //   }
+
+    //   if(validate(this.email)){
+    //     subscribeRef.push({
+    //       name: this.payload.name,
+    //       email: this.payload.email
+    //     })
+    //     alert('Terima Kasih telah subscribe! Pilih tombol "Order Now" untuk proses cetak filemu !')
+    //     window.open(
+    //       'https://wa.me/6282390243711?text=Halo%2C%20aku%20tertarik%20untuk%20melakukan%20pencetakan%20dokumen.%20Mohon%20dibantu%20ya%20kak.%0ANama%20%3A%0AJenis%20dokumen%20%3A%0AJumlah%20halaman%20%3A%0AUkuran%20kertas%20%3A%0AJilid%20%3A%20y%2Fn%20%28tambahkan%20keterangan%20jilid%20spt%20cover%20%2B%20warna%29%0AJasa%20Antar%20%3A%20y%2Fn%20%28alamat%20kamu%29%0A%0ATerima%20Kasih'
+    //     )     
+    //   }
+    // }
+
+    
   }
 }
 </script>
@@ -94,10 +171,9 @@ export default {
   .right-side {
     background-color: #F6F6F6;
     min-height: 100vh;
-    z-index: 1;
   }
 
-  h4 {
+  h5 {
     text-align: left;
     line-height: 34px;
     color: #fff;
@@ -106,29 +182,38 @@ export default {
     margin: 0 auto;
   }
 
+  h3 {
+    text-align: left;
+    color: #fff;
+    width: 60%;
+    margin: 0 auto;
+  }
+
+  h3 span {
+    color: #F4BE0B;
+    margin: 0 auto;
+  }
+
   h6 {
     text-align: left;
     line-height: 22px;
-    color: #F4BE0B;
+    color: #fff;
     font-weight: 600;
     width: 60%;
     margin: 0 auto;
+  }
+
+  h6 span {
+    color: #F4BE0B;
   }
 
   .bolder {
     font-weight: 900;
   }
 
-  .logo {
-    color: #0065C2;
-    font-weight: bolder;
-    margin: 0 auto;
-    text-align: center;
-  }
-
   form {
     margin: 0 auto;
-    padding: 30px;
+    padding: 10px;
   }
 
   input {
@@ -152,15 +237,10 @@ export default {
     color: #fff;
     font-weight: bold;
     margin-bottom: 30px;
-    visibility: hidden;
   }
 
   .button-order:hover {
     opacity: 0.5;
-  }
-
-  img {
-    margin: 0 auto;
   }
 
   .social-media {
@@ -172,5 +252,9 @@ export default {
 
   .social-media:hover {
     opacity: 0.5;
+  }
+
+  .logo {
+    width: 30%;
   }
 </style>
