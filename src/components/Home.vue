@@ -1,25 +1,34 @@
 <template>
   <div class="row">
     <div class="col-lg-6 col-md-6 col-sm-12 col-12 left-side">
-      <div id="wave" class="p-5">
+      <div id="wave">
         <h3>Dikejar <span class="bolder">Deadline?</span></h3>
         <h3>Tenang, Ada <span class="bolder">Cetakk.id</span></h3>
         <h6 class="my-3"><span class="bolder">Cetakk.id</span> akan segera hadir untuk memudahkan proses cetak dokumen kamu!</h6>
-        <img src="../assets/Asset1.png" alt="landing-page" class="mt-5 pt-5 ml-4 w-75 d-block">
+        <img src="../assets/Asset1.png" alt="landing-page" class="mt-3 pt-5 ml-5 w-75 d-block">
       </div>
     </div>
-    <div class="col-lg-6 col-md-6 col-sm-12 col-12 right-side p-lg-5 ">
-      <img src="../assets/Logo.png" alt="Logo Cetak" class="img-fluid logo mt-5" />
-      <form class="form-group w-75">
-        <input type="text" class="form-control" placeholder="Nama" v-model="name" required />
-        <input type="email" class="form-control email" id="email" placeholder="Email" v-model="email" required />
-        <input type="button" class="form-control button-subscribe" value="Subscribe" @click="subscribe" />
-        <input type="button" id="order" class="form-control button-order" data-toggle="modal" data-target="#orderModal" value="Order Now" @click="orderNow" />
-        <!-- <input type="button" class="form-control button-subscribe" value="Order Sekarang" @click="orderNow" /> -->
 
-        <!-- <span class="text-secondary text-center display-block">Langganan sekarang untuk informasi lebih lanjut dan pembaruan</span> -->
-        <span class="text-secondary text-center display-block">Order sekarang untuk mencoba layanan jasa percetakan dokumen kami</span>
-      </form>
+    <div class="col-lg-6 col-md-6 col-sm-12 col-12 right-side p-lg-5 ">
+      <img src="../assets/Logo.png" alt="Logo Cetak" class="img-fluid logo mt-5 pt-5 mb-4"/>
+      <div class="row justify-content-md-center">
+        <div class="col-md-10">
+          <form class="form-group w-100">
+            <input type="button" id="order" class="form-control button-order" data-toggle="modal" data-target="#orderModal" value="Cetak Sekarang" @click="orderNow" /> 
+              <p class="spanduk text-secondary text-left display-block">Saat ini, kami hanya melayani wilayah Kaliurang, Sleman, Yogyakarta</p>
+            <input type="button" class="form-control button-subscribe" value="Subscribe" data-toggle="modal" data-target="#subscribe"/>
+
+            <div class="pt-3">
+              <span class="letter text-secondary">---------------------------</span>
+              <span class="span-letter font-weight-bold text-secondary">ATAU</span>
+              <span class="letter text-secondary">---------------------------</span>
+            </div>
+            
+            <p class="mt-3 text-secondary spandave">Ikuti sosial media kami untuk info Cetakk.Id</p>
+          </form>
+        </div>
+      </div>
+
       <div>
         <a href="https://www.instagram.com/cetakk/"><img src="../assets/instagram.png" alt="instagram" class="social-media"></a>
         <a href="https://medium.com/cetakk-id"><img src="../assets/medium.png" alt="medium" class="social-media"></a>
@@ -27,6 +36,32 @@
         <a href="mailto:cetakid.info@gmail.com?"><img src="../assets/gmail.png" alt="gmail" class="social-media"></a>
       </div>
     </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="subscribe" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title text-center" ><img src="../assets/Logo.png" alt="Logo Cetak" class="img-fluid logo" /></h2>
+            <button type="button" class="pt-2 close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form class="form-group">
+              <input type="text" class="form-control in-field" placeholder="Nama" v-model="name" required />
+              <input type="email" class="form-control in-field email" id="email" placeholder="Email" v-model="email" required />
+              <input type="button" class="form-control btn-primary" value="Subscribe" @click="subscribe" />
+            </form>
+          </div>
+          <!-- <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div> -->
+        </div>
+      </div>
+    </div>
+
   </div>
 </template>
 
@@ -151,22 +186,39 @@ export default {
     font-family: 'Open Sans';
   }
 
+  .spanduk{
+    font-size: 12px;
+  }
+  .spandave{
+    font-size: 14px;
+  }
+  .letter{
+    letter-spacing: -3px;
+  }
+  .span-letter{
+    margin-left: 20px;
+    margin-right: 20px;
+  }
   .left-side {
     background-color: #F6F6F6;
-    background-image: url('../assets/background_biru_2.png');
+    background-image: url('../assets/bgbiru.png');
     background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: -40px;
     min-height: 100vh;
-    z-index: -1;
+    padding-top: 6rem;
+    text-align: left
   }
 
-  #wave {
+  /* #wave {
     position: absolute;
     background-image: url('../assets/background_biru.png');
     background-repeat: no-repeat;
     z-index: -1;
     min-height: 100vh;
+    background-size: cover;
     left: 0;
-  }
+  } */
 
   .right-side {
     background-color: #F6F6F6;
@@ -217,26 +269,36 @@ export default {
   }
 
   input {
-    margin-top: 30px;
+    margin-top: 20px;
     border: none;
   }
 
   .button-subscribe {
-    background-color: #0065C2;
+    background-color: #F4BE0B;
     color: #fff;
     font-weight: bold;
     margin-bottom: 30px;
   }
 
+  .modal-content{
+    background-color: #f0f0f0 !important;
+    z-index: 9999999;
+  }
+  .fade {
+    background-color: #080808ad !important;
+  }
+  /* .in-field{
+    background-color: rgb(209, 209, 209);
+  } */
   .button-subscribe:hover {
     opacity: 0.5;
   }
 
   .button-order {
-    background-color: #F4BE0B;
+    background-color: #0065C2;
     color: #fff;
     font-weight: bold;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
   }
 
   .button-order:hover {
@@ -255,6 +317,6 @@ export default {
   }
 
   .logo {
-    width: 30%;
+    width: 40%;
   }
 </style>
