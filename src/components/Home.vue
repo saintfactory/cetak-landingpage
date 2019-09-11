@@ -75,10 +75,6 @@ export default {
 
   data() {
     return {
-      // payload: {
-      //   name: '',
-      //   email: ''
-      // }
       name: '',
       email: ''
     }
@@ -147,7 +143,7 @@ export default {
 
     orderNow() {
       window.open(
-        'https://wa.me/6282390243711?text=Halo%2C%20aku%20tertarik%20untuk%20melakukan%20pencetakan%20dokumen.%20Mohon%20dibantu%20ya%20kak.%0ANama%20%3A%0AJenis%20dokumen%20%3A%0AJumlah%20halaman%20%3A%0AUkuran%20kertas%20%3A%0AJilid%20%3A%20y%2Fn%20%28tambahkan%20keterangan%20jilid%20spt%20cover%20%2B%20warna%29%0AJasa%20Antar%20%3A%20y%2Fn%20%28alamat%20kamu%29%0A%0ATerima%20Kasih'
+        'https://wa.me/6282390243711?text=Halo%2C%20aku%20tertarik%20untuk%20melakukan%20pencetakan%20dokumen.%20Mohon%20dibantu%20ya%20kak.%0ANama%20%3A%20%0AUkuran%20Kertas%20%3A%20%28A4%2FF4%29%0AJasa%20Antar%20%3A%20%28yes%2Fno%29%0AWarna%20%3A%20%28yes%2Fno%29%0AJilid%20%3A%20%28yes%2Fno%29%0AKeterangan%20tambahan%20%3A%20%0A%0ATerima%20Kasih'
       )
     }
 
