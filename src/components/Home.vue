@@ -14,7 +14,8 @@
       <div class="row justify-content-md-center">
         <div class="col-md-10">
           <form class="form-group w-100">
-            <input type="button" id="order" class="form-control button-order" data-toggle="modal" data-target="#orderModal" value="Cetak Sekarang" @click="orderNow" /> 
+            <!-- <input type="button" id="order" class="form-control button-order" data-toggle="modal" data-target="#orderModal" value="Cetak Sekarang" @click="orderNow" /> -->
+            <input type="button" class="form-control button-order" value="Order" data-toggle="modal" data-target="#pesan"/> 
               <p class="spanduk text-secondary text-left display-block">Saat ini, kami hanya melayani wilayah Kaliurang, Sleman, Yogyakarta</p>
             <input type="button" class="form-control button-subscribe" value="Subscribe" data-toggle="modal" data-target="#subscribe"/>
 
@@ -37,13 +38,13 @@
       </div>
     </div>
 
-    <!-- Modal -->
+    <!-- Modal Subscribe -->
     <div class="modal fade" id="subscribe" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h2 class="modal-title text-center" ><img src="../assets/Logo.png" alt="Logo Cetak" class="img-fluid logo" /></h2>
-            <button type="button" class="pt-2 close" data-dismiss="modal" aria-label="Close">
+            <p class="modal-title text-center" ><img src="../assets/Logo.png" alt="Logo Cetak" class="img-fluid logo" /></p>
+            <button type="button" class="align-center close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
@@ -51,13 +52,50 @@
             <form class="form-group">
               <input type="text" class="form-control in-field" placeholder="Nama" v-model="name" required />
               <input type="email" class="form-control in-field email" id="email" placeholder="Email" v-model="email" required />
-              <input type="button" class="form-control btn-primary" value="Subscribe" @click="subscribe" />
+              <input type="button" class="text-subscribe form-control button-subscribe" value="Subscribe" @click="subscribe" />
             </form>
           </div>
-          <!-- <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
-          </div> -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Order -->
+    <div class="modal fade" id="pesan" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header mb-2">
+            <h2 class="modal-title text-left" ><img src="../assets/Logo.png" alt="Logo Cetak" class="img-fluid logo" /></h2>
+            <!-- <p class="modal-title modplus text-left" >Daftar Harga</p> -->
+            <button type="button" class="align-center close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p class="modal-title modplus text-left mb-3" >Cek Estimasi Harga</p>
+
+            <table class="table table-hover table-bordered table-sm text-left">
+              <thead class="">
+                <th class="col1">Barang</th>
+                <th class="col2">Harga/qtc</th>
+                <th class="col3">Pesanan</th>
+              </thead>
+
+              <tbody v-for="dataa in dataa" v-bind:key="dataa">
+                <tr>
+                  <td class="align-baseline">{{dataa.etalase}}</td>
+                  <td class="align-baseline">Rp. {{dataa.harga}}</td>
+                  <td class="align-baseline"><input type="number" class="form-control modal-badge" placeholder="0"></td>
+                </tr>
+              </tbody>
+
+              <tr class="bg-total">
+                <td class="align-baseline font-weight-bold" colspan="2">Total Harga</td>
+                <td class="align-baseline">Rp.50000</td>
+              </tr>
+            </table>
+
+            <input type="button" id="order" class="form-control button-order" data-toggle="modal" data-target="#orderModal" value="Pesan Sekarang" @click="orderNow" />
+          </div>
         </div>
       </div>
     </div>
@@ -72,13 +110,54 @@ import subscribeRef from '../firebase'
 let regex =  /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 export default {
   name: 'Home',
-
   data() {
     return {
+      // payload: {
+      //   name: '',
+      //   email: ''
+      // }
       name: '',
       email: ''
     }
   },
+
+  name: 'Price',
+    data: () => ({
+      dataa: [
+        {
+          etalase:'Kertas A4 Print Hitam/Putih',
+          harga:'200' 
+        },
+        {
+          etalase:'Kertas A4 Print Warna',
+          harga:'500' 
+        },
+        {
+          etalase:'Kertas A4 Print Full Warna',
+          harga:'1500' 
+        },
+        {
+          etalase:'Kertas F4 Print Hitam/Putih',
+          harga:'250'
+        },
+        {
+          etalase:'Kertas F4 Print Warna',
+          harga:'750' 
+        },
+        {
+          etalase:'Kertas F4 Print Full Warna',
+          harga:'2000' 
+        },
+        {
+          etalase:'Jilid Mika',
+          harga:'3000' 
+        },
+        {
+          etalase:'Jilid Hardcover',
+          harga:'4000' 
+        },
+      ]
+    }),
 
   firebase: {
     subscribe: subscribeRef
@@ -143,7 +222,7 @@ export default {
 
     orderNow() {
       window.open(
-        'https://wa.me/6282390243711?text=Halo%2C%20aku%20tertarik%20untuk%20melakukan%20pencetakan%20dokumen.%20Mohon%20dibantu%20ya%20kak.%0ANama%20%3A%20%0AUkuran%20Kertas%20%3A%20%28A4%2FF4%29%0AJasa%20Antar%20%3A%20%28yes%2Fno%29%0AWarna%20%3A%20%28yes%2Fno%29%0AJilid%20%3A%20%28yes%2Fno%29%0AKeterangan%20tambahan%20%3A%20%0A%0ATerima%20Kasih'
+        'https://wa.me/6282390243711?text=Halo%2C%20aku%20tertarik%20untuk%20melakukan%20pencetakan%20dokumen.%20Mohon%20dibantu%20ya%20kak.%0ANama%20%3A%0AJenis%20dokumen%20%3A%0AJumlah%20halaman%20%3A%0AUkuran%20kertas%20%3A%0AJilid%20%3A%20y%2Fn%20%28tambahkan%20keterangan%20jilid%20spt%20cover%20%2B%20warna%29%0AJasa%20Antar%20%3A%20y%2Fn%20%28alamat%20kamu%29%0A%0ATerima%20Kasih'
       )
     }
 
@@ -181,15 +260,23 @@ export default {
   * {
     font-family: 'Open Sans';
   }
-
+  .col1{width: 70%} .col2{width: 20%} .col3{width: 10%}
   .spanduk{
     font-size: 12px;
+  }
+  .modplus{
+    font-weight: 700;
+    font-size: 16px;
   }
   .spandave{
     font-size: 14px;
   }
   .letter{
     letter-spacing: -3px;
+  }
+  .bg-total{
+    border-top:0.5px solid #333;
+    margin-top: 50px;
   }
   .span-letter{
     margin-left: 20px;
@@ -269,11 +356,20 @@ export default {
     border: none;
   }
 
+  .modal-badge {
+    margin-top: 0 !important;
+    height: 25px !important;
+  }
+
   .button-subscribe {
     background-color: #F4BE0B;
     color: #fff;
     font-weight: bold;
     margin-bottom: 30px;
+  }
+
+  .text-subscribe{
+    color: #250825 !important;
   }
 
   .modal-content{
@@ -313,6 +409,6 @@ export default {
   }
 
   .logo {
-    width: 40%;
+    width: 30%;
   }
 </style>
