@@ -8,6 +8,8 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@sentry/browser": "^5.6.3",
+    "@sentry/integrations": "^5.6.1",
     "babel-install": "^2.1.0",
     "bootstrap": "^4.3.1",
     "core-js": "^2.6.5",

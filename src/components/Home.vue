@@ -61,43 +61,7 @@
 
     <!-- Modal Order -->
     <div class="modal fade" id="pesan" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header mb-2">
-            <h2 class="modal-title text-left" ><img src="../assets/Logo.png" alt="Logo Cetak" class="img-fluid logo" /></h2>
-            <!-- <p class="modal-title modplus text-left" >Daftar Harga</p> -->
-            <button type="button" class="align-center close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <p class="modal-title modplus text-left mb-3" >Cek Estimasi Harga</p>
-
-            <table class="table table-hover table-bordered table-sm text-left">
-              <thead class="">
-                <th class="col1">Barang</th>
-                <th class="col2">Harga/qtc</th>
-                <th class="col3">Pesanan</th>
-              </thead>
-
-              <tbody v-for="dataa in dataa" v-bind:key="dataa">
-                <tr>
-                  <td class="align-baseline">{{dataa.etalase}}</td>
-                  <td class="align-baseline">Rp. {{dataa.harga}}</td>
-                  <td class="align-baseline"><input type="number" class="form-control modal-badge" placeholder="0"></td>
-                </tr>
-              </tbody>
-
-              <tr class="bg-total">
-                <td class="align-baseline font-weight-bold" colspan="2">Total Harga</td>
-                <td class="align-baseline">Rp.50000</td>
-              </tr>
-            </table>
-
-            <input type="button" id="order" class="form-control button-order" data-toggle="modal" data-target="#orderModal" value="Pesan Sekarang" @click="orderNow" />
-          </div>
-        </div>
-      </div>
+      <PriceList />
     </div>
 
   </div>
@@ -106,91 +70,28 @@
 <script>
 /* eslint-disable */
 import subscribeRef from '../firebase'
+import PriceList from './PriceList.vue'
 
 let regex =  /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 export default {
   name: 'Home',
+  components: {
+    PriceList
+  },
+
   data() {
     return {
-      // payload: {
-      //   name: '',
-      //   email: ''
-      // }
       name: '',
       email: ''
     }
   },
 
-  name: 'Price',
-    data: () => ({
-      dataa: [
-        {
-          etalase:'Kertas A4 Print Hitam/Putih',
-          harga:'200' 
-        },
-        {
-          etalase:'Kertas A4 Print Warna',
-          harga:'500' 
-        },
-        {
-          etalase:'Kertas A4 Print Full Warna',
-          harga:'1500' 
-        },
-        {
-          etalase:'Kertas F4 Print Hitam/Putih',
-          harga:'250'
-        },
-        {
-          etalase:'Kertas F4 Print Warna',
-          harga:'750' 
-        },
-        {
-          etalase:'Kertas F4 Print Full Warna',
-          harga:'2000' 
-        },
-        {
-          etalase:'Jilid Mika',
-          harga:'3000' 
-        },
-        {
-          etalase:'Jilid Hardcover',
-          harga:'4000' 
-        },
-      ]
-    }),
-
   firebase: {
     subscribe: subscribeRef
   },
 
-  // created() {
-  //   let getData = function(){
-  //     let ref = subscribeRef
-  //     ref.on('value', function(snapshot){
-  //       snapshot.forEach(function(childSnapshot){
-  //         var childData = {
-  //           name: childSnapshot.val().name,
-  //           email: childSnapshot.val().email
-  //         }
-  //         console.log(childData)
-  //       })
-  //     })
-  //   }
-
-  //   getData()
-  //},
-
   methods: {
     subscribe() {
-      // let getData = function(childData){
-      //   let ref = subscribeRef
-      //   ref.on('value', function(snapshot){
-      //     snapshot.forEach(function(childSnapshot){
-      //       var childData = childSnapshot.val()
-      //     })
-      //   })
-      // }
-
       let validate = function(e) {
         var email = document.querySelector("#email").value
         var regex =  /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -204,54 +105,17 @@ export default {
       }
 
       if(this.name != '' && this.email != '' && validate(this.email)){
-        // if(getData.name != this.name && getData.email != this.email){
           subscribeRef.push({
             name: this.name,
             email: this.email
           })
           alert('Terima Kasih telah subscribe! Pilih tombol "Order Now" untuk proses cetak filemu !')
-          // document.querySelector("#order").style.visibility = "visible";
-        // } else {
-        //   alert('Nama & Email sudah terdaftar :)')
-        // }
       }
       else {
         alert('Nama & email tidak boleh kosong!')
       }
     },
 
-    orderNow() {
-      window.open(
-        'https://wa.me/6282390243711?text=Halo%2C%20aku%20tertarik%20untuk%20melakukan%20pencetakan%20dokumen.%20Mohon%20dibantu%20ya%20kak.%0ANama%20%3A%0AJenis%20dokumen%20%3A%0AJumlah%20halaman%20%3A%0AUkuran%20kertas%20%3A%0AJilid%20%3A%20y%2Fn%20%28tambahkan%20keterangan%20jilid%20spt%20cover%20%2B%20warna%29%0AJasa%20Antar%20%3A%20y%2Fn%20%28alamat%20kamu%29%0A%0ATerima%20Kasih'
-      )
-    }
-
-    // orderNow() {
-    //   let validate = function(e) {
-    //     var email = document.querySelector("#email").value
-    //     var regex =  /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        
-    //     if(regex.test(email)){
-    //       return true;
-    //     } else {
-    //       alert("Masukkan alamat email yang benar");
-    //       return false;
-    //     }
-    //   }
-
-    //   if(validate(this.email)){
-    //     subscribeRef.push({
-    //       name: this.payload.name,
-    //       email: this.payload.email
-    //     })
-    //     alert('Terima Kasih telah subscribe! Pilih tombol "Order Now" untuk proses cetak filemu !')
-    //     window.open(
-    //       'https://wa.me/6282390243711?text=Halo%2C%20aku%20tertarik%20untuk%20melakukan%20pencetakan%20dokumen.%20Mohon%20dibantu%20ya%20kak.%0ANama%20%3A%0AJenis%20dokumen%20%3A%0AJumlah%20halaman%20%3A%0AUkuran%20kertas%20%3A%0AJilid%20%3A%20y%2Fn%20%28tambahkan%20keterangan%20jilid%20spt%20cover%20%2B%20warna%29%0AJasa%20Antar%20%3A%20y%2Fn%20%28alamat%20kamu%29%0A%0ATerima%20Kasih'
-    //     )     
-    //   }
-    // }
-
-    
   }
 }
 </script>
