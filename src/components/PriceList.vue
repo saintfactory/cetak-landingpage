@@ -33,7 +33,7 @@
                 </table> -->
 
                 <!-- Daftar Print -->
-                <p><a data-toggle="collapse" href="#print" aria-expanded="false" aria-controls="print">Harga Print</a></p>
+                <p><a data-toggle="collapse" href="#print" aria-expanded="false" aria-controls="print">Cek Harga Print</a></p>
                 <table class="table table-hover table-bordered table-sm text-left collapse multi-collapse" id="print">
                     <thead class="">
                         <th class="col1">Barang</th>
@@ -51,7 +51,7 @@
                 </table>
 
                 <!-- Daftar Jilid	 -->
-                <p><a data-toggle="collapse" href="#jilid" aria-expanded="false" aria-controls="jilid">Harga Jilid</a></p>
+                <p><a data-toggle="collapse" href="#jilid" aria-expanded="false" aria-controls="jilid">Cek Harga Jilid</a></p>
                 <table class="table table-hover table-bordered table-sm text-left collapse multi-collapse" id="jilid">
                     <thead class="">
                         <th class="col1">Barang</th>
@@ -102,7 +102,7 @@ export default {
     methods: {
         orderNow: function() {
             window.open(
-                'https://wa.me/6282390243711?text=Halo%2C%20aku%20tertarik%20untuk%20melakukan%20pencetakan%20dokumen.%20Mohon%20dibantu%20ya%20kak.%0ANama%20%3A%0AJenis%20dokumen%20%3A%0AJumlah%20halaman%20%3A%0AUkuran%20kertas%20%3A%0AJilid%20%3A%20y%2Fn%20%28tambahkan%20keterangan%20jilid%20spt%20cover%20%2B%20warna%29%0AJasa%20Antar%20%3A%20y%2Fn%20%28alamat%20kamu%29%0A%0ATerima%20Kasih'
+                'https://wa.me/6289674450090?text=Halo%2C%20aku%20tertarik%20untuk%20melakukan%20pencetakan%20dokumen.%20Mohon%20dibantu%20ya%20kak.%0ANama%20%3A%0AJenis%20dokumen%20%3A%0AJumlah%20halaman%20%3A%0AUkuran%20kertas%20%3A%0AJilid%20%3A%20y%2Fn%20%28tambahkan%20keterangan%20jilid%20spt%20cover%20%2B%20warna%29%0AJasa%20Antar%20%3A%20y%2Fn%20%28alamat%20kamu%29%0A%0ATerima%20Kasih'
             )
         }
     },
