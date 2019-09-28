@@ -4,7 +4,7 @@
 			<img src="../assets/Logo.png" alt="Logo Cetak" class="img-fluid logo my-4 pb-3 w-75"/>
 			<div class="form-group text-left">
 				<label for="exampleInputEmail1">Email address</label>
-				<input type="email" v-model="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+				<input type="text" v-model="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
 				<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
 			</div>
 			<div class="form-group text-left">
@@ -35,11 +35,11 @@ export default {
 	methods: {
 		register: function(){
 			firebase.auth().createUserWithEmailAndPassword(this.email, this.password).then(
-				function(user){
+				(user) => {
 					alert('Akun berhasil dibuat!')
-					this.$router.push({path: '/'})
+					this.$router.replace('/')
 				},
-				function(err){
+				(err) => {
 					alert('Akun gagal dibuat, ' + err.message)
 				}
 			)
