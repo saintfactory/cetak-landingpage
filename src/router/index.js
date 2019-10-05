@@ -3,12 +3,14 @@ import Router from 'vue-router'
 import Home from '@/components/Home'
 import Login from '@/components/Login'
 import Register from '@/components/Register'
-import Dashboard from '@/components/Dashboard'
+import DashboardCustomer from '@/components/customer/Dashboard'
+import DashboardVendor from '@/components/vendor/Dashboard'
+import Order from '@/components/Order'
 //import firebase from 'firebase'
 
 Vue.use(Router)
 
-export default new Router({
+const router = new Router({
   mode: 'history',
   routes: [
     {
@@ -26,17 +28,32 @@ export default new Router({
       component: Login
     },
     {
+      path: '/order',
+      name: 'Order',
+      component: Order
+    },
+    {
       path: '/register',
       name: 'Register',
       component: Register
     },
     {
-      path: '/dashboard',
-      name: 'Dashboard',
-      component: Dashboard,
+      path: '/dashboard-customer',
+      name: 'DashboardCustomer',
+      component: DashboardCustomer,
       meta: {
         requiresAuth: true
-      }
+      },
+      children: []
+    },
+    {
+      path: '/dashboard-vendor',
+      name: 'DashboardVendor',
+      component: DashboardVendor,
+      meta: {
+        requiresAuth: true
+      },
+      children: []
     }
   ]
 })
@@ -50,4 +67,4 @@ export default new Router({
 //   else next()
 // })
 
-//export default router
+export default router

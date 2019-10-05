@@ -22,7 +22,7 @@
 
 <script>
 /* eslint-disable */
-import firebase from 'firebase'
+import firebase, { firestore } from 'firebase'
 
 export default {
 	name: 'Login',
@@ -32,17 +32,43 @@ export default {
 			password: ''
 		}
 	},
+
 	methods: {
 		login: function(){
+			let email = this.email
+			let password = this.password
 			firebase.auth().signInWithEmailAndPassword(this.email, this.password).then(
 				(user) => {
-					this.$router.replace('Dashboard')
+					this.$router.replace('/dashboard-customer')
 				},
 				(err) => {
 					console.log(err)
 					alert('Login gagal, ' + err.message)
 				}
 			)
+
+			// let uid = 'some-uid';
+
+			// function token(){
+			// 	firebase.auth().createCustomToken(uid)
+			// 	.then(function(customToken) {
+			// 		// Send token back to client
+			// 	})
+			// 	.catch(function(error) {
+			// 		console.log('Error creating custom token:', error);
+			// 	});
+			// } 
+
+			// firebase.auth().signInWithCustomToken(token)
+			// 	.then(
+			// 		(customToken) => {
+			// 			this.$router.replace('Dashboard')
+			// 		},
+			// 		(err) => {
+			// 			console.log(err)
+			// 			alert('Login gagal, ' + err.message)
+			// 		}
+			// 	)
 		}
 	}
 }
