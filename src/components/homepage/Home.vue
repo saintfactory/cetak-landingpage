@@ -62,7 +62,7 @@
 
 		<div class="footer cover row justify-content-md-center ">
 			<div class="col-sm-12 part-foot">
-				<h1 class="font-hero yellow mb-3">1000+ Dokumen</h1>
+				<h1 class="font-hero text-warning mb-3">1000+ Dokumen</h1>
 				<h2 class="font-subhero text-light mb-3">Sudah berhasil dicetak</h2>
 				<p class="font-primary text-light mb-4 font-italic">Ribuan pengguna semakin mudah dan cepat<br>
 						mencetak dokumen setelah menggunakan Cetak.ID
@@ -74,7 +74,7 @@
 		
 		<div class="super-foot cover row justify-content-md-center text-left pl-5 pt-4">
 			<div class="col-md-4">
-				<img src="../../assets/Logo.png" height="40" alt="">
+				<img src="../../assets/LogoteksPutih.png" height="95" alt="" class="mb-3">
 				<p class="text-light font-primary">Copyright Cetak.Id 2019</p>
 			</div>
 
@@ -115,19 +115,6 @@
 
 export default {
 	name: 'Home',
-	// data() {
-	// 	return {
-	// 		content: 'Ambil hasil cetak langsung di tempat pilihan kamu'
-	// 	}
-	// },
-	// components: {
-	// 	// Header
-	// },
-	// methods: {
-	// 	getStarted: function(){
-	// 		document.getElementsByClassName("hero--button").scrollspy({target: ".home", offset: 100});
-	// 	}
-	// },
 }
 </script>
 
@@ -138,7 +125,6 @@ export default {
 	text-decoration: none;
 }
 .btn-based:hover{
-    color: #0065C2 !important;
     text-decoration: none;
 }
 .btn-second{
@@ -159,7 +145,7 @@ export default {
 .hero {
     background:url('../../assets/bghome.png') no-repeat center;
     background-size: cover;
-    min-height: 950px;
+    min-height: 130vh;
     background-color: rgba(255, 255, 255, 0.816);
     padding-top: 200px
 }
@@ -183,7 +169,7 @@ section{
 .gmbr{
 	min-height: 290px;
     max-height: 290px;
-    max-width: 80%;
+    max-width: 90%;
 	margin-bottom: 40px;
 }
 
