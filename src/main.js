@@ -13,7 +13,6 @@ import firebase from 'firebase'
 //   integrations: [new Integrations.Vue({Vue, attachProps: true})],
 // });
 
-Vue.config.productionTip = false
 let app = ''
 
 firebase.auth().onAuthStateChanged(() => {
@@ -24,3 +23,5 @@ firebase.auth().onAuthStateChanged(() => {
     }).$mount('#app')
   }
 })
+
+Vue.config.productionTip = false

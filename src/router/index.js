@@ -1,11 +1,26 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from '@/components/Home'
-import Login from '@/components/Login'
-import Register from '@/components/Register'
-import DashboardCustomer from '@/components/customer/Dashboard'
-import DashboardVendor from '@/components/vendor/Dashboard'
-import Order from '@/components/Order'
+// import Home from '@/components/Home'
+// import Login from '@/components/Login'
+// import Register from '@/components/Register'
+// import DashboardCustomer from '@/components/customer/Dashboard'
+// import DashboardVendor from '@/components/vendor/Dashboard'
+// import Order from '@/components/Order'
+//import Dashboard from '@/components/Dashboard'
+
+import Based from '@/components/layouter/Based'
+
+import Home from '@/components/homepage/Home'
+import TentangKami from '@/components/homepage/TentangKami'
+import CaraPrint from '@/components/homepage/CaraPrint'
+import Kebijakan from '@/components/homepage/Kebijakan'
+
+
+import Login from '@/components/login/Login'
+import Join from '@/components/login/Join'
+import RegisterUser from '@/components/login/RegisterUser'
+import RegisterPartnership from '@/components/login/RegisterPartnership'
+
 //import firebase from 'firebase'
 
 Vue.use(Router)
@@ -17,44 +32,89 @@ const router = new Router({
       path: '*',
       redirect: '/login'
     },
-    {
-      path: '/',
-      name: 'Home',
-      component: Home
+    // {
+    //   path: '/',
+    //   name: 'Home',
+    //   component: Home
+    // },
+    // {
+    //   path: '/login',
+    //   name: 'Login',
+    //   component: Login
+    // },
+    // {
+    //   path: '/order',
+    //   name: 'Order',
+    //   component: Order
+    // },
+    // {
+    //   path: '/register',
+    //   name: 'Register',
+    //   component: Register
+    //  }
+
+    { 
+      path: '/', 
+      name: 'based',
+      component: Based,
+      children: [
+          {
+              path: '',
+              component: Home
+          },
+          {
+              path: '/home',
+              component: Home
+          },
+          { 
+              path: '/tentang', 
+              component: TentangKami 
+          },
+          { 
+              path: '/cara', 
+              component: CaraPrint 
+          },
+          {
+              path: '/kebijakan', 
+              component: Kebijakan 
+          },
+          { 
+              path: '/join', 
+              component: Join 
+          },
+          { 
+            path: '/login', 
+            component: Login 
+          },
+          { 
+            path: '/register-user', 
+            component: RegisterUser 
+          },
+          { 
+            path: '/register-partnership', 
+            component: RegisterPartnership 
+          },
+
+      ]
     },
-    {
-      path: '/login',
-      name: 'Login',
-      component: Login
-    },
-    {
-      path: '/order',
-      name: 'Order',
-      component: Order
-    },
-    {
-      path: '/register',
-      name: 'Register',
-      component: Register
-    },
-    {
-      path: '/dashboard-customer',
-      name: 'DashboardCustomer',
-      component: DashboardCustomer,
-      meta: {
-        requiresAuth: true
-      },
-      children: []
-    },
-    {
-      path: '/dashboard-vendor',
-      name: 'DashboardVendor',
-      component: DashboardVendor,
-      meta: {
-        requiresAuth: true
-      },
-      children: []
-    }
+    // {
+    //   path: '/dashboard-customer',
+    //   name: 'DashboardCustomer',
+    //   component: DashboardCustomer,
+    //   meta: {
+    //     requiresAuth: true
+    //   },
+    //   children: []
+    // },
+    // {
+    //   path: '/dashboard-vendor',
+    //   name: 'DashboardVendor',
+    //   component: DashboardVendor,
+    //   meta: {
+    //     requiresAuth: true
+    //   },
+    //   children: []
+    // }
   ]
 })
 
