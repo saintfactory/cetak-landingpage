@@ -38,3 +38,13 @@ docker run -it -p 8080:8080 --rm --name dockerize-vue-app-1 firebase/dockerize-v
 ```
 
 You should be able to access on `localhost:8080`
+
+**Or**, if using `docker-compose` you can build the image with :
+```sh
+docker-compose up -d --build
+```
+
+Ensure the app is running on browser and test it again, if succedd stop the services using :
+```sh
+docker-compose stop
+```
