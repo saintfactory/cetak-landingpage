@@ -1,0 +1,13 @@
+version: '3.3'
+
+services:
+
+  dockerize-cetak:
+    container_name: dockerize-cetak
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - '.:/dockerize-cetak'
+    ports:
+      - '8081:8080'
