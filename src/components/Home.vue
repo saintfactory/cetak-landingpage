@@ -31,7 +31,7 @@
       </div>
 
       <div>
-        <a href="https://www.instagram.com/cetakk/"><img src="../assets/instagram.png" alt="instagram" class="social-media"></a>
+        <a href="https://www.instagram.com/cetakkid.official/"><img src="../assets/instagram.png" alt="instagram" class="social-media"></a>
         <a href="https://medium.com/cetakk-id"><img src="../assets/medium.png" alt="medium" class="social-media"></a>
         <a href="https://www.linkedin.com/company/cetakk-id/"><img src="../assets/linkedin.png" alt="linkedin" class="social-media"></a>
         <a href="mailto:cetakid.info@gmail.com?"><img src="../assets/gmail.png" alt="gmail" class="social-media"></a>
@@ -61,7 +61,7 @@
 
     <!-- Modal Order -->
     <div class="modal fade" id="pesan" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <PriceList />
+      <lazyComponent />
     </div>
 
   </div>
@@ -70,13 +70,13 @@
 <script>
 /* eslint-disable */
 import subscribeRef from '../firebase'
-import PriceList from './PriceList.vue'
 
 let regex =  /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+const lazyComponent = () => import('./PriceList.vue')
 export default {
   name: 'Home',
   components: {
-    PriceList
+    lazyComponent
   },
 
   data() {
