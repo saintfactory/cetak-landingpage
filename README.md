@@ -25,5 +25,18 @@ npm run test
 npm run lint
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### Docker
+
+- I assumed that in your machine already had Docker
+
+For build the docker image for our cetakk app, you can do this like :
+```sh
+docker build -t firebase/dockerize-vue-app .
+```
+
+and then run docker container using :
+```sh
+docker run -it -p 8080:8080 --rm --name dockerize-vue-app-1 firebase/dockerize-vue-app
+```
+
+You should be able to access on `localhost:8080`
