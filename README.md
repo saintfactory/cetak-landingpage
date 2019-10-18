@@ -27,9 +27,7 @@ npm run lint
 
 ### Docker
 
-- I assumed that in your machine already had Docker
-
-For build the docker image for our cetakk app, you can do this like :
+I assumed that in your machine already had Docker. for build the docker image for our cetakk app, you can do this like :
 ```sh
 docker build -t firebase/dockerize-vue-app .
 ```
