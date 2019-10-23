@@ -115,6 +115,11 @@
 
 export default {
 	name: 'Home',
+	methods: {
+		getStarted(){
+			return 0
+		}
+	}
 }
 </script>
 

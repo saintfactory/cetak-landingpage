@@ -10,8 +10,8 @@
             </div>
             
             <div class="col-md-12">
-                <router-link to="/register-partnership" ><input type="submit" class="btn btn-warning btn-second" value="Daftar Partnership" href="#0" /></router-link>
-                <router-link to="/register-user"><input type="submit" class="btn btn-warning btn-second" value="Daftar Pengguna" href="#0" /></router-link>
+                <router-link to="/register-vendor" ><input type="submit" class="btn btn-warning btn-second" value="Daftar Vendor" href="#0" /></router-link>
+                <router-link to="/register-customer"><input type="submit" class="btn btn-warning btn-second" value="Daftar Customer" href="#0" /></router-link>
             </div>
         </div>
 

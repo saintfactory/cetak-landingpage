@@ -26,6 +26,8 @@
 <script>
 /* eslint-disable */
 import firebase from 'firebase'
+// import admin from 'firebase-admin'
+// import token from '../../firebase'
 
 export default {
 	name: 'Login',
@@ -35,19 +37,46 @@ export default {
 			password: ''
 		}
 	},
+
 	methods: {
 		login: function(){
 			let email = this.email
 			let password = this.password
 			firebase.auth().signInWithEmailAndPassword(this.email, this.password).then(
-				function(user){
+				(user) => {
 					console.log('bisa nih')
-					this.$router.replace('/home')
+					this.$router.replace('/dashboard-customer')
 				},
-				function(err){
+				(err) => {
 					alert('Login gagal, ' + err.message)
 				}
 			)
+
+			// let token = function(){
+			// 	let uid = 'BoKqyoSM0ec11tZCQrDdp9mu8Pl2';
+
+			// 	return admin.auth().createCustomToken(uid)
+			// 	.then(function(customToken) {
+			// 		return customToken
+			// 	})
+			// 	.catch(function(error) {
+			// 		console.log('Error creating custom token:', error);
+			// 	});
+			// }
+
+			// firebase.auth().signInWithCustomToken(token)
+			// 	.then(
+			// 		(customToken) => {
+			// 			let email = this.email
+			// 			let password = this.password
+			// 			this.$router.replace('/dashboard-customer')
+			// 			//console.log(customToken)
+			// 		},
+			// 		(err) => {
+			// 			console.log(err)
+			// 			alert('Login gagal, ' + err.message)
+			// 		}
+			// 	)
 		}
 	}
 }

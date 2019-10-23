@@ -18,8 +18,11 @@ import Kebijakan from '@/components/homepage/Kebijakan'
 
 import Login from '@/components/login/Login'
 import Join from '@/components/login/Join'
-import RegisterUser from '@/components/login/RegisterUser'
-import RegisterPartnership from '@/components/login/RegisterPartnership'
+import RegisterCustomer from '@/components/login/RegisterCustomer'
+import RegisterVendor from '@/components/login/RegisterVendor'
+
+import DashboardCustomer from '@/components/customer/Dashboard'
+import DashboardVendor from '@/components/vendor/Dashboard'
 
 //import firebase from 'firebase'
 
@@ -32,27 +35,6 @@ const router = new Router({
       path: '*',
       redirect: '/login'
     },
-    // {
-    //   path: '/',
-    //   name: 'Home',
-    //   component: Home
-    // },
-    // {
-    //   path: '/login',
-    //   name: 'Login',
-    //   component: Login
-    // },
-    // {
-    //   path: '/order',
-    //   name: 'Order',
-    //   component: Order
-    // },
-    // {
-    //   path: '/register',
-    //   name: 'Register',
-    //   component: Register
-    //  }
-
     { 
       path: '/', 
       name: 'based',
@@ -87,34 +69,54 @@ const router = new Router({
             component: Login 
           },
           { 
-            path: '/register-user', 
-            component: RegisterUser 
+            path: '/register-customer', 
+            component: RegisterCustomer 
           },
           { 
-            path: '/register-partnership', 
-            component: RegisterPartnership 
+            path: '/register-vendor', 
+            component: RegisterVendor
           },
 
       ]
     },
+    {
+      path: '/dashboard-customer',
+      name: 'DashboardCustomer',
+      component: DashboardCustomer,
+      meta: {
+        requiresAuth: true
+      },
+      children: []
+    },
+    {
+      path: '/dashboard-vendor',
+      name: 'DashboardVendor',
+      component: DashboardVendor,
+      meta: {
+        requiresAuth: true
+      },
+      children: []
+    }
     // {
-    //   path: '/dashboard-customer',
-    //   name: 'DashboardCustomer',
-    //   component: DashboardCustomer,
-    //   meta: {
-    //     requiresAuth: true
-    //   },
-    //   children: []
+    //   path: '/',
+    //   name: 'Home',
+    //   component: Home
     // },
     // {
-    //   path: '/dashboard-vendor',
-    //   name: 'DashboardVendor',
-    //   component: DashboardVendor,
-    //   meta: {
-    //     requiresAuth: true
-    //   },
-    //   children: []
-    // }
+    //   path: '/login',
+    //   name: 'Login',
+    //   component: Login
+    // },
+    // {
+    //   path: '/order',
+    //   name: 'Order',
+    //   component: Order
+    // },
+    // {
+    //   path: '/register',
+    //   name: 'Register',
+    //   component: Register
+    //  }
   ]
 })
 
