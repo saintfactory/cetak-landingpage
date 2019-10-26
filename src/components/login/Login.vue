@@ -26,8 +26,7 @@
 <script>
 /* eslint-disable */
 import firebase from 'firebase'
-// import admin from 'firebase-admin'
-// import token from '../../firebase'
+import { dbstore } from '../../firebase'
 
 export default {
 	name: 'Login',
@@ -42,41 +41,22 @@ export default {
 		login: function(){
 			let email = this.email
 			let password = this.password
-			firebase.auth().signInWithEmailAndPassword(this.email, this.password).then(
+			firebase.auth().signInWithEmailAndPassword(email, password).then(
 				(user) => {
-					console.log('bisa nih')
-					this.$router.replace('/dashboard-customer')
+					dbstore.collection('vendor').where('email', '==', email).get()
+					.then(querySnapshot => {
+						const documents = querySnapshot.docs.map(doc => doc.data().email)
+						if(documents == email){
+							this.$router.push('/dashboard-vendor')
+						} else {
+							this.$router.push('/dashboard-customer')
+						}
+					})
 				},
 				(err) => {
 					alert('Login gagal, ' + err.message)
 				}
 			)
-
-			// let token = function(){
-			// 	let uid = 'BoKqyoSM0ec11tZCQrDdp9mu8Pl2';
-
-			// 	return admin.auth().createCustomToken(uid)
-			// 	.then(function(customToken) {
-			// 		return customToken
-			// 	})
-			// 	.catch(function(error) {
-			// 		console.log('Error creating custom token:', error);
-			// 	});
-			// }
-
-			// firebase.auth().signInWithCustomToken(token)
-			// 	.then(
-			// 		(customToken) => {
-			// 			let email = this.email
-			// 			let password = this.password
-			// 			this.$router.replace('/dashboard-customer')
-			// 			//console.log(customToken)
-			// 		},
-			// 		(err) => {
-			// 			console.log(err)
-			// 			alert('Login gagal, ' + err.message)
-			// 		}
-			// 	)
 		}
 	}
 }

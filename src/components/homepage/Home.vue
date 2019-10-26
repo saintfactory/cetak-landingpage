@@ -111,13 +111,26 @@
 </template>
 
 <script>
+/* eslint-disable */
 // import Header from './Header.vue'
+import firebase, { firestore } from 'firebase'
+import { dbstore } from '../../firebase'
 
 export default {
 	name: 'Home',
 	methods: {
 		getStarted(){
 			return 0
+		}
+	},
+	mounted() {
+		var user = firebase.auth().currentUser;
+		if (user != null) {
+			user.providerData.forEach(function (profile) {
+				console.log("Sign-in provider: " + profile.providerId);
+				console.log("  Provider-specific UID: " + profile.uid);
+				console.log("  Email: " + profile.email);
+			});
 		}
 	}
 }
