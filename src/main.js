@@ -2,6 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import 'bootstrap'
+import './assets/fonts/all.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'vuefire'
 // import * as Sentry from '@sentry/browser';

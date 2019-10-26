@@ -45,11 +45,10 @@
 </template>
 
 <script>
-/* eslint-disable */ 
-import JQuery from 'jquery'
 import { storageRef } from '../../firebase'
 import storage from 'firebase/storage'
 import firebase from 'firebase'
+import JQuery from 'jquery'
 
 export default {
 	name: 'DashboardCustomer',
@@ -64,7 +63,12 @@ export default {
 		$(".custom-file-input").on("change", function() {
 		var fileName = $(this).val().split("\\").pop();
 		$(this).siblings(".custom-file-label").addClass("selected").html(fileName);
-		})
+    }),
+    
+    $("#menu-toggle").click(function(e) {
+    e.preventDefault();
+    $("#wrapper").toggleClass("toggled");
+    });
 	},
 
 	methods: {
