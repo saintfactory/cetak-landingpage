@@ -6,9 +6,9 @@
       <div class="sidebar-heading"><img src="../../assets/Logo.png" alt="" width="220px"></div>
       <div class="list-group list-group-flush">
           <section class="menus">
-            <a><router-link class="list-group-item list-group-item-action" to='/profilUser'><i class="fas fa-user icon"></i> Profil</router-link></a>
-            <a><router-link class="list-group-item list-group-item-action" to='/pesananUser'><i class="fas fa-clone icon"></i> Cetak Dokumen</router-link></a>
-            <a><router-link class="list-group-item list-group-item-action" to='/historyUser'><i class="fas fa-history icon"></i> Sejarah Pesanan</router-link></a>
+            <a><router-link class="list-group-item list-group-item-action" to='/profile-customer'><i class="fas fa-user icon"></i> Profil</router-link></a>
+            <a><router-link class="list-group-item list-group-item-action" to='/pesanan-customer'><i class="fas fa-clone icon"></i> Cetak Dokumen</router-link></a>
+            <a><router-link class="list-group-item list-group-item-action" to='/history-customer'><i class="fas fa-history icon"></i> Sejarah Pesanan</router-link></a>
           </section>
 
           <section class="menus">

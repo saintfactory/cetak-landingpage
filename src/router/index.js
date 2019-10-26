@@ -23,7 +23,11 @@ import RegisterCustomer from '@/components/login/RegisterCustomer'
 import RegisterVendor from '@/components/login/RegisterVendor'
 
 import DashboardCustomer from '@/components/customer/DashboardCustomer'
-import DashboardVendor from '@/components/vendor/Dashboard'
+import ProfileCustomer from '@/components/customer/ProfileCustomer'
+import PesananCustomer from '@/components/customer/PesananCustomer'
+import HistoryCustomer from '@/components/customer/HistoryCustomer'
+
+import DashboardVendor from '@/components/vendor/DashboardVendor'
 
 import firebase from 'firebase'
 
@@ -86,10 +90,25 @@ const router = new Router({
       component: DashboardCustomer,
       meta: {
         requiresAuth: true,
-        //customerAuth: true,
-        //vendorAuth: false
       },
-      children: []
+      children: [
+        {
+          path: '',
+          component: ProfileCustomer
+        },
+        {
+          path: '/profile-customer',
+          component: ProfileCustomer
+        },
+        {
+          path: '/pesanan-customer',
+          component: PesananCustomer
+        },
+        { 
+          path: '/history-customer', 
+          component: HistoryCustomer 
+        },
+      ]
     },
 
     
@@ -99,8 +118,6 @@ const router = new Router({
       component: DashboardVendor,
       meta: {
         requiresAuth: true,
-        //customerAuth: false,
-        //vendorAuth: true
       },
       children: []
     }
