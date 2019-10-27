@@ -26,6 +26,7 @@ import DashboardCustomer from '@/components/customer/DashboardCustomer'
 import ProfileCustomer from '@/components/customer/ProfileCustomer'
 import PesananCustomer from '@/components/customer/PesananCustomer'
 import HistoryCustomer from '@/components/customer/HistoryCustomer'
+import OrderCustomer from '@/components/customer/OrderCustomer'
 
 import DashboardVendor from '@/components/vendor/DashboardVendor'
 
@@ -107,6 +108,10 @@ const router = new Router({
         { 
           path: '/history-customer', 
           component: HistoryCustomer 
+        },
+        { 
+          path: '/order-customer', 
+          component: OrderCustomer 
         },
       ]
     },

@@ -6,15 +6,9 @@
       <div class="sidebar-heading"><img src="../../assets/Logo.png" alt="" width="220px"></div>
       <div class="list-group list-group-flush">
           <section class="menus">
-            <a><router-link class="list-group-item list-group-item-action" to='/profile-customer'><i class="fas fa-user icon"></i> Profil</router-link></a>
+            <a><router-link class="list-group-item list-group-item-action" to='/profile-customer' ><i class="fas fa-user icon"></i> Profil</router-link></a>
             <a><router-link class="list-group-item list-group-item-action" to='/pesanan-customer'><i class="fas fa-clone icon"></i> Cetak Dokumen</router-link></a>
             <a><router-link class="list-group-item list-group-item-action" to='/history-customer'><i class="fas fa-history icon"></i> Sejarah Pesanan</router-link></a>
-          </section>
-
-          <section class="menus">
-            <a><router-link class="list-group-item list-group-item-action" to='/login'><i class="fas fa-bookmark  icon"></i> Cara Penggunaan</router-link></a>
-            <a><router-link class="list-group-item list-group-item-action" to='/login'><i class="fas fa-paper-plane icon"></i> Kebijakan</router-link></a>
-            <a><router-link class="list-group-item list-group-item-action" to='/login'><i class="fas fa-cog icon"></i> Pengaturan</router-link></a>
           </section>
 
           <section class="menus">
@@ -104,11 +98,12 @@ export default {
 #sidebar-wrapper {
   min-height: 100vh;
   margin-left: -15rem;
+  position: fixed;
   -webkit-transition: margin .25s ease-out;
   -moz-transition: margin .25s ease-out;
   -o-transition: margin .25s ease-out;
   transition: margin .25s ease-out;
-  /* background-color: #0275d8 !important; */
+  background-color: #0275d8 !important;
 }
 #menu-toggle{
     display: block;
@@ -132,11 +127,11 @@ export default {
     font-size: 14px;
     border-color: transparent !important;
     border-left: 3px solid transparent !important;
-    /* background-color: #0275d8 !important; */
-    /* color: white !important; */
+    background-color: #0275d8 !important;
+    color: white !important;
 }
 .list-group-item:hover{
-    background-color: rgba(41, 135, 223) !important;
+    background-color: rgb(101, 170, 235) !important;
     color: white !important;
     border-left: 3px solid #FEC71F !important;
     -webkit-transition: background-color 0.3s !important;
@@ -145,7 +140,7 @@ export default {
     transition: background-color 0.3s !important;
 }
 .menus{
-    border-bottom: 0.5px solid rgba(155, 155, 155, 0.966) !important;
+    border-bottom: 0.5px solid rgba(255, 255, 255, 0.966) !important;
     padding: 10px 0 10px;
 }
 #sidebar-wrapper .list-group {
@@ -154,9 +149,22 @@ export default {
 
 #page-content-wrapper {
   min-width: 100vw;
+  margin-left: 17rem;
+  -webkit-transition: margin .25s ease-out;
+  -moz-transition: margin .25s ease-out;
+  -o-transition: margin .25s ease-out;
+  transition: margin .25s ease-out;
 }
 
 #wrapper.toggled #sidebar-wrapper {
+  margin-left: 0;
+  -webkit-transition: margin .25s ease-out;
+  -moz-transition: margin .25s ease-out;
+  -o-transition: margin .25s ease-out;
+  transition: margin .25s ease-out;
+}
+
+#wrapper.toggled #page-content-wrapper {
   margin-left: 0;
 }
 
@@ -182,7 +190,7 @@ export default {
 }
 
 .router-link-exact-active{
-  background-color: #0275d8 !important;
+  background-color: rgb(101, 170, 235) !important;
   z-index: 1000;
   color: #fff !important;
   border-left: 3px solid #FEC71F !important;
@@ -193,6 +201,7 @@ export default {
 }
 .content{
     padding: 0 10px;
+    
 }
 </style>
 
