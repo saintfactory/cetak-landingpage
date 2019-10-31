@@ -2,6 +2,9 @@
 	<div>
 		<p>dashboard vendor</p>
 		<p><a href="" id="file">Download File</a></p>
+		<div v-for="list of lists" :key="list.id">
+			{{ list.name }}
+		</div>
 		<button @click="logout" class="btn btn-danger">Logout</button>
 	</div>
 </template>
@@ -14,6 +17,11 @@ import { storageRef } from '../../firebase'
 
 export default {
 	name: 'DashboardVendor',
+	data() {
+		return {
+			lists: []
+		}
+	},
 	methods: {
 		logout: function(){
 			firebase.auth().signOut().then(() => {
@@ -22,12 +30,12 @@ export default {
 		}
 	},
 	mounted() {
-		storageRef.child('vendor-1/1572097487936-Financial Model Template by Slidebean.xlsx').getDownloadURL().then((url) => {
+		// Download file from folder 'vendor-1'
+		let docRef = storageRef.child('vendor-1/1572097487936-Financial Model Template by Slidebean.xlsx')
+		let parentRef 
+		docRef.getDownloadURL().then((url) => {
 			const file = document.querySelector('#file')
 			file.href = url
-			
-			console.log(url.status)
-			console.log(url.response)
 		}).catch(error => {
 			switch (error.code) {
 				case 'storage/object-not-found':
@@ -47,6 +55,32 @@ export default {
 				break;
 			}
 		})
+
+		//Get Metadata from Storage
+		docRef.getMetadata().then((metadata) => {
+			//console.log(metadata)
+			console.log(metadata.name)
+		}).catch((error) => {
+			console.log(error)
+		})
+
+		//Trying to list all files in vendor dashboard
+		// storageRef.child('vendor-1/uid').listAll().then((res) => {
+		// 	res.prefixes.forEach((folderRef) => {
+		// 		// const folder = document.querySelector('#folder')
+		// 		// folder.appendChild(folderRef)
+		// 		data = folderRef.status
+		// 		console.log(data)
+		// 	})
+		// 	res.items.forEach((itemRef) => {
+		// 		// const item = document.querySelector('#item')
+		// 		// item.appendChild(itemRef)
+		// 		data = itemRef.status
+		// 		console.log(data)
+		// 	}).catch((error) => {
+		// 		console.log(error)
+		// 	})
+		// })
 	}
 }
 </script>
