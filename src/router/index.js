@@ -22,8 +22,13 @@ import Join from '@/components/login/Join'
 import RegisterCustomer from '@/components/login/RegisterCustomer'
 import RegisterVendor from '@/components/login/RegisterVendor'
 
-import DashboardCustomer from '@/components/customer/Dashboard'
-import DashboardVendor from '@/components/vendor/Dashboard'
+import DashboardCustomer from '@/components/customer/DashboardCustomer'
+import ProfileCustomer from '@/components/customer/ProfileCustomer'
+import PesananCustomer from '@/components/customer/PesananCustomer'
+import HistoryCustomer from '@/components/customer/HistoryCustomer'
+import OrderCustomer from '@/components/customer/OrderCustomer'
+
+import DashboardVendor from '@/components/vendor/DashboardVendor'
 
 import firebase from 'firebase'
 
@@ -86,79 +91,43 @@ const router = new Router({
       component: DashboardCustomer,
       meta: {
         requiresAuth: true,
-        //customerAuth: true,
-        //vendorAuth: false
       },
-      children: []
+      children: [
+        {
+          path: '',
+          component: ProfileCustomer
+        },
+        {
+          path: '/profile-customer',
+          component: ProfileCustomer
+        },
+        {
+          path: '/pesanan-customer',
+          component: PesananCustomer
+        },
+        { 
+          path: '/history-customer', 
+          component: HistoryCustomer 
+        },
+        { 
+          path: '/order-customer', 
+          component: OrderCustomer 
+        },
+      ]
     },
+
+    
     {
       path: '/dashboard-vendor',
       name: 'DashboardVendor',
       component: DashboardVendor,
       meta: {
         requiresAuth: true,
-        //customerAuth: false,
-        //vendorAuth: true
       },
       children: []
     }
-    // {
-    //   path: '/',
-    //   name: 'Home',
-    //   component: Home
-    // },
-    // {
-    //   path: '/login',
-    //   name: 'Login',
-    //   component: Login
-    // },
-    // {
-    //   path: '/order',
-    //   name: 'Order',
-    //   component: Order
-    // },
-    // {
-    //   path: '/register',
-    //   name: 'Register',
-    //   component: Register
-    //  }
+    
   ]
 })
-
-// router.beforeEach((to, from, next) => {
-//   const currentUser = firebase.auth().currentUser
-//   const requiresAuth = to.matched.some(record => record.meta.requiresAuth)
-
-//   if(requiresAuth && !currentUser) next('/login')
-//   else if (!requiresAuth && currentUser) next('/home')
-//   else next()
-// })
-
-// router.beforeEach((to, from, next) => {
-//   if(to.meta.requiresAuth){
-//     const authUser = JSON.parse(window.localStorage.getItem('authUser'))
-//     if(!authUser || !authUser.token) {
-//       next({name:'login'})
-//     }
-//     else if (to.meta.vendorAuth) {
-//       const authUser = JSON.parse(window.localStorage.getItem('authUser'))
-//       if(authUser.data.role_id === 'VENDOR'){
-//         next()
-//       } else {
-//         next('/dashboard-customer')
-//       }
-//     } else if (to.meta.customerAuth) {
-//       const authUser = JSON.parse(window.localStorage.getItem('authUser'))
-//       if(authUser.data.role_id === 'CUSTOMER'){
-//         next()
-//       } else {
-//         console.log('Vendor auth')
-//         next('/dashboard-vendor')
-//       }
-//     }
-//   } else {
-//     next()
-//   }
-// })
 
 export default router
