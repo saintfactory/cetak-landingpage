@@ -6,7 +6,7 @@
 				<br> cepat, mudah, dan dimana saja</h1>
 				<p class="font-secondary font-weight-normal">Dikejar <span class="font-weight-bold">Deadline</span>? Tenang, ada <span class="font-weight-bold">Cetak.Id</span></p>
 				<a v-on:click="getStarted" class="btn-based btn btn-warning">
-					<router-link to='/join' class="btn-based btn">Cetak Sekarang</router-link></a>
+					<router-link to='/dashboard-customer' class="btn-based btn">Cetak Sekarang</router-link></a>
 			</div>
 			<div class="hero-paid col-md-6">
 			</div>
@@ -62,44 +62,36 @@
 
 		<div class="footer cover row justify-content-md-center ">
 			<div class="col-sm-12 part-foot">
-				<h1 class="font-hero text-warning mb-3">1000+ Dokumen</h1>
+				<h1 class="font-hero text-warning mb-3">500+ Dokumen</h1>
 				<h2 class="font-subhero text-light mb-3">Sudah berhasil dicetak</h2>
 				<p class="font-primary text-light mb-4 font-italic">Ribuan pengguna semakin mudah dan cepat<br>
 						mencetak dokumen setelah menggunakan Cetak.ID
 				</p>
 				<a v-on:click="getStarted" class="btn-based btn btn-warning" href="#feature">
-					<router-link to='/join' class="btn-based btn">Cetak Sekarang</router-link></a>
+					<router-link to='/dashboard-customer' class="btn-based btn">Cetak Sekarang</router-link></a>
 			</div>
 		</div>
 		
 		<div class="super-foot cover row justify-content-md-center text-left pl-5 pt-4">
-			<div class="col-md-4">
+			<div class="col-md-8">
 				<img src="../../assets/LogoteksPutih.png" height="95" alt="" class="mb-3">
 				<p class="text-light font-primary">Copyright Cetak.Id 2019</p>
 			</div>
 
-			<div class="col-md-8">
+			<div class="col-md-4">
 				<table class="table table-sm table-borderless">
 					<thead class="font-primary text-light font-weight-bold">
 						<th>Navigasi</th>
 						<th>Sosial Media</th>
-						<th>Info & Kontak</th>
 					</thead>
 					<tbody>
 						<tr>
 							<td><a><router-link to='/tentang-kami' class="text-light font-smaller">Tentang Kami</router-link></a></td>
-							<td><a><router-link to='/tentang-kami' class="text-light font-smaller">Facebook</router-link></a></td>
-							<td><a><router-link to='/tentang-kami' class="text-light font-smaller">+62 895 6169 52598</router-link></a></td>
-						</tr>
-						<tr>
-							<td><a><router-link to='/tentang-kami' class="text-light font-smaller">Kebijakan</router-link></a></td>
-							<td><a><router-link to='/tentang-kami' class="text-light font-smaller">Instagram</router-link></a></td>
-							<td><a><router-link to='/tentang-kami' class="text-light font-smaller">+62 838 6967 9347</router-link></a></td>
+							<td><a class="text-light font-smaller" href="https://www.instagram.com/cetakkid.official/">Instagram</a></td>
 						</tr>
 						<tr>
 							<td><a><router-link to='/tentang-kami' class="text-light font-smaller">Cara Cetak</router-link></a></td>
-							<td><a><router-link to='/tentang-kami' class="text-light font-smaller">Linked In</router-link></a></td>
-							<td><a><router-link to='/tentang-kami' class="text-light font-smaller">cetak.info@gmail.com</router-link></a></td>
+							<td><a class="text-light font-smaller" href="https://www.linkedin.com/company/cetakk-id/">LinkedIn</a></td>
 						</tr>
 					</tbody>
 				</table>

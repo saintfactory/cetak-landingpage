@@ -13,9 +13,6 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a><router-link to="/kebijakan" class="nav-link text-light">Kebijakan</router-link></a>
-                    </li>
-                    <li class="nav-item">
                         <a><router-link to="/cara" class="nav-link text-light">Cara Cetak</router-link></a>
                     </li>
                     <li class="nav-item">
@@ -23,14 +20,14 @@
                     </li>
                 </ul>
 
-                <ul class="navbar-nav ml-auto">
+                <!-- <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
                         <a><router-link to='/join' class="nav-link text-light">Daftar</router-link></a>
                     </li>
                     <li class="nav-item" id="font-pbtn">
                         <a><router-link to='/login' class="nav-link text-primary btn btn-block btn-light" id="font-pbtn">Masuk</router-link></a>
                     </li>
-                </ul>
+                </ul> -->
                 </div>
             </div>
             </nav>

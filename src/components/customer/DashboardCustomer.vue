@@ -3,7 +3,7 @@
 
     <!-- Sidebar -->
     <div class="shadow text-left" id="sidebar-wrapper">
-      <div class="sidebar-heading"><img src="../../assets/Logo.png" alt="" width="220px"></div>
+      <div class="sidebar-heading"><img src="../../assets/LogoteksPutih.png" alt="Logo Cetakk.id" style="display: block;margin-left: auto;margin-right: auto; width: 50%;"/></div>
       <div class="list-group list-group-flush">
           <section class="menus">
             <a><router-link class="list-group-item list-group-item-action" to='/profile-customer' ><i class="fas fa-user icon"></i> Profil</router-link></a>
