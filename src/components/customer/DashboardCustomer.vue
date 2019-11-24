@@ -6,14 +6,14 @@
       <div class="sidebar-heading"><img src="../../assets/LogoteksPutih.png" alt="Logo Cetakk.id" style="display: block;margin-left: auto;margin-right: auto; width: 50%;"/></div>
       <div class="list-group list-group-flush">
           <section class="menus">
-            <a><router-link class="list-group-item list-group-item-action" to='/profile-customer' ><i class="fas fa-user icon"></i> Profil</router-link></a>
-            <a><router-link class="list-group-item list-group-item-action" to='/pesanan-customer'><i class="fas fa-clone icon"></i> Cetak Dokumen</router-link></a>
-            <a><router-link class="list-group-item list-group-item-action" to='/history-customer'><i class="fas fa-history icon"></i> Sejarah Pesanan</router-link></a>
+            <!-- <a><router-link class="list-group-item list-group-item-action" to='/profile-customer' ><i class="fas fa-user icon"></i> Profil</router-link></a> -->
+            <a><router-link class="list-group-item list-group-item-action" to='/pesanan-customer'><i class="fas fa-clone icon"></i> Pilih Vendor</router-link></a>
+            <!-- <a><router-link class="list-group-item list-group-item-action" to='/history-customer'><i class="fas fa-history icon"></i> Sejarah Pesanan</router-link></a> -->
           </section>
 
           <section class="menus">
             <a><router-link class="list-group-item list-group-item-action" to='/login'><i class="fas fa-question icon"></i> Bantuan</router-link></a>
-            <a><router-link class="list-group-item list-group-item-action" to='/login'><i class="fas fa-door-open icon"></i> Keluar</router-link></a>
+            <!-- <a><router-link class="list-group-item list-group-item-action" to='/login'><i class="fas fa-door-open icon"></i> Keluar</router-link></a> -->
           </section>
       </div>
     </div>
@@ -24,8 +24,6 @@
       <div class="text-left dashboard">
             <div class="sidebar-heading container-fluid">
             <button class="btn btn-light float-left" id="menu-toggle"><i class="fas fa-align-left"></i></button>
-
-            <p class="float-right username">Halo, <span>Nama User</span></p>
         </div>
 
         <section class="content">
@@ -46,50 +44,14 @@ import JQuery from 'jquery'
 
 export default {
 	name: 'DashboardCustomer',
-	data(){
-		return {
-			file: ''
-		}
-	},
-
-  	mounted(){
+  mounted(){
 		let $ = JQuery
-		$(".custom-file-input").on("change", function() {
-		var fileName = $(this).val().split("\\").pop();
-		$(this).siblings(".custom-file-label").addClass("selected").html(fileName);
-    }),
-    
     $("#menu-toggle").click(function(e) {
     e.preventDefault();
     $("#wrapper").toggleClass("toggled");
     });
 	},
 
-	methods: {
-		uploadDocument(){ 
-			let file = document.querySelector('#file').files[0]
-			let name = (+new Date()) + '-' + file.name
-			const metadata = {
-				contentType: file.type
-			}
-
-			storageRef.child('vendor-1/' + name).put(file, metadata)
-				.then(function(snapshot) {
-					console.log('Uploaded a blob or file!');
-					alert('Upload dokumen berhasil!' + 'Untuk proses selanjutnya, silahkan tunggu respon dari Vendor!')
-				})
-    	},
-
-		handleDocument(){
-			this.file = this.$refs.file.files[0]
-		},
-
-		logout(){
-			firebase.auth().signOut().then(() => {
-				this.$router.replace('/')
-			})
-		}
-	}
 }
 </script>
 
@@ -184,6 +146,47 @@ export default {
     width: 100%;
   }
 
+  #wrapper.toggled #sidebar-wrapper {
+    margin-left: -17rem;
+  }
+}
+
+@media (max-width: 800px) {
+  #sidebar-wrapper {
+    margin-left: 0;
+  }
+    /* #menu-toggle{
+    display: none;
+    } */
+  #page-content-wrapper {
+    min-width: 0;
+    width: 100%;
+  }
+
+  #wrapper.toggled #sidebar-wrapper {
+    margin-left: -17rem;
+  }
+}
+
+@media (max-width: 700px) {
+  #sidebar-wrapper {
+    margin-left: 0;
+    width: 15rem;
+  }
+  #sidebar-wrapper .list-group {
+    width: 15rem;
+  }
+    /* #menu-toggle{
+    display: none;
+    } */
+  #page-content-wrapper {
+    min-width: 0;
+    width: 100%;
+    margin-left: 15rem
+  }
+  #page-content-wrapper .dashboard {
+    padding: 0%;
+  }
   #wrapper.toggled #sidebar-wrapper {
     margin-left: -17rem;
   }

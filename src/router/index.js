@@ -49,26 +49,23 @@ const router = new Router({
       path: '/dashboard-customer',
       name: 'DashboardCustomer',
       component: DashboardCustomer,
-      meta: {
-        requiresAuth: true,
-      },
       children: [
         {
           path: '',
-          component: ProfileCustomer
+          component: PesananCustomer
         },
-        {
-          path: '/profile-customer',
-          component: ProfileCustomer
-        },
+        // {
+        //   path: '/profile-customer',
+        //   component: ProfileCustomer
+        // },
         {
           path: '/pesanan-customer',
           component: PesananCustomer
         },
-        { 
-          path: '/history-customer', 
-          component: HistoryCustomer 
-        },
+        // { 
+        //   path: '/history-customer', 
+        //   component: HistoryCustomer 
+        // },
       ]
     },
   ]
