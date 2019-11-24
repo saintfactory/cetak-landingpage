@@ -1,18 +1,14 @@
 <template>
   <div class="profilUser">
-    <div class="row p-3">
+    <div class="row">
 
-      <div class="col-md-12 p-4">
+      <!-- <div class="col-md-12 p-4">
         <div class="row justify-content-md-center cardPrint p-3">
           <div class="col-md-12 p-0">
             <div class="imagePrint mb-4 p-0">
-              <!-- <img src="../../assets/tempatPrint1.jpg" alt="" class="imagePrint mx-auto mb-2"> -->
               <span class="namaPrint ml-3">Keylacopier</span>
             </div>
             <div class="row m-2 p-0">
-              <!-- <div class="col-md-4 p-0">
-                <span class="status text-success">Buka</span>
-              </div> -->
               <div class="d-inline p-0 mr-3">
                 <button class="btn btn-primary btn-sm float-left">
                   <a href="https://s.id/vendor1" class="text-light linked">Cetakk</a>
@@ -28,7 +24,31 @@
             </div>
           </div>
         </div>
+      </div> -->
+
+      <!-- insert by irfan ============================================ -->
+      <div class="col-md-3 col-sm-6">
+          <div class="card card-block">
+            <!-- <div class="card-header text-right">
+              <i class="material-icons">settings</i>
+            </div> -->
+
+            <div class="card-body p-2">
+              <img src="https://static.pexels.com/photos/7096/people-woman-coffee-meeting.jpg" alt="Photo of sunset">
+            </div>
+            <div class="card-body p-2">
+              <h3>Sierra Web Development • Owner</h3>
+              <p class="describer">Jl. Jaliurang KM.13 Besi, Sukoharjo, Ngaglik, Sleman</p> 
+            </div>
+
+            <div class="card-footer p-2">
+              <!-- WAK INI CARA BIKIN TOMBOL YG EFEKTIF, JNGN TARO <A> DALAM BUTTON -_____-      -->
+              <button class="btn btn-primary btn-sm mr-2" href="https://s.id/vendor1">Cetakk</button>
+              <button class="btn btn-warning btn-sm text-light linked" data-toggle="modal" data-target="#pesan">Cek Harga</button> 
+            </div>
+          </div>
       </div>
+      <!-- ### insert by irfan ============================================ -->
     
     </div>
 
@@ -36,6 +56,9 @@
     <div class="modal fade" id="pesan" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <PriceList />
     </div>  
+
+
+    
   </div>
 </template>
 
@@ -47,6 +70,7 @@ export default {
     PriceList
   }
 }
+
 </script>
 
 <style scoped>
@@ -98,4 +122,13 @@ export default {
   background-color: #f0f0f0 !important;
   z-index: 9999999;
 }
+.card:hover{
+  transform: scale(1.001);
+  transition:0.3s;
+  box-shadow: 2px 2px 5px rgba(54, 54, 54, 0.3);
+}
+.card img{
+  width:100%;
+}
+
 </style>

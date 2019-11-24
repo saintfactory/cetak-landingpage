@@ -2,18 +2,16 @@
     <div class="d-flex" id="wrapper">
 
     <!-- Sidebar -->
-    <div class="shadow text-left" id="sidebar-wrapper">
-      <div class="sidebar-heading"><img src="../../assets/LogoteksPutih.png" alt="Logo Cetakk.id" style="display: block;margin-left: auto;margin-right: auto; width: 50%;"/></div>
+    <div class="shadow-lg text-left" id="sidebar-wrapper">
+      <div class="sidebar-heading p-4">
+        <img src="../../assets/Logo.png" alt="Logo Cetakk.id" />
+        </div>
       <div class="list-group list-group-flush">
-          <section class="menus">
+          <section class="mt-3">
             <!-- <a><router-link class="list-group-item list-group-item-action" to='/profile-customer' ><i class="fas fa-user icon"></i> Profil</router-link></a> -->
             <a><router-link class="list-group-item list-group-item-action" to='/pesanan-customer'><i class="fas fa-clone icon"></i> Pilih Vendor</router-link></a>
-            <!-- <a><router-link class="list-group-item list-group-item-action" to='/history-customer'><i class="fas fa-history icon"></i> Sejarah Pesanan</router-link></a> -->
-          </section>
-
-          <section class="menus">
             <a><router-link class="list-group-item list-group-item-action" to='/login'><i class="fas fa-question icon"></i> Bantuan</router-link></a>
-            <!-- <a><router-link class="list-group-item list-group-item-action" to='/login'><i class="fas fa-door-open icon"></i> Keluar</router-link></a> -->
+            <!-- <a><router-link class="list-group-item list-group-item-action" to='/history-customer'><i class="fas fa-history icon"></i> Sejarah Pesanan</router-link></a> -->
           </section>
       </div>
     </div>
@@ -22,8 +20,8 @@
     <!-- Page Content -->
     <div id="page-content-wrapper">
       <div class="text-left dashboard">
-            <div class="sidebar-heading container-fluid">
-            <button class="btn btn-light float-left" id="menu-toggle"><i class="fas fa-align-left"></i></button>
+        <div class="sidebar-heading container-fluid">
+          <button class="btn btn-light" id="menu-toggle"><i class="fas fa-align-left"></i></button>
         </div>
 
         <section class="content">
@@ -72,10 +70,11 @@ export default {
     margin-top: 15px;
 }
 .sidebar-heading{
-    min-height: 90px
+  min-height: 30px;
 }
-#sidebar-wrapper .sidebar-heading {
-  padding: 0.875rem 1.25rem;
+
+.sidebar-heading img{
+  max-width: 10rem;
 }
 .icon{
     min-width: 40px;
@@ -134,13 +133,15 @@ export default {
     padding: 10px 20px;
 }
 
-@media (min-width: 800px) {
+@media (min-width: 1200px) {
+  #menu-toggle{
+    display: none;
+  }
+  
   #sidebar-wrapper {
     margin-left: 0;
   }
-    /* #menu-toggle{
-    display: none;
-    } */
+    
   #page-content-wrapper {
     min-width: 0;
     width: 100%;
@@ -149,25 +150,29 @@ export default {
   #wrapper.toggled #sidebar-wrapper {
     margin-left: -17rem;
   }
+  
 }
 
-@media (max-width: 800px) {
-  #sidebar-wrapper {
-    margin-left: 0;
+@media (max-width: 1200px) {
+  #menu-toggle{
+    display: block;
   }
-    /* #menu-toggle{
-    display: none;
-    } */
+  
+  #sidebar-wrapper {
+    margin-left: -17rem;
+  }
+    
   #page-content-wrapper {
     min-width: 0;
     width: 100%;
+    margin-left: 0rem;
   }
 
   #wrapper.toggled #sidebar-wrapper {
-    margin-left: -17rem;
+    margin-left: 0rem;
   }
 }
-
+/* 
 @media (max-width: 700px) {
   #sidebar-wrapper {
     margin-left: 0;
@@ -176,9 +181,9 @@ export default {
   #sidebar-wrapper .list-group {
     width: 15rem;
   }
-    /* #menu-toggle{
+    #menu-toggle{
     display: none;
-    } */
+    }
   #page-content-wrapper {
     min-width: 0;
     width: 100%;
@@ -190,7 +195,7 @@ export default {
   #wrapper.toggled #sidebar-wrapper {
     margin-left: -17rem;
   }
-}
+} */
 
 .router-link-exact-active{
   background-color: rgb(101, 170, 235) !important;
