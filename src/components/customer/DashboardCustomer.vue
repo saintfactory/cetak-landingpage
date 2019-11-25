@@ -1,6 +1,10 @@
 <template>
     <div class="d-flex" id="wrapper">
-
+    <loading :active.sync="isLoading" 
+			:can-cancel="true" 
+			:on-cancel="onCancel"
+        	:is-full-page="fullPage">
+		</loading> 
     <!-- Sidebar -->
     <div class="shadow text-left" id="sidebar-wrapper">
       <div class="sidebar-heading"><img src="../../assets/LogoteksPutih.png" alt="Logo Cetakk.id" style="display: block;margin-left: auto;margin-right: auto; width: 50%;"/></div>
@@ -41,15 +45,31 @@ import { storageRef } from '../../firebase'
 import storage from 'firebase/storage'
 import firebase from 'firebase'
 import JQuery from 'jquery'
+import Loading from 'vue-loading-overlay'
+import 'vue-loading-overlay/dist/vue-loading.css'
 
 export default {
-	name: 'DashboardCustomer',
+  name: 'DashboardCustomer',
+  components: {
+		Loading
+	},
+	data(){
+		return {
+			isLoading: false,
+			fullPage: true
+		}
+	},
   mounted(){
 		let $ = JQuery
     $("#menu-toggle").click(function(e) {
     e.preventDefault();
     $("#wrapper").toggleClass("toggled");
     });
+
+    this.isLoading = true
+		setTimeout(() => {
+			this.isLoading = false
+		}, 3000)
 	},
 
 }

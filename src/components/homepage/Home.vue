@@ -1,5 +1,10 @@
 <template>
 	<div class="container-fluid">
+		<loading :active.sync="isLoading" 
+			:can-cancel="true" 
+			:on-cancel="onCancel"
+        	:is-full-page="fullPage">
+		</loading>
 		<div class="hero cover row justify-content-md-center">
 			<div class="hero-part col-md-6 text-left">
 				<h1 class="font-hero text-light mb-3">Cetak dokumen kamu sekarang
@@ -107,9 +112,20 @@
 // import Header from './Header.vue'
 import firebase, { firestore } from 'firebase'
 import { dbstore } from '../../firebase'
+import Loading from 'vue-loading-overlay'
+import 'vue-loading-overlay/dist/vue-loading.css'
 
 export default {
 	name: 'Home',
+	components: {
+		Loading
+	},
+	data(){
+		return {
+			isLoading: false,
+			fullPage: true
+		}
+	},
 	methods: {
 		getStarted(){
 			return 0
@@ -124,6 +140,11 @@ export default {
 				console.log("  Email: " + profile.email);
 			});
 		}
+
+		this.isLoading = true
+		setTimeout(() => {
+			this.isLoading = false
+		}, 3000)
 	}
 }
 </script>
