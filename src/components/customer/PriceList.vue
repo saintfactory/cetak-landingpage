@@ -28,21 +28,21 @@
                             <tr>
                                 <td class="align-baseline">{{item.etalase}}</td>
                                 <td class="align-baseline">Rp. {{item.harga}}</td>
-                                <td class="align-baseline"><input type="number" class="form-control modal-badge" placeholder="0" v-model="item.order"></td>
+                                <td class="align-baseline"><input type="number" min="0" class="form-control modal-badge" placeholder="0" v-model="item.order"></td>
                             </tr>
                         </tbody>
                         <tbody v-for="item in hvs_colors" v-bind:key="item.id">
                             <tr>
                                 <td class="align-baseline">{{item.etalase}}</td>
                                 <td class="align-baseline">Rp. {{item.harga}}</td>
-                                <td class="align-baseline"><input type="number" class="form-control modal-badge" placeholder="0" v-model="item.order"></td>
+                                <td class="align-baseline"><input type="number" min="0" class="form-control modal-badge" placeholder="0" v-model="item.order"></td>
                             </tr>
                         </tbody>
                         <tbody v-for="item in hvs_fullcolors" v-bind:key="item.id">
                             <tr>
                                 <td class="align-baseline">{{item.etalase}}</td>
                                 <td class="align-baseline">Rp. {{item.harga}}</td>
-                                <td class="align-baseline"><input type="number" class="form-control modal-badge" placeholder="0" v-model="item.order"></td>
+                                <td class="align-baseline"><input type="number" min="0" class="form-control modal-badge" placeholder="0" v-model="item.order"></td>
                             </tr>
                         </tbody>
                     </table>
@@ -61,7 +61,7 @@
                             <tr>
                                 <td class="align-baseline">{{item.etalase}}</td>
                                 <td class="align-baseline">Rp. {{item.harga}}</td>
-                                <td class="align-baseline"><input type="number" class="form-control modal-badge" placeholder="0" v-model="item.order"></td>
+                                <td class="align-baseline"><input type="number" min="0" class="form-control modal-badge" placeholder="0" v-model="item.order"></td>
                             </tr>
                         </tbody>
                     </table>
@@ -79,7 +79,7 @@
                             <tr>
                                 <td class="align-baseline">{{item.etalase}}</td>
                                 <td class="align-baseline">Rp. {{item.harga}}</td>
-                                <td class="align-baseline"><input type="number" class="form-control modal-badge" placeholder="0" v-model="item.order"></td>
+                                <td class="align-baseline"><input type="number" min="0" class="form-control modal-badge" placeholder="0" v-model="item.order"></td>
                             </tr>
                         </tbody>
                     </table>
@@ -102,7 +102,7 @@
                             <tr>
                                 <td class="align-baseline">{{jilid.etalase}}</td>
                                 <td class="align-baseline">Rp. {{jilid.harga}}</td>
-                                <td class="align-baseline"><input type="number" class="form-control modal-badge" placeholder="0" v-model="jilid.order"></td>
+                                <td class="align-baseline"><input type="number" min="0" class="form-control modal-badge" placeholder="0" v-model="jilid.order"></td>
                             </tr>
                         </tbody>
                     </table>
@@ -120,7 +120,7 @@
                             <tr>
                                 <td class="align-baseline">{{jilid.etalase}}</td>
                                 <td class="align-baseline">Rp. {{jilid.harga}}</td>
-                                <td class="align-baseline"><input type="number" class="form-control modal-badge" placeholder="0" v-model="jilid.order"></td>
+                                <td class="align-baseline"><input type="number" min="0" class="form-control modal-badge" placeholder="0" v-model="jilid.order"></td>
                             </tr>
                         </tbody>
                     </table>
