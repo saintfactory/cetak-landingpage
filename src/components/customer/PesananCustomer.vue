@@ -87,7 +87,7 @@ export default {
 .card-cooming-soon {
   position: relative;
   text-align: center;
-  color: #000;
+  color: #7e7e7e;
   height: 100%;
 }
 .caption-cooming-soon {
