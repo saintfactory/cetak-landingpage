@@ -10,132 +10,121 @@
             </div>
             <div class="modal-body">
                 <p class="modal-title modplus text-left mb-3" >Cek Estimasi Harga</p>
+                
+                <a href="#print" data-toggle="collapse" aria-expanded="false" aria-controls="print" class="btn btn-primary text-center mx-auto d-block w-25 mx-auto my-2">Cek Harga Print</a>
+                <div class="collapse multi-collapse text-center" id="print">
+                    <span class="font-weight-bold text-center d-block m-2">Jenis Kertas</span>
 
-                <!-- Daftar Harga Print HVS Hitam Putih -->
-                <p><a data-toggle="collapse" href="#hvs_blackwhite" aria-expanded="false" aria-controls="hvs_blackwhite">Cek Harga Print HVS Hitam Putih</a></p>
-                <table class="table table-hover table-bordered table-sm text-left collapse multi-collapse" id="hvs_blackwhite">
-                    <thead class="">
-                        <th class="col1">Barang</th>
-                        <th class="col2">Harga/qtc</th>
-                        <th class="col3">Pesanan</th>
-                    </thead>
+                    <!-- Daftar HVS -->
+                    <a href="#hvs" data-toggle="collapse" aria-expanded="false" aria-controls="hvs" class="btn btn-primary d-block mx-auto w-25 my-2">HVS</a>
+                    <table class="table table-hover table-bordered table-sm text-left collapse multi-collapse" id="hvs">
+                        <thead class="">
+                            <th class="col1">Barang</th>
+                            <th class="col2">Harga/qtc</th>
+                            <th class="col3">Pesanan</th>
+                        </thead>
 
-                    <tbody v-for="item in hvs_blackwhites" v-bind:key="item.id">
-                        <tr>
-                            <td class="align-baseline">{{item.etalase}}</td>
-                            <td class="align-baseline">Rp. {{item.harga}}</td>
-                            <td class="align-baseline"><input type="number" class="form-control modal-badge" placeholder="0" v-model="item.order"></td>
-                        </tr>
-                    </tbody>
-                </table>
+                        <tbody v-for="item in hvs_blackwhites" v-bind:key="item.id">
+                            <tr>
+                                <td class="align-baseline">{{item.etalase}}</td>
+                                <td class="align-baseline">Rp. {{item.harga}}</td>
+                                <td class="align-baseline"><input type="number" class="form-control modal-badge" placeholder="0" v-model="item.order"></td>
+                            </tr>
+                        </tbody>
+                        <tbody v-for="item in hvs_colors" v-bind:key="item.id">
+                            <tr>
+                                <td class="align-baseline">{{item.etalase}}</td>
+                                <td class="align-baseline">Rp. {{item.harga}}</td>
+                                <td class="align-baseline"><input type="number" class="form-control modal-badge" placeholder="0" v-model="item.order"></td>
+                            </tr>
+                        </tbody>
+                        <tbody v-for="item in hvs_fullcolors" v-bind:key="item.id">
+                            <tr>
+                                <td class="align-baseline">{{item.etalase}}</td>
+                                <td class="align-baseline">Rp. {{item.harga}}</td>
+                                <td class="align-baseline"><input type="number" class="form-control modal-badge" placeholder="0" v-model="item.order"></td>
+                            </tr>
+                        </tbody>
+                    </table>
 
-                <!-- Daftar Harga Print HVS Warna -->
-                <p><a data-toggle="collapse" href="#hvs_color" aria-expanded="false" aria-controls="hvs_color">Cek Harga Print HVS Warna</a></p>
-                <table class="table table-hover table-bordered table-sm text-left collapse multi-collapse" id="hvs_color">
-                    <thead class="">
-                        <th class="col1">Barang</th>
-                        <th class="col2">Harga/qtc</th>
-                        <th class="col3">Pesanan</th>
-                    </thead>
+                    <!-- Daftar Ivory -->
 
-                    <tbody v-for="item in hvs_colors" v-bind:key="item.id">
-                        <tr>
-                            <td class="align-baseline">{{item.etalase}}</td>
-                            <td class="align-baseline">Rp. {{item.harga}}</td>
-                            <td class="align-baseline"><input type="number" class="form-control modal-badge" placeholder="0" v-model="item.order"></td>
-                        </tr>
-                    </tbody>
-                </table>
+                    <a href="#ivory" data-toggle="collapse" aria-expanded="false" aria-controls="ivory" class="btn btn-primary d-block w-25 mx-auto my-2">Ivory</a>
+                    <table class="table table-hover table-bordered table-sm text-left collapse multi-collapse" id="ivory">
+                        <thead class="">
+                            <th class="col1">Barang</th>
+                            <th class="col2">Harga/qtc</th>
+                            <th class="col3">Pesanan</th>
+                        </thead>
 
-                <!-- Daftar Harga Print HVS Full Warna -->
-                <p><a data-toggle="collapse" href="#hvs_fullcolor" aria-expanded="false" aria-controls="hvs_fullcolor">Cek Harga Print HVS Full Warna</a></p>
-                <table class="table table-hover table-bordered table-sm text-left collapse multi-collapse" id="hvs_fullcolor">
-                    <thead class="">
-                        <th class="col1">Barang</th>
-                        <th class="col2">Harga/qtc</th>
-                        <th class="col3">Pesanan</th>
-                    </thead>
+                        <tbody v-for="item in ivorys" v-bind:key="item.id">
+                            <tr>
+                                <td class="align-baseline">{{item.etalase}}</td>
+                                <td class="align-baseline">Rp. {{item.harga}}</td>
+                                <td class="align-baseline"><input type="number" class="form-control modal-badge" placeholder="0" v-model="item.order"></td>
+                            </tr>
+                        </tbody>
+                    </table>
 
-                    <tbody v-for="item in hvs_fullcolors" v-bind:key="item.id">
-                        <tr>
-                            <td class="align-baseline">{{item.etalase}}</td>
-                            <td class="align-baseline">Rp. {{item.harga}}</td>
-                            <td class="align-baseline"><input type="number" class="form-control modal-badge" placeholder="0" v-model="item.order"></td>
-                        </tr>
-                    </tbody>
-                </table>
+                     <!-- Daftar Art Paper	 -->
+                    <a data-toggle="collapse" href="#art_paper" aria-expanded="false" aria-controls="art_paper" class="btn btn-primary d-block w-25 mx-auto my-2">Art Paper</a>
+                    <table class="table table-hover table-bordered table-sm text-left collapse multi-collapse" id="art_paper">
+                        <thead class="">
+                            <th class="col1">Barang</th>
+                            <th class="col2">Harga/qtc</th>
+                            <th class="col3">Pesanan</th>
+                        </thead>
 
-                <!-- Daftar Ivory	 -->
-                <p><a data-toggle="collapse" href="#ivory" aria-expanded="false" aria-controls="ivory">Cek Harga Print Ivory</a></p>
-                <table class="table table-hover table-bordered table-sm text-left collapse multi-collapse" id="ivory">
-                    <thead class="">
-                        <th class="col1">Barang</th>
-                        <th class="col2">Harga/qtc</th>
-                        <th class="col3">Pesanan</th>
-                    </thead>
+                        <tbody v-for="item in art_papers" v-bind:key="item.id">
+                            <tr>
+                                <td class="align-baseline">{{item.etalase}}</td>
+                                <td class="align-baseline">Rp. {{item.harga}}</td>
+                                <td class="align-baseline"><input type="number" class="form-control modal-badge" placeholder="0" v-model="item.order"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
 
-                    <tbody v-for="item in ivorys" v-bind:key="item.id">
-                        <tr>
-                            <td class="align-baseline">{{item.etalase}}</td>
-                            <td class="align-baseline">Rp. {{item.harga}}</td>
-                            <td class="align-baseline"><input type="number" class="form-control modal-badge" placeholder="0" v-model="item.order"></td>
-                        </tr>
-                    </tbody>
-                </table>
+                <a href="#jilid" data-toggle="collapse" aria-expanded="false" aria-controls="jilid" class="btn btn-primary text-center mx-auto my-2 d-block w-25">Cek Harga Jilid</a>
+                <div class="collapse multi-collapse text-center" id="jilid">
+                    <span class="font-weight-bold text-center d-block m-2">Jenis Jilid</span>
+                    
+                    <!-- Daftar Harga Jilid Mika	 -->
+                    <a data-toggle="collapse" href="#mica" aria-expanded="false" aria-controls="mica" class="btn btn-primary mx-auto my-2 d-block w-25">Mika</a>
+                    <table class="table table-hover table-bordered table-sm text-left collapse multi-collapse" id="mica">
+                        <thead class="">
+                            <th class="col1">Barang</th>
+                            <th class="col2">Harga/qtc</th>
+                            <th class="col3">Pesanan</th>
+                        </thead>
 
-                 <!-- Daftar Art Paper	 -->
-                <p><a data-toggle="collapse" href="#art_paper" aria-expanded="false" aria-controls="art_paper">Cek Harga Print Art Paper</a></p>
-                <table class="table table-hover table-bordered table-sm text-left collapse multi-collapse" id="art_paper">
-                    <thead class="">
-                        <th class="col1">Barang</th>
-                        <th class="col2">Harga/qtc</th>
-                        <th class="col3">Pesanan</th>
-                    </thead>
+                        <tbody v-for="jilid in micas" v-bind:key="jilid.id">
+                            <tr>
+                                <td class="align-baseline">{{jilid.etalase}}</td>
+                                <td class="align-baseline">Rp. {{jilid.harga}}</td>
+                                <td class="align-baseline"><input type="number" class="form-control modal-badge" placeholder="0" v-model="jilid.order"></td>
+                            </tr>
+                        </tbody>
+                    </table>
 
-                    <tbody v-for="item in art_papers" v-bind:key="item.id">
-                        <tr>
-                            <td class="align-baseline">{{item.etalase}}</td>
-                            <td class="align-baseline">Rp. {{item.harga}}</td>
-                            <td class="align-baseline"><input type="number" class="form-control modal-badge" placeholder="0" v-model="item.order"></td>
-                        </tr>
-                    </tbody>
-                </table>
+                    <!-- Daftar Harga Hard Cover	 -->
+                    <a data-toggle="collapse" href="#hard_cover" aria-expanded="false" aria-controls="hard_cover" class="btn btn-primary mx-auto my-2 d-block w-25">Hard Cover</a>
+                    <table class="table table-hover table-bordered table-sm text-left collapse multi-collapse" id="hard_cover">
+                        <thead class="">
+                            <th class="col1">Barang</th>
+                            <th class="col2">Harga/qtc</th>
+                            <th class="col3">Pesanan</th>
+                        </thead>
 
-                <!-- Daftar Harga Jilid Mika	 -->
-                <p><a data-toggle="collapse" href="#mica" aria-expanded="false" aria-controls="mica">Cek Harga Jilid Mika</a></p>
-                <table class="table table-hover table-bordered table-sm text-left collapse multi-collapse" id="mica">
-                    <thead class="">
-                        <th class="col1">Barang</th>
-                        <th class="col2">Harga/qtc</th>
-                        <th class="col3">Pesanan</th>
-                    </thead>
-
-                    <tbody v-for="jilid in micas" v-bind:key="jilid.id">
-                        <tr>
-                            <td class="align-baseline">{{jilid.etalase}}</td>
-                            <td class="align-baseline">Rp. {{jilid.harga}}</td>
-                            <td class="align-baseline"><input type="number" class="form-control modal-badge" placeholder="0" v-model="jilid.order"></td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <!-- Daftar Harga Hard Cover	 -->
-                <p><a data-toggle="collapse" href="#hard_cover" aria-expanded="false" aria-controls="hard_cover">Cek Harga Hard Cover</a></p>
-                <table class="table table-hover table-bordered table-sm text-left collapse multi-collapse" id="hard_cover">
-                    <thead class="">
-                        <th class="col1">Barang</th>
-                        <th class="col2">Harga/qtc</th>
-                        <th class="col3">Pesanan</th>
-                    </thead>
-
-                    <tbody v-for="jilid in hard_covers" v-bind:key="jilid.id">
-                        <tr>
-                            <td class="align-baseline">{{jilid.etalase}}</td>
-                            <td class="align-baseline">Rp. {{jilid.harga}}</td>
-                            <td class="align-baseline"><input type="number" class="form-control modal-badge" placeholder="0" v-model="jilid.order"></td>
-                        </tr>
-                    </tbody>
-                </table>
+                        <tbody v-for="jilid in hard_covers" v-bind:key="jilid.id">
+                            <tr>
+                                <td class="align-baseline">{{jilid.etalase}}</td>
+                                <td class="align-baseline">Rp. {{jilid.harga}}</td>
+                                <td class="align-baseline"><input type="number" class="form-control modal-badge" placeholder="0" v-model="jilid.order"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
 
                 <table class="table table-hover table-bordered table-sm text-left">
                     <tr class="bg-total">

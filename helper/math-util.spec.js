@@ -1,5 +1,6 @@
 /* eslint-disable */
 import { add, min, increment, decrement } from '@/helper/math-util'
+//const {add, min, increment, decrement} = require('@/helper/math-util')
 
 describe('math-util.js', () => {
   it('`add` harus mengembalikan nilai yang benar', () => {

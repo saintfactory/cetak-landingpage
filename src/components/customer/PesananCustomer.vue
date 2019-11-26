@@ -4,7 +4,7 @@
       <div class="col-md-3 col-sm-6 mb-2" v-for="vendor in vendors" :key="vendor.id">
           <div class="card card-block">
             <div class="card-body p-2">
-              <img :src="vendor.imgLink" alt="Photo of sunset">
+              <img src="../../assets/keylafc.png" alt="Photo of sunset">
             </div>
             <div class="card-body p-2">
               <h3>{{ vendor.name }}</h3>
