@@ -9,9 +9,7 @@ import TentangKami from '@/components/homepage/TentangKami'
 import CaraPrint from '@/components/homepage/CaraPrint'
 
 import DashboardCustomer from '@/components/customer/DashboardCustomer'
-import ProfileCustomer from '@/components/customer/ProfileCustomer'
 import PesananCustomer from '@/components/customer/PesananCustomer'
-import HistoryCustomer from '@/components/customer/HistoryCustomer'
 
 Vue.use(Router)
 
@@ -54,18 +52,10 @@ const router = new Router({
           path: '',
           component: PesananCustomer
         },
-        // {
-        //   path: '/profile-customer',
-        //   component: ProfileCustomer
-        // },
         {
           path: '/pesanan-customer',
           component: PesananCustomer
-        },
-        // { 
-        //   path: '/history-customer', 
-        //   component: HistoryCustomer 
-        // },
+        }
       ]
     },
   ]

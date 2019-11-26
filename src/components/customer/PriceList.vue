@@ -11,34 +11,124 @@
             <div class="modal-body">
                 <p class="modal-title modplus text-left mb-3" >Cek Estimasi Harga</p>
 
-                <!-- Daftar Print -->
-                <p><a data-toggle="collapse" href="#print" aria-expanded="false" aria-controls="print">Cek Harga Print</a></p>
-                <table class="table table-hover table-bordered table-sm text-left collapse multi-collapse" id="print">
+                <!-- Daftar Harga Print HVS Hitam Putih -->
+                <p><a data-toggle="collapse" href="#hvs_blackwhite" aria-expanded="false" aria-controls="hvs_blackwhite">Cek Harga Print HVS Hitam Putih</a></p>
+                <table class="table table-hover table-bordered table-sm text-left collapse multi-collapse" id="hvs_blackwhite">
                     <thead class="">
                         <th class="col1">Barang</th>
                         <th class="col2">Harga/qtc</th>
                         <th class="col3">Pesanan</th>
                     </thead>
 
-                    <tbody v-for="print in prints" v-bind:key="print.id">
+                    <tbody v-for="item in hvs_blackwhites" v-bind:key="item.id">
                         <tr>
-                            <td class="align-baseline">{{print.etalase}}</td>
-                            <td class="align-baseline">Rp. {{print.harga}}</td>
-                            <td class="align-baseline"><input type="number" class="form-control modal-badge" placeholder="0" v-model="print.order"></td>
+                            <td class="align-baseline">{{item.etalase}}</td>
+                            <td class="align-baseline">Rp. {{item.harga}}</td>
+                            <td class="align-baseline"><input type="number" class="form-control modal-badge" placeholder="0" v-model="item.order"></td>
                         </tr>
                     </tbody>
                 </table>
 
-                <!-- Daftar Jilid	 -->
-                <p><a data-toggle="collapse" href="#jilid" aria-expanded="false" aria-controls="jilid">Cek Harga Jilid</a></p>
-                <table class="table table-hover table-bordered table-sm text-left collapse multi-collapse" id="jilid">
+                <!-- Daftar Harga Print HVS Warna -->
+                <p><a data-toggle="collapse" href="#hvs_color" aria-expanded="false" aria-controls="hvs_color">Cek Harga Print HVS Warna</a></p>
+                <table class="table table-hover table-bordered table-sm text-left collapse multi-collapse" id="hvs_color">
                     <thead class="">
                         <th class="col1">Barang</th>
                         <th class="col2">Harga/qtc</th>
                         <th class="col3">Pesanan</th>
                     </thead>
 
-                    <tbody v-for="jilid in jilids" v-bind:key="jilid.id">
+                    <tbody v-for="item in hvs_colors" v-bind:key="item.id">
+                        <tr>
+                            <td class="align-baseline">{{item.etalase}}</td>
+                            <td class="align-baseline">Rp. {{item.harga}}</td>
+                            <td class="align-baseline"><input type="number" class="form-control modal-badge" placeholder="0" v-model="item.order"></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- Daftar Harga Print HVS Full Warna -->
+                <p><a data-toggle="collapse" href="#hvs_fullcolor" aria-expanded="false" aria-controls="hvs_fullcolor">Cek Harga Print HVS Full Warna</a></p>
+                <table class="table table-hover table-bordered table-sm text-left collapse multi-collapse" id="hvs_fullcolor">
+                    <thead class="">
+                        <th class="col1">Barang</th>
+                        <th class="col2">Harga/qtc</th>
+                        <th class="col3">Pesanan</th>
+                    </thead>
+
+                    <tbody v-for="item in hvs_fullcolors" v-bind:key="item.id">
+                        <tr>
+                            <td class="align-baseline">{{item.etalase}}</td>
+                            <td class="align-baseline">Rp. {{item.harga}}</td>
+                            <td class="align-baseline"><input type="number" class="form-control modal-badge" placeholder="0" v-model="item.order"></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- Daftar Ivory	 -->
+                <p><a data-toggle="collapse" href="#ivory" aria-expanded="false" aria-controls="ivory">Cek Harga Print Ivory</a></p>
+                <table class="table table-hover table-bordered table-sm text-left collapse multi-collapse" id="ivory">
+                    <thead class="">
+                        <th class="col1">Barang</th>
+                        <th class="col2">Harga/qtc</th>
+                        <th class="col3">Pesanan</th>
+                    </thead>
+
+                    <tbody v-for="item in ivorys" v-bind:key="item.id">
+                        <tr>
+                            <td class="align-baseline">{{item.etalase}}</td>
+                            <td class="align-baseline">Rp. {{item.harga}}</td>
+                            <td class="align-baseline"><input type="number" class="form-control modal-badge" placeholder="0" v-model="item.order"></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                 <!-- Daftar Art Paper	 -->
+                <p><a data-toggle="collapse" href="#art_paper" aria-expanded="false" aria-controls="art_paper">Cek Harga Print Art Paper</a></p>
+                <table class="table table-hover table-bordered table-sm text-left collapse multi-collapse" id="art_paper">
+                    <thead class="">
+                        <th class="col1">Barang</th>
+                        <th class="col2">Harga/qtc</th>
+                        <th class="col3">Pesanan</th>
+                    </thead>
+
+                    <tbody v-for="item in art_papers" v-bind:key="item.id">
+                        <tr>
+                            <td class="align-baseline">{{item.etalase}}</td>
+                            <td class="align-baseline">Rp. {{item.harga}}</td>
+                            <td class="align-baseline"><input type="number" class="form-control modal-badge" placeholder="0" v-model="item.order"></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- Daftar Harga Jilid Mika	 -->
+                <p><a data-toggle="collapse" href="#mica" aria-expanded="false" aria-controls="mica">Cek Harga Jilid Mika</a></p>
+                <table class="table table-hover table-bordered table-sm text-left collapse multi-collapse" id="mica">
+                    <thead class="">
+                        <th class="col1">Barang</th>
+                        <th class="col2">Harga/qtc</th>
+                        <th class="col3">Pesanan</th>
+                    </thead>
+
+                    <tbody v-for="jilid in micas" v-bind:key="jilid.id">
+                        <tr>
+                            <td class="align-baseline">{{jilid.etalase}}</td>
+                            <td class="align-baseline">Rp. {{jilid.harga}}</td>
+                            <td class="align-baseline"><input type="number" class="form-control modal-badge" placeholder="0" v-model="jilid.order"></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- Daftar Harga Hard Cover	 -->
+                <p><a data-toggle="collapse" href="#hard_cover" aria-expanded="false" aria-controls="hard_cover">Cek Harga Hard Cover</a></p>
+                <table class="table table-hover table-bordered table-sm text-left collapse multi-collapse" id="hard_cover">
+                    <thead class="">
+                        <th class="col1">Barang</th>
+                        <th class="col2">Harga/qtc</th>
+                        <th class="col3">Pesanan</th>
+                    </thead>
+
+                    <tbody v-for="jilid in hard_covers" v-bind:key="jilid.id">
                         <tr>
                             <td class="align-baseline">{{jilid.etalase}}</td>
                             <td class="align-baseline">Rp. {{jilid.harga}}</td>
@@ -50,7 +140,7 @@
                 <table class="table table-hover table-bordered table-sm text-left">
                     <tr class="bg-total">
                         <td class="align-baseline font-weight-bold" colspan="2">Total Harga</td>
-                        <td class="align-baseline">Rp {{ (totalJilid + totalPrint) }}</td>
+                        <td class="align-baseline">Rp {{ (totalHvs_blackwhite + totalHvs_color + totalHvs_fullcolor + totalIvory + totalMica +  totalArt_paper + totalHard_cover) }}</td>
                     </tr>
                 </table>
 
@@ -74,7 +164,49 @@ export default {
             return this.jilids.reduce(function(total, item){
                 return total += item.order*item.harga; 
             },0);
-        }
+        },
+
+        totalHvs_blackwhite: function(){
+            return this.hvs_blackwhites.reduce(function(total, item){
+                return total += item.order*item.harga; 
+            },0);
+        },
+
+        totalHvs_color: function(){
+            return this.hvs_colors.reduce(function(total, item){
+                return total += item.order*item.harga; 
+            },0);
+        },
+
+        totalHvs_fullcolor: function(){
+            return this.hvs_fullcolors.reduce(function(total, item){
+                return total += item.order*item.harga; 
+            },0);
+        },
+
+        totalIvory: function(){
+            return this.ivorys.reduce(function(total, item){
+                return total += item.order*item.harga; 
+            },0);
+        },
+
+        totalArt_paper: function(){
+            return this.art_papers.reduce(function(total, item){
+                return total += item.order*item.harga; 
+            },0);
+        },
+
+        totalMica: function(){
+            return this.micas.reduce(function(total, item){
+                return total += item.order*item.harga; 
+            },0);
+        },
+
+        totalHard_cover: function(){
+            return this.hard_covers.reduce(function(total, item){
+                return total += item.order*item.harga; 
+            },0);
+        },
     },
     methods: {
         orderNow: function() {
@@ -85,37 +217,97 @@ export default {
     },
     data() {
         return {
-            hvs_hitamputih: [
+            hvs_blackwhites: [
                 {
-                    etalase: 'A4',
+                    etalase: 'HVS Hitam Putih A4',
                     harga: 200,
                     order: ''
                 },
                 {
-                    etalase: 'F4',
+                    etalase: 'HVS Hitam Putih F4',
                     harga: 250,
                     order: ''
                 },
                 {
-                    etalase: 'A3',
+                    etalase: 'HVS Hitam Putih A3',
                     harga: 1200,
                     order: ''
                 }
             ],
-            hvs_warna: [
+            hvs_colors: [
                 {
-                    etalase: 'A4',
+                    etalase: 'HVS Warna A4',
                     harga: 500,
                     order: ''
                 },
                 {
-                    etalase: 'F4',
+                    etalase: 'HVS Warna F4',
                     harga: 750,
                     order: ''
                 },
                 {
-                    etalase: 'A3',
+                    etalase: 'HVS Warna A3',
                     harga: 1200,
+                    order: ''
+                }
+            ],
+            hvs_fullcolors: [
+                {
+                    etalase: 'HVS Full Warna A4',
+                    harga: 1500,
+                    order: ''
+                },
+                {
+                    etalase: 'HVS Full WarnaF4',
+                    harga: 2000,
+                    order: ''
+                },
+                {
+                    etalase: 'HVS Full Warna A3',
+                    harga: 2700,
+                    order: ''
+                }
+            ],
+            ivorys: [
+                {
+                    etalase: 'Ivory A4',
+                    harga: 2500,
+                    order: ''
+                },
+                {
+                    etalase: 'Ivory A3',
+                    harga: 4500,
+                    order: ''
+                }
+            ],
+            art_papers: [
+                {
+                    etalase: 'Art Paper A3',
+                    harga: 2500,
+                    order: ''
+                }
+            ],
+            micas: [
+                {
+                    etalase: '1 inch (40 lembar)',
+                    harga: 3000,
+                    order: ''
+                },
+                {
+                    etalase: '1,5 inch (-+100 lembar)',
+                    harga: 4000,
+                    order: ''
+                },
+                {
+                    etalase: '2 inch (-+200 lembar)',
+                    harga: 5000,
+                    order: ''
+                },
+            ],
+            hard_covers: [
+                {
+                    etalase: 'Hard Cover',
+                    harga: 35000,
                     order: ''
                 }
             ],

@@ -1,14 +1,10 @@
 <template>
-    <div class="d-flex" id="wrapper">
-    <loading :active.sync="isLoading" 
-			:can-cancel="true" 
-			:on-cancel="onCancel"
-        	:is-full-page="fullPage">
-		</loading> 
+  <div class="d-flex" id="wrapper">
+    <loading :active.sync="isLoading" :can-cancel="true" :is-full-page="fullPage"></loading> 
     <!-- Sidebar -->
     <div class="shadow-lg text-left" id="sidebar-wrapper">
       <div class="sidebar-heading p-4">
-        <img src="../../assets/Logo.png" alt="Logo Cetakk.id" />
+        <img src="../../assets/LogoteksPutih.png" alt="Logo Cetakk.id" />
         </div>
       <div class="list-group list-group-flush">
           <section class="mt-3">
@@ -39,9 +35,6 @@
 </template>
 
 <script>
-import { storageRef } from '../../firebase'
-import storage from 'firebase/storage'
-import firebase from 'firebase'
 import JQuery from 'jquery'
 import Loading from 'vue-loading-overlay'
 import 'vue-loading-overlay/dist/vue-loading.css'
@@ -135,6 +128,7 @@ export default {
   -moz-transition: margin .25s ease-out;
   -o-transition: margin .25s ease-out;
   transition: margin .25s ease-out;
+  position: relative;
 }
 
 #wrapper.toggled #sidebar-wrapper {
@@ -192,7 +186,7 @@ export default {
     margin-left: 0rem;
   }
 }
-/* 
+
 @media (max-width: 700px) {
   #sidebar-wrapper {
     margin-left: 0;
@@ -215,7 +209,7 @@ export default {
   #wrapper.toggled #sidebar-wrapper {
     margin-left: -17rem;
   }
-} */
+}
 
 .router-link-exact-active{
   background-color: rgb(101, 170, 235) !important;

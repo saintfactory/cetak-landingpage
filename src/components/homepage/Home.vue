@@ -1,10 +1,6 @@
 <template>
 	<div class="container-fluid">
-		<loading :active.sync="isLoading" 
-			:can-cancel="true" 
-			:on-cancel="onCancel"
-        	:is-full-page="fullPage">
-		</loading>
+		<loading :active.sync="isLoading" :can-cancel="true" :is-full-page="fullPage"></loading> 
 		<div class="hero cover row justify-content-md-center">
 			<div class="hero-part col-md-6 text-left">
 				<h1 class="font-hero text-light mb-3">Cetak dokumen kamu sekarang
@@ -109,9 +105,6 @@
 
 <script>
 /* eslint-disable */
-// import Header from './Header.vue'
-import firebase, { firestore } from 'firebase'
-import { dbstore } from '../../firebase'
 import Loading from 'vue-loading-overlay'
 import 'vue-loading-overlay/dist/vue-loading.css'
 
@@ -132,15 +125,6 @@ export default {
 		}
 	},
 	mounted() {
-		var user = firebase.auth().currentUser;
-		if (user != null) {
-			user.providerData.forEach(function (profile) {
-				console.log("Sign-in provider: " + profile.providerId);
-				console.log("  Provider-specific UID: " + profile.uid);
-				console.log("  Email: " + profile.email);
-			});
-		}
-
 		this.isLoading = true
 		setTimeout(() => {
 			this.isLoading = false
