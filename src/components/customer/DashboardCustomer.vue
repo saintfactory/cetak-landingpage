@@ -2,10 +2,10 @@
   <div class="d-flex" id="wrapper">
     <loading :active.sync="isLoading" :can-cancel="true" :is-full-page="fullPage"></loading> 
     <!-- Sidebar -->
-    <div class="shadow-lg text-left" id="sidebar-wrapper">
-      <div class="sidebar-heading p-4">
-        <img src="../../assets/LogoteksPutih.png" alt="Logo Cetakk.id" />
-        </div>
+    <div class="text-left" id="sidebar-wrapper">
+      <div class="sidebar-heading p-4 text-center">
+        <img src="../../assets/cetakkPutih.png" alt="Logo Cetakk.id" />
+      </div>
       <div class="list-group list-group-flush">
           <section class="mt-3">
             <!-- <a><router-link class="list-group-item list-group-item-action" to='/profile-customer' ><i class="fas fa-user icon"></i> Profil</router-link></a> -->
@@ -70,13 +70,16 @@ export default {
 
 #sidebar-wrapper {
   min-height: 100vh;
-  margin-left: -15rem;
+  margin-left: -17rem;
   position: fixed;
   -webkit-transition: margin .25s ease-out;
   -moz-transition: margin .25s ease-out;
   -o-transition: margin .25s ease-out;
   transition: margin .25s ease-out;
   background-color: #0275d8 !important;
+  transform: scale(1.001);
+  transition:0.3s;
+  box-shadow: 2px 2px 5px rgba(54, 54, 54, 0.3);
 }
 #menu-toggle{
     display: block;
@@ -87,7 +90,7 @@ export default {
 }
 
 .sidebar-heading img{
-  max-width: 10rem;
+  max-width: 13rem;
 }
 .icon{
     min-width: 40px;

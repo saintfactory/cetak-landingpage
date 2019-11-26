@@ -12,7 +12,6 @@
             </div>
 
             <div class="card-footer p-2">
-              <!-- WAK INI CARA BIKIN TOMBOL YG EFEKTIF, JNGN TARO <A> DALAM BUTTON -_____-      -->
               <a class="btn btn-primary btn-sm mr-2" :href="vendor.orderLink">Cetakk</a>
               <button class="btn btn-warning btn-sm text-light linked" data-toggle="modal" data-target="#pesan">Cek Harga</button> 
             </div>

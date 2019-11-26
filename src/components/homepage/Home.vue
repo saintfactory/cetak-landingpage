@@ -161,7 +161,7 @@ export default {
     background:url('../../assets/bghome.png') no-repeat center;
     background-size: cover;
     min-height: 130vh;
-    background-color: rgba(255, 255, 255, 0.816);
+	background-color: rgba(255, 255, 255, 0.816);
     padding-top: 200px
 }
 .hero-part{
