@@ -12,7 +12,7 @@
           <section class="mt-3">
             <!-- <a><router-link class="list-group-item list-group-item-action" to='/profile-customer' ><i class="fas fa-user icon"></i> Profil</router-link></a> -->
             <a><router-link class="list-group-item list-group-item-action" to='/pilih-vendor'><i class="fas fa-clone icon"></i> Pilih Vendor</router-link></a>
-            <a><router-link class="list-group-item list-group-item-action" to='/login'><i class="fas fa-question icon"></i> Bantuan</router-link></a>
+            <a><router-link class="list-group-item list-group-item-action" to='/cara-cetak'><i class="fas fa-question icon"></i> Bantuan</router-link></a>
             <!-- <a><router-link class="list-group-item list-group-item-action" to='/history-customer'><i class="fas fa-history icon"></i> Sejarah Pesanan</router-link></a> -->
           </section>
       </div>

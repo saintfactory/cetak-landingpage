@@ -7,6 +7,7 @@ import Based from '@/components/layouter/Based'
 import Home from '@/components/homepage/Home'
 import TentangKami from '@/components/homepage/TentangKami'
 import CaraPrint from '@/components/homepage/CaraPrint'
+import NotFound from '@/components/PageNotFound'
 
 import DashboardCustomer from '@/components/customer/DashboardCustomer'
 import PilihVendor from '@/components/customer/PilihVendor'
@@ -18,7 +19,11 @@ const router = new Router({
   routes: [
     {
       path: '*',
-      redirect: '/home'
+      redirect: '/page-not-found'
+    },
+    {
+      path: '/page-not-found',
+      component: NotFound
     },
     { 
       path: '/', 
@@ -40,7 +45,7 @@ const router = new Router({
           { 
               path: '/cara', 
               component: CaraPrint 
-          },
+          }
       ]
     },
     {

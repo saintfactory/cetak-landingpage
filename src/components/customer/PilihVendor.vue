@@ -20,11 +20,11 @@
             </div>
           </div>
       </div>
-      <div class="col-md-3 col-sm-6 mb-2" v-for="vendor in cooming_soons" :key="vendor.id">
-        <div class="card card-block card-cooming-soon">
+      <div class="col-md-3 col-sm-6 mb-2" v-for="vendor in Coming_soons" :key="vendor.id">
+        <div class="card card-block card-Coming-soon">
           <div class="card-body p-2">
-            <img :src="vendor.imgLink" alt="Cooming Soon" class="mt-4" style="opacity: 0.2;">
-            <h2 class="font-weight-bold text-center caption-cooming-soon">{{ vendor.name }}</h2>
+            <img :src="vendor.imgLink" alt="Coming Soon" class="mt-4" style="opacity: 0.2;">
+            <h2 class="font-weight-bold text-center caption-Coming-soon">{{ vendor.name }}</h2>
           </div>
         </div>
       </div>
@@ -59,17 +59,17 @@ export default {
           orderLink: 'https://s.id/vendor1'
         },
       ],
-      cooming_soons: [
+      Coming_soons: [
         {
-          name: 'Cooming Soon',
+          name: 'Coming Soon',
           imgLink: 'https://assets-ouch.icons8.com/preview/149/9566f952-eae4-4d7f-ae5d-5d20728d817e.png'
         },
         {
-          name: 'Cooming Soon',
+          name: 'Coming Soon',
           imgLink: 'https://assets-ouch.icons8.com/preview/149/9566f952-eae4-4d7f-ae5d-5d20728d817e.png'
         },
         {
-          name: 'Cooming Soon',
+          name: 'Coming Soon',
           imgLink: 'https://assets-ouch.icons8.com/preview/149/9566f952-eae4-4d7f-ae5d-5d20728d817e.png'
         }
       ]
@@ -91,13 +91,13 @@ export default {
 *{
   font-size: 14px ;  
 }
-.card-cooming-soon {
+.card-Coming-soon {
   position: relative;
   text-align: center;
   color: #7e7e7e;
   height: 100%;
 }
-.caption-cooming-soon {
+.caption-Coming-soon {
   position: absolute;
   bottom: 45%;
   left: 15%;
