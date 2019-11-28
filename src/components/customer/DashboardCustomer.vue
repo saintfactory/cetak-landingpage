@@ -4,7 +4,9 @@
     <!-- Sidebar -->
     <div class="text-left" id="sidebar-wrapper">
       <div class="sidebar-heading p-4 text-center">
-        <img src="../../assets/cetakkPutih.png" alt="Logo Cetakk.id" />
+        <router-link to="/home">
+          <img src="../../assets/cetakkPutih.png" alt="Logo Cetakk.id" />
+        </router-link>
       </div>
       <div class="list-group list-group-flush">
           <section class="mt-3">

@@ -76,26 +76,10 @@
 		<div class="super-foot bg-dark cover row justify-content-md-center copyrights">
 			<div class="col-md-8 p-4">
 				<img src="../../assets/img/LogoteksPutih.png" alt="" class="mb-3 footerCredit">
-				<p class="text-light font-primary">Copyright Cetak.Id 2019</p>
+				<p class="text-light font-primary">Copyright Cetakk.Id 2019</p>
 			</div>
 
 			<div class="col-md-4 p-4 medsos">
-				<!-- <table class="table table-sm table-borderless">
-					<thead class="font-primary text-light font-weight-bold">
-						<th>Navigasi</th>
-						<th>Sosial Media</th>
-					</thead>
-					<tbody>
-						<tr>
-							<td><a><router-link to='/tentang-kami' class="text-light font-smaller">Tentang Kami</router-link></a></td>
-							<td><a class="text-light font-smaller" href="https://www.instagram.com/cetakkid.official/">Instagram</a></td>
-						</tr>
-						<tr>
-							<td><a><router-link to='/tentang-kami' class="text-light font-smaller">Cara Cetak</router-link></a></td>
-							<td><a class="text-light font-smaller" href="https://www.linkedin.com/company/cetakk-id/">LinkedIn</a></td>
-						</tr>
-					</tbody>
-				</table> -->
 				<a href="https://www.instagram.com/cetakkid.official/">
                     <img class="img-tumbs" src="../../assets/img/instagramwhite.png" alt="">
                 </a>
@@ -103,9 +87,7 @@
                     <img class="img-tumbs" src="../../assets/img/linkedinwhite.png" alt="">
                 </a>
 			</div>
-
 		</div>
-
 	</div>
 </template>
 

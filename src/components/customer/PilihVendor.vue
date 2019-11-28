@@ -1,7 +1,7 @@
 <template>
   <div class="profilUser">
     <div class="row my-4">
-      <input type="text" class="w-100 d-block form-control searchbar" placeholder="Cari Vendor" v-model="search" />
+      <input type="text" class="w-100 mx-3 d-block form-control searchbar" placeholder="Cari Vendor" v-model="search" />
     </div>
     <div class="row" v-for="vendor in filteredList" :key="vendor.id">
       <div class="col-md-3 col-sm-6 mb-2" v-for="vendor in vendors" :key="vendor.id">
@@ -54,7 +54,7 @@ export default {
         {
           id: 1,
           name: 'Keylacopier • Owner',
-          address: 'Jl. Jaliurang KM.13 Besi, Sukoharjo, Ngaglik, Sleman',
+          address: 'Jl. Kaliurang KM.13 Besi, Sukoharjo, Ngaglik, Sleman',
           imgLink: 'https://static.pexels.com/photos/7096/people-woman-coffee-meeting.jpg',
           orderLink: 'https://s.id/vendor1'
         },
