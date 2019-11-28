@@ -41,23 +41,27 @@ const router = new Router({
               path: '/cara', 
               component: CaraPrint 
           },
+          { 
+            path: '/dashboard-customer', 
+            component: PilihVendor
+          },
       ]
     },
-    {
-      path: '/dashboard-customer',
-      name: 'DashboardCustomer',
-      component: DashboardCustomer,
-      children: [
-        {
-          path: '',
-          component: PilihVendor
-        },
-        {
-          path: '/pilih-vendor',
-          component: PilihVendor
-        }
-      ]
-    },
+    // {
+    //   path: '/dashboard-customer',
+    //   name: 'DashboardCustomer',
+    //   component: DashboardCustomer,
+    //   children: [
+    //     {
+    //       path: '',
+    //       component: PilihVendor
+    //     },
+    //     {
+    //       path: '/pilih-vendor',
+    //       component: PilihVendor
+    //     }
+    //   ]
+    // },
   ]
 })
 

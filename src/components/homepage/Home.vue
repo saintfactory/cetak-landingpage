@@ -5,12 +5,32 @@
 			<div class="hero-part col-md-6 text-left">
 				<h1 class="font-hero text-light mb-3">Cetak dokumen kamu sekarang
 				<br> cepat, mudah, dan dimana saja</h1>
-				<p class="font-secondary font-weight-normal">Dikejar <span class="font-weight-bold">Deadline</span>? Tenang, ada <span class="font-weight-bold">Cetak.Id</span></p>
-				<a v-on:click="getStarted" class="rounded-pill btn btn-warning mt-3">
-					<router-link to='/dashboard-customer' class="btn-based btn font-weight-bold text-secondary">Cetak Sekarang</router-link>
+				<p class="font-secondary font-weight-normal">Dikejar <span class="font-weight-bold">Deadline</span>? Tenang, ada <span class="font-weight-bold">Cetakk.Id</span></p>
+				
+				<p class="font-weight-bold text-light mt-5">Dokumen tercetak bulan ini</p>
+				<div class="row pl-3">
+					<div class="col-1 bg-light p-2 mr-2 text-center rounded shadow">
+						<span class="count" id="ribuan"></span>
+					</div>
+
+					<div class="col-1 bg-light p-2 mr-2 text-center rounded shadow">
+						<span class="count" id="ratusan"></span>
+					</div>
+					<div class="col-1 bg-light p-2 mr-2 text-center rounded shadow">
+						<span class="count" id="puluhan"></span>
+					</div>
+					<div class="col-1 bg-light p-2 text-center rounded shadow">
+						<span class="count" id="satuan"></span>
+					</div>
+				</div>
+
+				
+				<a v-on:click="getStarted" class="rounded-pill btn btn-warning mt-5">
+					<router-link to='/dashboard-customer' class="btn-based btn font-weight-bold text-dark">Cetak Sekarang</router-link>
 				</a>
 			</div>
 			<div class="hero-paid col-md-6">
+				<img src="../../assets/home-paid.png" alt="">
 			</div>
 		</div>
 
@@ -21,7 +41,7 @@
 
 				<div class="col-md-4 text-center ">
 					<div class="col-md-12">
-						<img class="gmbr" src="../../assets/img/benefit1.png" alt="Upload Dokumen di Cetak.id">
+						<img class="gmbr" src="../../assets/img/benefit1.png" alt="Upload Dokumen di Cetakk.id">
 					</div>
 					<div class="col-md-12">
 						<h5 class="text center font-subhero">PILIH</h5>
@@ -34,7 +54,7 @@
 
 				<div class="col-md-4 text-center ">
 					<div class="col-md-12">
-						<img class="gmbr" src="../../assets/img/benefit2.png" alt="Upload Dokumen di Cetak.id">
+						<img class="gmbr" src="../../assets/img/benefit2.png" alt="Upload Dokumen di Cetakkid">
 					</div>
 					<div class="col-md-12">
 						<h5 class="text center font-subhero">CETAK</h5>
@@ -47,13 +67,13 @@
 
 				<div class="col-md-4 text-center">
 					<div class="col-md-12">
-						<img class="gmbr" src="../../assets/img/benefit3.png" alt="Upload Dokumen di Cetak.id">
+						<img class="gmbr" src="../../assets/img/benefit3.png" alt="Upload Dokumen di Cetakk.id">
 					</div>
 					<div class="col-md-12">
 						<h5 class="text center font-subhero">AMBIL</h5>
 					</div>
 					<div class="col-md-12 text-center">
-						<p class="font-primary black lh-copy">Ambil hasil cetak dokumen <br> di tempat pilihan sekaligus bayar
+						<p class="font-primary black lh-copy">Ambil hasil dokumen di lokasi  <br> vendor dan lakukan pembayaran
 						</p>
 					</div>
 				</div>
@@ -62,13 +82,13 @@
 
 		<div class="footer cover row justify-content-md-center ">
 			<div class="col-sm-12 part-foot">
-				<h1 class="font-hero text-warning mb-3">500+ Dokumen</h1>
+				<h1 class="font-hero text-warning mb-3">100+ Dokumen</h1>
 				<h2 class="font-subhero text-light mb-3">Sudah berhasil dicetak</h2>
 				<p class="font-primary text-light mb-4 font-italic">Banyak pengguna semakin mudah dan cepat<br>
-						mencetak dokumen setelah menggunakan Cetak.ID
+						mencetak dokumen setelah menggunakan Cetakk.id
 				</p>
-				<a v-on:click="getStarted" class="rounded-pill btn btn-warning mt-3 mb-5">
-					<router-link to='/dashboard-customer' class="btn-based btn font-weight-bold text-secondary">Cetak Sekarang</router-link>
+				<a v-on:click="getStarted" class="rounded-pill btn-outline-warning btn mt-3 mb-5">
+					<router-link to='/dashboard-customer' class="btn text-button font-weight-bold text-white">Cetak Sekarang</router-link>
 				</a>
 			</div>
 		</div>
@@ -117,6 +137,40 @@ export default {
 		setTimeout(() => {
 			this.isLoading = false
 		}, 3000)
+
+		// Set the date we're counting down to
+		var countDownDate = new Date("Nov 28, 2010 01:40:00").getTime();
+
+		// Update the count down every 1 second
+		var x = setInterval(function() {
+
+		// Get today's date and time
+		var now = new Date().getTime();
+			
+		// Find the distance between now and the count down date
+		var t = countDownDate + now;
+
+		// var t = Date.parse(endtime) - Date.parse(new Date());
+			
+		// Time calculations for days, hours, minutes and seconds
+		// var ribuan = Math.floor((distance % (10 * 10 * 10 * 10 * 10)) / (10 * 10 * 10 * 10));
+		// var ratusan = Math.floor((distance % (100000 * 10 * 10 * 10)) / (100000 * 10 * 10));
+		// var puluhan = Math.floor((distance % (100000 * 10 * 10)) / (100000 * 10));
+		// var satuan = Math.floor((distance % (100000 * 10)) / 100000);
+		
+		var satuan = Math.floor((t / 176190790) % 10);
+		var puluhan = Math.floor((t / 176190790 / 10) % 10);
+		var ratusan = Math.floor((t / (176190790 * 10 * 10)) % 10);
+		var ribuan = Math.floor(t / (176190790 * 10 * 10 * 10));
+
+		// Output the result in an element with id="demo"
+		document.getElementById("ribuan").innerHTML = 0;
+		document.getElementById("ratusan").innerHTML = ratusan;
+		document.getElementById("puluhan").innerHTML = puluhan;
+		document.getElementById("satuan").innerHTML = satuan;
+
+		
+		}, 1000);
 	}
 }
 </script>
@@ -141,20 +195,30 @@ export default {
 .font-primary{
     font-size: 14px;
 }
+.count{
+	font-size: 20px;
+	font-weight: 800;
+}
 .hero {
     background:url('../../assets/img/vectorBg.png') no-repeat center;
     background-size: cover;
     min-height: 120vh;
 	background-color: rgba(255, 255, 255, 0.816);
 	background-position-y: -10vh;
-	padding-top: 25vh;
+	padding-top: 15vh;
 }
 .hero-part{
     padding: 100px;
 }
-.hero-paid{
+/* .hero-paid{
 	background: url('../../assets/home-paid.png') no-repeat;
+} */
+
+.hero-paid img{
+	width: 100%;
+	padding: 6rem 5rem 0 5rem;
 }
+
 section{
     margin-top: 10vh
 }
@@ -164,6 +228,18 @@ section{
 
 .hero--button {
     color: #C7E87C;
+}
+
+.btn-outline-warning{
+	border: 2px solid #F4BE0B;
+}
+
+.text-white{
+	color: #fff !important;
+}
+
+.text-white:hover{
+	color: #222 !important;
 }
 
 .gmbr{
@@ -222,7 +298,7 @@ section{
 	text-align: right !important
 }
 
-@media (max-width: 790px) {
+@media (max-width: 900px) {
 	.font-hero{
 		font-weight: 700;
 		font-size: 20px;

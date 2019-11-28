@@ -71,7 +71,10 @@ p{
     min-width: 100%;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 900px) {
+    .hero{
+        padding-top: 80px !important;
+    }
     .img-about {
         min-width: 100%;
         visibility: hidden;
