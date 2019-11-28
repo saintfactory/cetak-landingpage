@@ -6,48 +6,48 @@
 				<h1 class="font-hero text-light mb-3">Cetak dokumen kamu sekarang
 				<br> cepat, mudah, dan dimana saja</h1>
 				<p class="font-secondary font-weight-normal">Dikejar <span class="font-weight-bold">Deadline</span>? Tenang, ada <span class="font-weight-bold">Cetak.Id</span></p>
-				<a v-on:click="getStarted" class="btn-based btn btn-warning">
-					<router-link to='/dashboard-customer' class="btn-based btn">Cetak Sekarang</router-link></a>
+				<a v-on:click="getStarted" class="rounded-pill btn btn-warning mt-3">
+					<router-link to='/dashboard-customer' class="btn-based btn font-weight-bold text-secondary">Cetak Sekarang</router-link>
+				</a>
 			</div>
 			<div class="hero-paid col-md-6">
 			</div>
 		</div>
 
-		<div class="usefull row justify-content-md-center">
-			<div class="col-md-12 cara" style="">
-				<h3 class="center font-title mt-5">Bagaimana Caranya?</h3>
+		<div class="usefull row justify-content-md-center mb-5">
+			<div class="col-md-12 cara">
+				<h3 class="center font-title mt-5 mb-5">Bagaimana Caranya?</h3>
 			</div>
 
-			<div class="row justify-content-md-center batch">
-				<div class="col-sm-4 text-center ">
+				<div class="col-md-4 text-center ">
 					<div class="col-md-12">
-						<img class="gmbr" src="../../assets/batch1.png" alt="Upload Dokumen di Cetak.id">
+						<img class="gmbr" src="../../assets/img/benefit1.png" alt="Upload Dokumen di Cetak.id">
 					</div>
 					<div class="col-md-12">
-						<h5 class="text center font-subhero">UPLOAD</h5>
+						<h5 class="text center font-subhero">PILIH</h5>
 					</div>
 					<div class="col-md-12">
-						<p class="font-primary black lh-copy">Daftar akun lalu pilih tempat cetak <br> yang kamu mau kemudian upload file
+						<p class="font-primary black lh-copy">Pilih vendor yang kamu mau! gunakan <br> fitur cek harga untuk memastikan estimasi harga
 						</p>
 					</div>
 				</div>
 
-				<div class="col-sm-4 text-center ">
+				<div class="col-md-4 text-center ">
 					<div class="col-md-12">
-						<img class="gmbr" src="../../assets/batch2.png" alt="Upload Dokumen di Cetak.id">
+						<img class="gmbr" src="../../assets/img/benefit2.png" alt="Upload Dokumen di Cetak.id">
 					</div>
 					<div class="col-md-12">
 						<h5 class="text center font-subhero">CETAK</h5>
 					</div>
 					<div class="col-md-12">
-						<p class="font-primary black lh-copy">Dokumen akan dicetak <br> sesuai dengan tempat permintaan
+						<p class="font-primary black lh-copy">Dokumen pesanan Anda akan <br> dicetak oleh vendor pilihan Anda
 						</p>
 					</div>
 				</div>
 
-				<div class="col-sm-4 text-center">
+				<div class="col-md-4 text-center">
 					<div class="col-md-12">
-						<img class="gmbr" src="../../assets/batch3.png" alt="Upload Dokumen di Cetak.id">
+						<img class="gmbr" src="../../assets/img/benefit3.png" alt="Upload Dokumen di Cetak.id">
 					</div>
 					<div class="col-md-12">
 						<h5 class="text center font-subhero">AMBIL</h5>
@@ -58,29 +58,29 @@
 					</div>
 				</div>
 
-			</div>
 		</div>
 
 		<div class="footer cover row justify-content-md-center ">
 			<div class="col-sm-12 part-foot">
 				<h1 class="font-hero text-warning mb-3">500+ Dokumen</h1>
 				<h2 class="font-subhero text-light mb-3">Sudah berhasil dicetak</h2>
-				<p class="font-primary text-light mb-4 font-italic">Ribuan pengguna semakin mudah dan cepat<br>
+				<p class="font-primary text-light mb-4 font-italic">Banyak pengguna semakin mudah dan cepat<br>
 						mencetak dokumen setelah menggunakan Cetak.ID
 				</p>
-				<a v-on:click="getStarted" class="btn-based btn btn-warning" href="#feature">
-					<router-link to='/dashboard-customer' class="btn-based btn">Cetak Sekarang</router-link></a>
+				<a v-on:click="getStarted" class="rounded-pill btn btn-warning mt-3 mb-5">
+					<router-link to='/dashboard-customer' class="btn-based btn font-weight-bold text-secondary">Cetak Sekarang</router-link>
+				</a>
 			</div>
 		</div>
 		
-		<div class="super-foot cover row justify-content-md-center text-left pl-5 pt-4">
-			<div class="col-md-8">
-				<img src="../../assets/LogoteksPutih.png" height="95" alt="" class="mb-3">
+		<div class="super-foot bg-dark cover row justify-content-md-center copyrights">
+			<div class="col-md-8 p-4">
+				<img src="../../assets/img/LogoteksPutih.png" alt="" class="mb-3 footerCredit">
 				<p class="text-light font-primary">Copyright Cetak.Id 2019</p>
 			</div>
 
-			<div class="col-md-4">
-				<table class="table table-sm table-borderless">
+			<div class="col-md-4 p-4 medsos">
+				<!-- <table class="table table-sm table-borderless">
 					<thead class="font-primary text-light font-weight-bold">
 						<th>Navigasi</th>
 						<th>Sosial Media</th>
@@ -95,7 +95,13 @@
 							<td><a class="text-light font-smaller" href="https://www.linkedin.com/company/cetakk-id/">LinkedIn</a></td>
 						</tr>
 					</tbody>
-				</table>
+				</table> -->
+				<a href="https://www.instagram.com/cetakkid.official/">
+                    <img class="img-tumbs" src="../../assets/img/instagramwhite.png" alt="">
+                </a>
+				<a href="https://www.linkedin.com/company/cetakk-id/">
+                    <img class="img-tumbs" src="../../assets/img/linkedinwhite.png" alt="">
+                </a>
 			</div>
 
 		</div>
@@ -134,41 +140,38 @@ export default {
 </script>
 
 <style scoped>
-.btn-based{
-    border-radius: 25px;
-    color: text-light;
-	text-decoration: none;
+.font-hero{
+    font-weight: 700;
+    font-size: 32px;
 }
-.btn-based:hover{
-    text-decoration: none;
+.font-subhero{
+    font-weight: 700;
+    font-size: 25px;
 }
-.btn-second{
-    border-radius: 5px;
-    height: 50px;
-    width: 300px;
-    margin: 30px;
-    color: text-light;
-    text-decoration: none;
-    font-weight: 700
+.font-title{
+    font-size: 30px;
 }
-.btn-primary{
-    background-color: #0065C2 !important
+.font-secondary{
+    font-weight: 500;
+    font-size: 18px;
+    color: #ffc502
 }
-.btn-primary:hover{
-    background-color: rgb(8, 85, 157) !important
+.font-primary{
+    font-size: 14px;
 }
 .hero {
-    background:url('../../assets/bghome.png') no-repeat center;
+    background:url('../../assets/img/vectorBg.png') no-repeat center;
     background-size: cover;
-    min-height: 130vh;
+    min-height: 120vh;
 	background-color: rgba(255, 255, 255, 0.816);
-    padding-top: 200px
+	background-position-y: -10vh;
+	padding-top: 25vh;
 }
 .hero-part{
     padding: 100px;
 }
 .hero-paid{
-    background: url('../../assets/home-paid.png') no-repeat;
+	background: url('../../assets/home-paid.png') no-repeat;
 }
 section{
     margin-top: 10vh
@@ -182,9 +185,9 @@ section{
 }
 
 .gmbr{
-	min-height: 290px;
-    max-height: 290px;
-    max-width: 90%;
+	min-height: 240px;
+    max-height: 240px;
+    max-width: 100%;
 	margin-bottom: 40px;
 }
 
@@ -197,5 +200,83 @@ section{
     color: #F4BE0B !important;
     text-decoration: none;
     transform: scale(1.02) !important;
+}
+
+.footer{
+    background: url('../../assets/footer.png') no-repeat center;
+    background-size: cover;
+    min-height: 50vh;
+	background-color: #ffffff;
+	background-position-y: 20px;
+}
+.part-foot{
+    margin-top: 100px;
+}
+
+.super-foot{
+    min-height: 100px;
+    background-color:#0E75D3
+}
+.footerCredit{
+	width: 100px;
+	text-align: left
+}
+
+.img-tumbs{
+    min-width: 35px;
+    max-width: 35px;
+	margin: 10px;
+	text-align: center;
+}
+
+.img-tumbs:hover{
+    transition: transform .5s !important;
+	transform: scale(1.1) !important
+}
+.copyrights{
+	text-align: left !important;	
+}
+.medsos{
+	text-align: right !important
+}
+
+@media (max-width: 790px) {
+	.font-hero{
+		font-weight: 700;
+		font-size: 20px;
+	}
+	.hero{
+		padding-top: 100px;
+		min-height: 70vh;
+		background-position-y: 0vh;
+	}
+	.hero-part{
+    	padding: 30px;
+	}
+	.hero-paid{
+		display: none
+	}
+	.gmbr{
+		min-height: 180px;
+		max-height: 180px;
+		max-width: 100%;
+		margin-bottom: 20px;
+	}	
+	.footer{
+		background: url('../../assets/footer.png') no-repeat center;
+		background-size: cover;
+		min-height: 40vh;
+		background-color: #0065C2;
+	}
+	.copyrights{
+		text-align: center !important;
+		padding-bottom: 0px !important
+	}
+
+	.medsos{
+		text-align: center !important;
+		padding-top: 0px !important
+	}
+
 }
 </style>

@@ -20,7 +20,7 @@
     <!-- Page Content -->
     <div id="page-content-wrapper">
       <div class="text-left dashboard">
-        <div class="sidebar-heading container-fluid">
+        <div class="sidebar-heading container-fluid mb-3">
           <button class="btn btn-light" id="menu-toggle"><i class="fas fa-align-left"></i></button>
         </div>
 
@@ -126,7 +126,7 @@ export default {
 }
 
 #wrapper.toggled #sidebar-wrapper {
-  margin-left: 0;
+  margin-left: 17rem;
   -webkit-transition: margin .25s ease-out;
   -moz-transition: margin .25s ease-out;
   -o-transition: margin .25s ease-out;
@@ -134,7 +134,7 @@ export default {
 }
 
 #wrapper.toggled #page-content-wrapper {
-  margin-left: 0;
+  margin-left: 17rem;
 }
 
 .dashboard{
@@ -181,7 +181,7 @@ export default {
   }
 }
 
-@media (max-width: 700px) {
+@media (min-width: 800px) {
   #sidebar-wrapper {
     margin-left: 0;
     width: 15rem;
