@@ -1,9 +1,11 @@
 <template>
-  <div class="profilUser">
-    <div class="row my-4">
-      <input type="text" class="w-100 mx-3 d-block form-control searchbar" placeholder="Cari Vendor" v-model="search" />
+  <div class="pilihVendor">
+    <div class="row p-5">
+      <div class="col-md-12">
+        <input type="text" class="d-block form-control searchbar rounded-pill" placeholder="Cari Vendor ..." v-model="search" />
+      </div>
     </div>
-    <div class="row" v-for="vendor in filteredList" :key="vendor.id">
+    <div class="row pr-5 pl-5 text-left" v-for="vendor in filteredList" :key="vendor.id">
       <div class="col-md-3 col-sm-6 mb-2" v-for="vendor in vendors" :key="vendor.id">
           <div class="card card-block">
             <div class="card-body p-2">
@@ -88,6 +90,9 @@ export default {
 </script>
 
 <style scoped>
+.pilihVendor{
+  padding-top: 10vh
+}
 *{
   font-size: 14px ;  
 }
@@ -118,8 +123,7 @@ export default {
   width:100%;
 }
 .searchbar {
-  border-radius: 20px;
-  border-color: #0065C2;
+  border: 2px solid #ddd;
 }
 
 </style>
