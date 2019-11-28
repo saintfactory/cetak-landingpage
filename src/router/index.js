@@ -9,7 +9,7 @@ import TentangKami from '@/components/homepage/TentangKami'
 import CaraPrint from '@/components/homepage/CaraPrint'
 
 import DashboardCustomer from '@/components/customer/DashboardCustomer'
-import PesananCustomer from '@/components/customer/PesananCustomer'
+import PilihVendor from '@/components/customer/PilihVendor'
 
 Vue.use(Router)
 
@@ -50,11 +50,11 @@ const router = new Router({
       children: [
         {
           path: '',
-          component: PesananCustomer
+          component: PilihVendor
         },
         {
-          path: '/pesanan-customer',
-          component: PesananCustomer
+          path: '/pilih-vendor',
+          component: PilihVendor
         }
       ]
     },

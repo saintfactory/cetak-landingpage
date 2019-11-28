@@ -1,10 +1,13 @@
 <template>
   <div class="profilUser">
-    <div class="row">
+    <div class="row my-4">
+      <input type="text" class="w-100 d-block form-control searchbar" placeholder="Cari Vendor" v-model="search" />
+    </div>
+    <div class="row" v-for="vendor in filteredList" :key="vendor.id">
       <div class="col-md-3 col-sm-6 mb-2" v-for="vendor in vendors" :key="vendor.id">
           <div class="card card-block">
             <div class="card-body p-2">
-              <img src="../../assets/keylafc.png" alt="Photo of sunset">
+              <img src="../../assets/keylacopier.jpeg" alt="Photo of sunset">
             </div>
             <div class="card-body p-2">
               <h3>{{ vendor.name }}</h3>
@@ -40,12 +43,13 @@
 <script>
 import PriceList from './PriceList'
 export default {
-  name: 'Home',
+  name: 'PilihVendor',
   components : {
     PriceList
   },
   data() {
     return {
+      search: '',
       vendors: [
         {
           id: 1,
@@ -70,7 +74,15 @@ export default {
         }
       ]
     }
-  }
+  },
+  computed: {
+		filteredList: function(){
+			return this.vendors.filter((vendor) => {
+				return vendor.name.match(this.search)
+				//return order.type.toLowerCase().indexOf(this.search.toLowerCase()) > -1
+			})
+		}
+	}
 }
 
 </script>
@@ -78,10 +90,6 @@ export default {
 <style scoped>
 *{
   font-size: 14px ;  
-}
-.cardPrint{
-  border-radius: 20px;
-  border: 2px solid rgba(223, 133, 49, 0.796);
 }
 .card-cooming-soon {
   position: relative;
@@ -95,46 +103,11 @@ export default {
   left: 15%;
   font-size: 24px;
 }
-.imagePrint{
-  min-width: 100%;
-  max-width: 100%;
-  border-radius: 10px;
-  height: 300px;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../assets/tempatPrint1.jpg");
-  background-position: center;
-}
-.namaPrint{
-  font-size: 30px !important;
-  font-weight: 600;
-  position: absolute;
-  color: #fff;
-  top: 50%;
-}
-.orient{
-  border-bottom: 0.3px solid #ddd !important;
-}
 .linked{
   text-decoration: none;
 }
-.alamatPrint{
-  max-height: 40px;
-  overflow: auto;
-}
-.status{
-  line-height: 3;
-}
 .fade {
   background-color: #080808ad !important;
-}
-.modal-badge {
-  margin-top: 0 !important;
-  height: 25px !important;
-}
-.modal-content{
-  background-color: #f0f0f0 !important;
-  z-index: 9999999;
 }
 .card:hover{
   transform: scale(1.001);
@@ -143,6 +116,10 @@ export default {
 }
 .card img{
   width:100%;
+}
+.searchbar {
+  border-radius: 20px;
+  border-color: #0065C2;
 }
 
 </style>

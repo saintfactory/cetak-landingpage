@@ -25,4 +25,5 @@ firebase.auth().onAuthStateChanged(() => {
   }
 })
 
+Vue.config.performance = true
 Vue.config.productionTip = false

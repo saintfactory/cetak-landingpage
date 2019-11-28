@@ -9,7 +9,7 @@
       <div class="list-group list-group-flush">
           <section class="mt-3">
             <!-- <a><router-link class="list-group-item list-group-item-action" to='/profile-customer' ><i class="fas fa-user icon"></i> Profil</router-link></a> -->
-            <a><router-link class="list-group-item list-group-item-action" to='/pesanan-customer'><i class="fas fa-clone icon"></i> Pilih Vendor</router-link></a>
+            <a><router-link class="list-group-item list-group-item-action" to='/pilih-vendor'><i class="fas fa-clone icon"></i> Pilih Vendor</router-link></a>
             <a><router-link class="list-group-item list-group-item-action" to='/login'><i class="fas fa-question icon"></i> Bantuan</router-link></a>
             <!-- <a><router-link class="list-group-item list-group-item-action" to='/history-customer'><i class="fas fa-history icon"></i> Sejarah Pesanan</router-link></a> -->
           </section>
@@ -95,11 +95,6 @@ export default {
 .icon{
     min-width: 40px;
 }
-.username{
-    line-height: 4;
-    font-size: 14px;
-    font-weight: 800;
-}
 .list-group-item{
     font-size: 14px;
     border-color: transparent !important;
@@ -115,10 +110,6 @@ export default {
     -moz-transition: background-color 035s !important;
     -o-transition: background-color 0.3s !important;
     transition: background-color 0.3s !important;
-}
-.menus{
-    border-bottom: 0.5px solid rgba(255, 255, 255, 0.966) !important;
-    padding: 10px 0 10px;
 }
 #sidebar-wrapper .list-group {
   width: 17rem;
