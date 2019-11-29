@@ -19,15 +19,15 @@
 
             <div class="row m-3 mt-5">
                 <a href="https://www.instagram.com/cetakkid.official/">
-                    <img class="img-tumbs" src="../../assets/img/instagram.png" alt="instagram">
+                    <img class="img-tumbs" src="../../assets/img/instagram.svg" alt="instagram">
                 </a>
                 <a href="https://www.linkedin.com/company/cetakk-id/">
-                    <img class="img-tumbs" src="../../assets/img/linkedin.png" alt="instagram">
+                    <img class="img-tumbs" src="../../assets/img/linkedin.svg" alt="instagram">
                 </a>
             </div>
         </div>
         <div class="col-md-6 m-3">
-            <img src="../../assets/home-paid.png" alt="Tentang Kami" class="img-about" >
+            <img src="../../assets/img/home-paid.svg" alt="Tentang Kami" class="img-about" >
         </div>  
     </div>
     

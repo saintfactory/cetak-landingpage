@@ -126,13 +126,30 @@
                     </table>
                 </div>
 
+                <!-- Daftar Harga Jasa Antar	 -->
+                <a href="#delivery" data-toggle="collapse" aria-expanded="false" aria-controls="delivery" class="btn btn-primary text-center mx-auto my-2 d-block w-25">Cek Harga Jasa Antar</a>
+                <table class="table table-hover table-bordered table-sm text-left collapse multi-collapse" id="delivery">
+                    <thead class="">
+                        <th class="col1">Barang</th>
+                        <th class="col2">Harga/qtc</th>
+                        <th class="col3">Pesanan</th>
+                    </thead>
+
+                    <tbody v-for="item in deliveries" v-bind:key="item.id">
+                        <tr>
+                            <td class="align-baseline">{{item.etalase}}</td>
+                            <td class="align-baseline">Rp. {{item.harga}}</td>
+                            <td class="align-baseline"><input type="number" min="0" class="form-control modal-badge" placeholder="0" v-model="item.order"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <span class="font-italic text-danger text-left">*Hasil print dapat diambil 1x24 jam</span>
                 <table class="table table-hover table-bordered table-sm text-left">
                     <tr class="bg-total">
                         <td class="align-baseline font-weight-bold" colspan="2">Total Harga</td>
                         <td class="align-baseline">Rp {{ (totalHvs_blackwhite + totalHvs_color + totalHvs_fullcolor + totalIvory + totalMica +  totalArt_paper + totalHard_cover) }}</td>
                     </tr>
                 </table>
-
                 <input type="button" id="order" class="form-control button-order" data-toggle="modal" data-target="#orderModal" value="Pesan Sekarang" @click="orderNow" />
             </div>
         </div>
@@ -344,6 +361,13 @@ export default {
                     order: '' 
 				},					
 			],
+            deliveries: [
+                {
+                    etalase: 'Jl. Kaliurang KM 12 s/d KM 14,5 (2,5 Km)',
+                    harga: 5000,
+                    order: ''
+                }
+            ]
         }
     }
 }

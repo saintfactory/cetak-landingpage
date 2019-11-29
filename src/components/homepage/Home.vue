@@ -30,7 +30,7 @@
 				</a>
 			</div>
 			<div class="hero-paid col-md-6">
-				<img src="../../assets/home-paid.png" alt="">
+				<img src="../../assets/img/home-paid.svg" alt="Hero image">
 			</div>
 		</div>
 
@@ -41,7 +41,7 @@
 
 				<div class="col-md-4 text-center ">
 					<div class="col-md-12">
-						<img class="gmbr" src="../../assets/img/benefit1.png" alt="Upload Dokumen di Cetakk.id">
+						<img class="gmbr" src="../../assets/img/benefit1.svg" alt="Upload Dokumen di Cetakk.id">
 					</div>
 					<div class="col-md-12">
 						<h5 class="text center font-subhero">PILIH</h5>
@@ -54,7 +54,7 @@
 
 				<div class="col-md-4 text-center ">
 					<div class="col-md-12">
-						<img class="gmbr" src="../../assets/img/benefit2.png" alt="Upload Dokumen di Cetakkid">
+						<img class="gmbr" src="../../assets/img/benefit2.svg" alt="Upload Dokumen di Cetakkid">
 					</div>
 					<div class="col-md-12">
 						<h5 class="text center font-subhero">CETAK</h5>
@@ -67,7 +67,7 @@
 
 				<div class="col-md-4 text-center">
 					<div class="col-md-12">
-						<img class="gmbr" src="../../assets/img/benefit3.png" alt="Upload Dokumen di Cetakk.id">
+						<img class="gmbr" src="../../assets/img/benefit3.svg" alt="Upload Dokumen di Cetakk.id">
 					</div>
 					<div class="col-md-12">
 						<h5 class="text center font-subhero">AMBIL</h5>
@@ -101,10 +101,10 @@
 
 			<div class="col-md-4 p-4 medsos">
 				<a href="https://www.instagram.com/cetakkid.official/">
-                    <img class="img-tumbs" src="../../assets/img/instagramwhite.png" alt="">
+                    <img class="img-tumbs" src="../../assets/img/instagramwhite.svg" alt="Instagram Profile">
                 </a>
 				<a href="https://www.linkedin.com/company/cetakk-id/">
-                    <img class="img-tumbs" src="../../assets/img/linkedinwhite.png" alt="">
+                    <img class="img-tumbs" src="../../assets/img/linkedinwhite.svg" alt="LinkedIn Profile">
                 </a>
 			</div>
 		</div>
@@ -200,7 +200,7 @@ export default {
 	font-weight: 800;
 }
 .hero {
-    background:url('../../assets/img/vectorBg.png') no-repeat center;
+    background:url('../../assets/img/vectorBg.svg') no-repeat center;
     background-size: cover;
     min-height: 120vh;
 	background-color: rgba(255, 255, 255, 0.816);
@@ -261,7 +261,7 @@ section{
 }
 
 .footer{
-    background: url('../../assets/footer.png') no-repeat center;
+    background: url('../../assets/img/footer.svg') no-repeat center;
     background-size: cover;
     min-height: 50vh;
 	background-color: #ffffff;
@@ -321,7 +321,7 @@ section{
 		margin-bottom: 20px;
 	}	
 	.footer{
-		background: url('../../assets/footer.png') no-repeat center;
+		background: url('../../assets/img/footer.svg') no-repeat center;
 		background-size: cover;
 		min-height: 40vh;
 		background-color: #0065C2;
