@@ -1,5 +1,5 @@
 <template>
-	<div class="container-fluid">
+	<div class="container-fluid"> 
 		<loading :active.sync="isLoading" :can-cancel="true" :is-full-page="fullPage"></loading> 
 		<div class="hero cover row justify-content-md-center">
 			<div class="hero-part col-md-6 text-left">
@@ -113,7 +113,7 @@
 
 <script>
 /* eslint-disable */
-import Loading from 'vue-loading-overlay'
+const Loading = () => import('vue-loading-overlay')
 import 'vue-loading-overlay/dist/vue-loading.css'
 
 export default {
@@ -136,8 +136,7 @@ export default {
 		this.isLoading = true
 		setTimeout(() => {
 			this.isLoading = false
-		}, 3000)
-
+		}, 1000)
 		// Set the date we're counting down to
 		var countDownDate = new Date("Nov 28, 2010 01:40:00").getTime();
 

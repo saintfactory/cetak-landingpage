@@ -35,11 +35,8 @@
 
     <!-- Modal Order -->
     <div class="modal fade" id="pesan" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <PriceList />
+      <PriceList v-if="true" />
     </div>  
-
-
-    
   </div>
 </template>
 
@@ -76,16 +73,18 @@ export default {
     }
   },
   computed: {
-		// filteredList(){
-		// 	return this.vendors.filter((vendor) => {
-    //     //vendor.name.toLowerCase().includes(input.value.toLowerCase())
-    //     return vendor.name.match(this.search)
-		// 	})
-    // }
+    /*
+		filteredList(){
+			return this.vendors.filter((vendor) => {
+        //vendor.name.toLowerCase().includes(input.value.toLowerCase())
+        return vendor.name.match(this.search)
+			})
+    }
+    */
     filteredList(){
       return this.vendors.filter(vendor => {
         return vendor.name.toLowerCase().includes(this.search.toLowerCase())
-        //return vendor.name.startsWith(this.search)
+        /* return vendor.name.startsWith(this.search) */
       })
     }
 	}

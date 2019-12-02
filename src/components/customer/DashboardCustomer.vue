@@ -1,5 +1,5 @@
 <template>
-  <div class="d-flex" id="wrapper">
+  <div class="d-flex" id="wrapper"> 
     <loading :active.sync="isLoading" :can-cancel="true" :is-full-page="fullPage"></loading> 
     <!-- Sidebar -->
     <div class="text-left" id="sidebar-wrapper">
@@ -37,8 +37,8 @@
 </template>
 
 <script>
-import JQuery from 'jquery'
-import Loading from 'vue-loading-overlay'
+const JQuery = () => import('jquery')
+const Loading = () => import('vue-loading-overlay')
 import 'vue-loading-overlay/dist/vue-loading.css'
 
 export default {
@@ -53,16 +53,16 @@ export default {
 		}
 	},
   mounted(){
-		let $ = JQuery
-    $("#menu-toggle").click(function(e) {
-    e.preventDefault();
-    $("#wrapper").toggleClass("toggled");
-    });
-
     this.isLoading = true
 		setTimeout(() => {
 			this.isLoading = false
-		}, 3000)
+    }, 1000)
+    
+		let $ = JQuery
+    $("#menu-toggle").click(function(e) {
+      e.preventDefault();
+      $("#wrapper").toggleClass("toggled");
+    });
 	},
 
 }

@@ -40,19 +40,18 @@
 
 <script>
 import JQuery from 'jquery'
-import '../../firebase'
 export default {
-    name: 'Based',
-    
-    mounted(){
-	let $ = JQuery
-    $('.navbar-nav>li>a').on('click', function(){
-        $('.navbar-collapse').collapse('hide');
-    });
+    name: 'Based',   
+    async mounted(){
+        let $ = JQuery
+        
+        $('.navbar-nav>li>a').on('click', function(){
+            $('.navbar-collapse').collapse('hide');
+        });
 
-    $('.navbar-brand').on('click', function(){
-        $('.navbar-collapse').collapse('hide');
-    });
+        $('.navbar-brand').on('click', function(){
+            $('.navbar-collapse').collapse('hide');
+        });
 	},
 }
 </script>

@@ -139,7 +139,7 @@
                         <tr>
                             <td class="align-baseline">{{item.etalase}}</td>
                             <td class="align-baseline">Rp. {{item.harga}}</td>
-                            <td class="align-baseline"><input type="number" min="0" class="form-control modal-badge" placeholder="0" v-model="item.order"></td>
+                            <td class="align-baseline"><input type="number" min="0" max="1" class="form-control modal-badge" placeholder="0" v-model="item.order"></td>
                         </tr>
                     </tbody>
                 </table>
@@ -147,7 +147,7 @@
                 <table class="table table-hover table-bordered table-sm text-left">
                     <tr class="bg-total">
                         <td class="align-baseline font-weight-bold" colspan="2">Total Harga</td>
-                        <td class="align-baseline">Rp {{ (totalHvs_blackwhite + totalHvs_color + totalHvs_fullcolor + totalIvory + totalMica +  totalArt_paper + totalHard_cover) }}</td>
+                        <td class="align-baseline">Rp {{ (totalHvs_blackwhite + totalHvs_color + totalHvs_fullcolor + totalIvory + totalMica +  totalArt_paper + totalHard_cover + totalDelivery) }}</td>
                     </tr>
                 </table>
                 <input type="button" id="order" class="form-control button-order" data-toggle="modal" data-target="#orderModal" value="Pesan Sekarang" @click="orderNow" />
@@ -213,6 +213,12 @@ export default {
                 return total += item.order*item.harga; 
             },0);
         },
+
+        totalDelivery: function(){
+            return this.deliveries.reduce(function(total, item){
+                return total += item.order*item.harga;
+            },0)
+        }
     },
     methods: {
         orderNow: function() {
