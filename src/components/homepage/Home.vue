@@ -1,88 +1,73 @@
 <template>
-	<div class="container-fluid">
-		<loading :active.sync="isLoading" :can-cancel="true" :is-full-page="fullPage"></loading> 
+	<div class="">
+		<!-- <loading :active.sync="isLoading" :can-cancel="true" :is-full-page="fullPage"></loading>  -->
 		<div class="hero cover row justify-content-md-center">
 			<div class="hero-part col-md-6 text-left">
-				<h1 class="font-hero text-light mb-3">Cetak dokumen kamu sekarang
-				<br> cepat, mudah, dan dimana saja</h1>
+				<p class="font-hero text-light mb-0">Cetak dokumen kamu sekarang</p>
+				<p class="font-hero text-light mb-3">
+					<span class="text-slider-items">lebih cepat, lebih mudah,bisa dimana saja</span>
+					<strong class="text-slider"></strong>
+				</p>
+				
 				<p class="font-secondary font-weight-normal">Dikejar <span class="font-weight-bold">Deadline</span>? Tenang, ada <span class="font-weight-bold">Cetakk.Id</span></p>
-				
-				<p class="font-weight-bold text-light mt-5">Dokumen tercetak bulan ini</p>
-				<div class="row pl-3">
-					<div class="col-1 bg-light p-2 mr-2 text-center rounded shadow">
-						<span class="count" id="ribuan"></span>
-					</div>
-
-					<div class="col-1 bg-light p-2 mr-2 text-center rounded shadow">
-						<span class="count" id="ratusan"></span>
-					</div>
-					<div class="col-1 bg-light p-2 mr-2 text-center rounded shadow">
-						<span class="count" id="puluhan"></span>
-					</div>
-					<div class="col-1 bg-light p-2 text-center rounded shadow">
-						<span class="count" id="satuan"></span>
-					</div>
-				</div>
-
-				
-				<a v-on:click="getStarted" class="rounded-pill btn btn-warning mt-5">
+		
+				<a v-on:click="getStarted" class="rounded-pill btn btn-warning mt-3">
 					<router-link to='/dashboard-customer' class="btn-based btn font-weight-bold text-dark">Cetak Sekarang</router-link>
 				</a>
 			</div>
 			<div class="hero-paid col-md-6">
-				<img src="../../assets/home-paid.png" alt="">
+				<img src="../../assets/img/man.png" alt="">
 			</div>
 		</div>
 
-		<div class="usefull row justify-content-md-center mb-5">
-			<div class="col-md-12 cara">
-				<h3 class="center font-title mt-5 mb-5">Bagaimana Caranya?</h3>
+
+		<div class="usefull row justify-content-md-center p-5">
+			<div class="col-md-12 cara mb-5">
+				<p class="font-title font-weight-bold">Bagaimana Caranya?</p>
 			</div>
 
-				<div class="col-md-4 text-center ">
-					<div class="col-md-12">
+			<div class="col-md-2 col-sm-2 p-2 m-3">
+				<div class="card shadow m-1">
+					<div class="card-body text-light p-4">
 						<img class="gmbr" src="../../assets/img/benefit1.png" alt="Upload Dokumen di Cetakk.id">
-					</div>
-					<div class="col-md-12">
-						<h5 class="text center font-subhero">PILIH</h5>
-					</div>
-					<div class="col-md-12">
-						<p class="font-primary black lh-copy">Pilih vendor yang kamu mau! gunakan <br> fitur cek harga untuk memastikan estimasi harga
-						</p>
+						<p class="font-weight-bold">PILIH VENDOR</p>
+						<p class="text-desc">Pilih salah satu vendor yang tersedia</p>
 					</div>
 				</div>
-
-				<div class="col-md-4 text-center ">
-					<div class="col-md-12">
-						<img class="gmbr" src="../../assets/img/benefit2.png" alt="Upload Dokumen di Cetakkid">
-					</div>
-					<div class="col-md-12">
-						<h5 class="text center font-subhero">CETAK</h5>
-					</div>
-					<div class="col-md-12">
-						<p class="font-primary black lh-copy">Dokumen pesanan Anda akan <br> dicetak oleh vendor pilihan Anda
-						</p>
+			</div>
+			<div class="col-md-2 col-sm-2 p-2 m-3">
+				<div class="card shadow m-1">
+					<div class="card-body text-light p-4">
+						<img class="gmbr" src="../../assets/img/benefit1.png" alt="Upload Dokumen di Cetakk.id">
+						<p class="font-weight-bold">CEK HARGA</p>
+						<p class="text-desc">Gunakan fitur cek harga untuk memastikan estimasi harga</p>
 					</div>
 				</div>
-
-				<div class="col-md-4 text-center">
-					<div class="col-md-12">
+			</div>
+			<div class="col-md-2 col-sm-2 p-2 m-3">
+				<div class="card shadow m-1">
+					<div class="card-body text-light p-4">
+						<img class="gmbr" src="../../assets/img/benefit2.png" alt="Upload Dokumen di Cetakk.id">
+						<p class="font-weight-bold">KIRIM FILE</p>
+						<p class="text-desc">Dokumen pesanan Anda akan dicetak oleh vendor pilihan Anda</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-2 col-sm-2 p-2 m-3">
+				<div class="card shadow m-1">
+					<div class="card-body text-light p-4">
 						<img class="gmbr" src="../../assets/img/benefit3.png" alt="Upload Dokumen di Cetakk.id">
-					</div>
-					<div class="col-md-12">
-						<h5 class="text center font-subhero">AMBIL</h5>
-					</div>
-					<div class="col-md-12 text-center">
-						<p class="font-primary black lh-copy">Ambil hasil dokumen di lokasi  <br> vendor dan lakukan pembayaran
-						</p>
+						<p class="font-weight-bold">AMBIL PESANAN</p>
+						<p class="text-desc">Ambil hasil dokumen di lokasi vendor dan lakukan pembayaran</p>
 					</div>
 				</div>
+			</div>
 
 		</div>
 
 		<div class="footer cover row justify-content-md-center ">
 			<div class="col-sm-12 part-foot">
-				<h1 class="font-hero text-warning mb-3">100+ Dokumen</h1>
+				<h1 class="font-hero text-warning mb-3">300+ Dokumen</h1>
 				<h2 class="font-subhero text-light mb-3">Sudah berhasil dicetak</h2>
 				<p class="font-primary text-light mb-4 font-italic">Banyak pengguna semakin mudah dan cepat<br>
 						mencetak dokumen setelah menggunakan Cetakk.id
@@ -93,13 +78,13 @@
 			</div>
 		</div>
 		
-		<div class="super-foot bg-dark cover row justify-content-md-center copyrights">
-			<div class="col-md-8 p-4">
+		<div class="super-foot bg-primary cover row justify-content-md-center copyrights p-3 pt-5">
+			<div class="col-md-5">
 				<img src="../../assets/img/LogoteksPutih.png" alt="" class="mb-3 footerCredit">
 				<p class="text-light font-primary">Copyright Cetakk.Id 2019</p>
 			</div>
 
-			<div class="col-md-4 p-4 medsos">
+			<div class="col-md-5 medsos">
 				<a href="https://www.instagram.com/cetakkid.official/">
                     <img class="img-tumbs" src="../../assets/img/instagramwhite.png" alt="">
                 </a>
@@ -113,8 +98,10 @@
 
 <script>
 /* eslint-disable */
+import JQuery from 'jquery'
 import Loading from 'vue-loading-overlay'
 import 'vue-loading-overlay/dist/vue-loading.css'
+import Typed from '../../assets/typed/typed.min.js'
 
 export default {
 	name: 'Home',
@@ -133,59 +120,46 @@ export default {
 		}
 	},
 	mounted() {
+		let $ = JQuery
 		this.isLoading = true
 		setTimeout(() => {
 			this.isLoading = false
 		}, 3000)
 
-		// Set the date we're counting down to
-		var countDownDate = new Date("Nov 28, 2010 01:40:00").getTime();
-
-		// Update the count down every 1 second
-		var x = setInterval(function() {
-
-		// Get today's date and time
-		var now = new Date().getTime();
-			
-		// Find the distance between now and the count down date
-		var t = countDownDate + now;
-
-		// var t = Date.parse(endtime) - Date.parse(new Date());
-			
-		// Time calculations for days, hours, minutes and seconds
-		// var ribuan = Math.floor((distance % (10 * 10 * 10 * 10 * 10)) / (10 * 10 * 10 * 10));
-		// var ratusan = Math.floor((distance % (100000 * 10 * 10 * 10)) / (100000 * 10 * 10));
-		// var puluhan = Math.floor((distance % (100000 * 10 * 10)) / (100000 * 10));
-		// var satuan = Math.floor((distance % (100000 * 10)) / 100000);
-		
-		var satuan = Math.floor((t / 176190790) % 10);
-		var puluhan = Math.floor((t / 176190790 / 10) % 10);
-		var ratusan = Math.floor((t / (176190790 * 10 * 10)) % 10);
-		var ribuan = Math.floor(t / (176190790 * 10 * 10 * 10));
-
-		// Output the result in an element with id="demo"
-		document.getElementById("ribuan").innerHTML = 0;
-		document.getElementById("ratusan").innerHTML = ratusan;
-		document.getElementById("puluhan").innerHTML = puluhan;
-		document.getElementById("satuan").innerHTML = satuan;
-
-		
-		}, 1000);
+		if ($('.text-slider').length == 1) {
+			var typed_strings = $('.text-slider-items').text();
+				var typed = new Typed('.text-slider', {
+					strings: typed_strings.split(','),
+					typeSpeed: 80,
+					loop: true,
+					backDelay: 1100,
+					backSpeed: 30
+				});
+			}
 	}
 }
 </script>
 
 <style scoped>
 .font-hero{
-    font-weight: 700;
-    font-size: 32px;
+    font-weight: 700 !important;
+    font-size: 35px;
+}
+strong{
+	font-weight: 700 !important
 }
 .font-subhero{
-    font-weight: 700;
+    font-weight: 900 !important;
     font-size: 25px;
 }
 .font-title{
     font-size: 30px;
+}
+.text-desc{
+	font-size: 12px;
+}
+.text-slider-items{
+	display: none
 }
 .font-secondary{
     font-weight: 500;
@@ -203,25 +177,54 @@ export default {
     background:url('../../assets/img/vectorBg.png') no-repeat center;
     background-size: cover;
     min-height: 120vh;
-	background-color: rgba(255, 255, 255, 0.816);
 	background-position-y: -10vh;
 	padding-top: 15vh;
 }
 .hero-part{
-    padding: 100px;
+	padding: 100px;
+	animation: fadein 2s;
+    -moz-animation: fadein 2s; /* Firefox */
+    -webkit-animation: fadein 2s; /* Safari and Chrome */
+    -o-animation: fadein 2s; /* Opera */
 }
-/* .hero-paid{
-	background: url('../../assets/home-paid.png') no-repeat;
-} */
+
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-moz-keyframes fadein { /* Firefox */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-webkit-keyframes fadein { /* Safari and Chrome */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-o-keyframes fadein { /* Opera */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity: 1;
+    }
+}
 
 .hero-paid img{
-	width: 100%;
-	padding: 6rem 5rem 0 5rem;
+	width: 45rem;
 }
 
-section{
-    margin-top: 10vh
-}
 .home-image{
     min-width: 70%
 }
@@ -243,15 +246,20 @@ section{
 }
 
 .gmbr{
-	min-height: 240px;
-    max-height: 240px;
-    max-width: 100%;
-	margin-bottom: 40px;
+	min-height: 150px;
+	max-height: 150px;
+	max-width: 100%;
+	padding: 20px
 }
 
-.gmbr:hover{
-	transition: transform .5s !important;
-	transform: scale(1.1) !important
+.card{
+	background-color: #0D7BE5;
+	border-radius: 10px;
+	min-height: 310px;
+}
+.card:hover{
+	transition: transform .6s !important;
+	transform: scale(1.01) !important;
 }
 
 .font-smaller:hover{
@@ -261,14 +269,14 @@ section{
 }
 
 .footer{
-    background: url('../../assets/footer.png') no-repeat center;
+    background: url('../../assets/img/footer.png') no-repeat center;
     background-size: cover;
-    min-height: 50vh;
-	background-color: #ffffff;
-	background-position-y: 20px;
+    min-height: 60vh;
+	min-width: 100%;
+	background-position-y: 10px;
 }
 .part-foot{
-    margin-top: 100px;
+    padding-top: 200px;
 }
 
 .super-foot{
@@ -301,11 +309,11 @@ section{
 @media (max-width: 900px) {
 	.font-hero{
 		font-weight: 700;
-		font-size: 20px;
+		font-size: 40px;
 	}
 	.hero{
 		padding-top: 100px;
-		min-height: 70vh;
+		min-height: 40em;
 		background-position-y: 0vh;
 	}
 	.hero-part{
@@ -315,16 +323,18 @@ section{
 		display: none
 	}
 	.gmbr{
-		min-height: 180px;
-		max-height: 180px;
+		min-height: 120px;
+		max-height: 120px;
 		max-width: 100%;
-		margin-bottom: 20px;
 	}	
 	.footer{
 		background: url('../../assets/footer.png') no-repeat center;
 		background-size: cover;
+		background-position-x: -280px;
 		min-height: 40vh;
-		background-color: #0065C2;
+	}
+	.part-foot{
+    	padding-top: 100px;
 	}
 	.copyrights{
 		text-align: center !important;
@@ -334,6 +344,9 @@ section{
 	.medsos{
 		text-align: center !important;
 		padding-top: 0px !important
+	}
+	.card{
+		min-height: 200px;
 	}
 
 }
