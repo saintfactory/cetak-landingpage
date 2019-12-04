@@ -8,28 +8,23 @@ body {
     padding: 0px;
     height: 100%;
     font-size: 14px;
-    background-color: rgb(226, 247, 255) !important;
 }
-
-/* width */
+/* 
 ::-webkit-scrollbar {
     width: 5px;
   }
   
-  /* Track */
   ::-webkit-scrollbar-track {
     background: #f1f1f1; 
   }
    
-  /* Handle */
   ::-webkit-scrollbar-thumb {
     background: #ffc502; 
   }
   
-  /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
     background: #e7b100; 
-  }
+  } */
 
 
 
@@ -71,16 +66,6 @@ body {
 
 /* =========================================================================== */
 
-.usefull{
-    min-height: 500px;
-}
-.cara{
-    height: 10% !important;
-}
-.batch{
-    height: 90% !important;
-    padding-top: 50px;
-}
 
 .contact-person {
     background: #535461;
