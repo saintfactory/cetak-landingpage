@@ -1,29 +1,25 @@
+/* eslint-disable */
+
 import Vue from 'vue'
-import App from './App.vue'
-import router from './router'
+const App = () => import('./App.vue')
+import { createRouter } from './router'
 import 'bootstrap'
 import './assets/fonts/all.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'vuefire'
-// import * as Sentry from '@sentry/browser';
-// import * as Integrations from '@sentry/integrations';
-import firebase from 'firebase'
 
-// Sentry.init({
-//   dsn: 'https://353b98443b6b49fc88022fd374ef9155@sentry.io/1727578',
-//   integrations: [new Integrations.Vue({Vue, attachProps: true})],
-// });
-
-let app = ''
-
-firebase.auth().onAuthStateChanged(() => {
-  if(!app) {
-    app = new Vue({
-      render: h => h(App),
-      router
-    }).$mount('#app')
-  }
-})
+const router = createRouter()
+const prod = process.env.NODE_ENV === 'production'
+const shouldSW = 'serviceWorker' in navigator && prod
+if (shouldSW) {
+  navigator.serviceWorker.register('/service-worker.js').then(() => {
+    console.log("Service Worker Registered!")
+  })
+}
+new Vue({
+  render: h => h(App),
+  router
+}).$mount('#app')
 
 Vue.config.performance = true
 Vue.config.productionTip = false

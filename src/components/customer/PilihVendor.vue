@@ -2,7 +2,7 @@
   <div class="pilihVendor">
     <div class="row p-5">
       <div class="col-md-12">
-        <input type="text" class="d-block form-control searchbar rounded-pill" placeholder="Cari Vendor ..." v-model="search" />
+        <input type="text" class="d-block form-control searchbar rounded-pill" placeholder="Cari Vendor ..." v-model="search" id="search" />
       </div>
     </div>
     <div class="row pr-5 pl-5 text-left" v-for="vendor in filteredList" :key="vendor.id">
@@ -12,8 +12,9 @@
               <img src="../../assets/keylacopier.jpeg" alt="Photo of sunset">
             </div>
             <div class="card-body p-2">
-              <h3>{{ vendor.name }}</h3>
+              <h3 class="font-weight-bold">{{ vendor.name }}</h3>
               <p class="describer">{{ vendor.address }}</p> 
+              <p>Buka pukul <span class="text-info">{{ vendor.openOrder }}</span></p>
             </div>
 
             <div class="card-footer p-2">
@@ -25,7 +26,7 @@
       <div class="col-md-3 col-sm-6 mb-2" v-for="vendor in Coming_soons" :key="vendor.id">
         <div class="card card-block card-Coming-soon">
           <div class="card-body p-2">
-            <img :src="vendor.imgLink" alt="Coming Soon" class="mt-4" style="opacity: 0.2;">
+            <img src="../../assets/img/coming-soon.svg" alt="Coming Soon" class="mt-4" style="opacity: 0.2;">
             <h2 class="font-weight-bold text-center caption-Coming-soon">{{ vendor.name }}</h2>
           </div>
         </div>
@@ -34,11 +35,8 @@
 
     <!-- Modal Order -->
     <div class="modal fade" id="pesan" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <PriceList />
+      <PriceList v-if="true" />
     </div>  
-
-
-    
   </div>
 </template>
 
@@ -57,33 +55,38 @@ export default {
           id: 1,
           name: 'Keylacopier • Owner',
           address: 'Jl. Kaliurang KM.13 Besi, Sukoharjo, Ngaglik, Sleman',
-          imgLink: 'https://static.pexels.com/photos/7096/people-woman-coffee-meeting.jpg',
+          openOrder: '07.00 - 23.00 WIB',
           orderLink: 'https://s.id/vendor1'
         },
       ],
       Coming_soons: [
         {
           name: 'Coming Soon',
-          imgLink: 'https://assets-ouch.icons8.com/preview/149/9566f952-eae4-4d7f-ae5d-5d20728d817e.png'
         },
         {
           name: 'Coming Soon',
-          imgLink: 'https://assets-ouch.icons8.com/preview/149/9566f952-eae4-4d7f-ae5d-5d20728d817e.png'
         },
         {
           name: 'Coming Soon',
-          imgLink: 'https://assets-ouch.icons8.com/preview/149/9566f952-eae4-4d7f-ae5d-5d20728d817e.png'
         }
       ]
     }
   },
   computed: {
-		filteredList: function(){
+    /*
+		filteredList(){
 			return this.vendors.filter((vendor) => {
-				return vendor.name.match(this.search)
-				//return order.type.toLowerCase().indexOf(this.search.toLowerCase()) > -1
+        //vendor.name.toLowerCase().includes(input.value.toLowerCase())
+        return vendor.name.match(this.search)
 			})
-		}
+    }
+    */
+    filteredList(){
+      return this.vendors.filter(vendor => {
+        return vendor.name.toLowerCase().includes(this.search.toLowerCase())
+        /* return vendor.name.startsWith(this.search) */
+      })
+    }
 	}
 }
 

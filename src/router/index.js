@@ -1,73 +1,81 @@
 /* eslint-disable */
 import Vue from 'vue'
+/* const Router = () => import('vue-router') */
 import Router from 'vue-router'
+const Based = () => import(/* webpackChunkName: "based" */ '@/components/layouter/Based')
 
-import Based from '@/components/layouter/Based'
+const Home = () => import(/* webpackChunkName: "home" */ '@/components/homepage/Home.vue')
+const TentangKami = () => import(/* webpackChunkName: "tentang-kami" */ '@/components/homepage/TentangKami.vue')
+const CaraPrint = () => import(/* webpackChunkName: "cara-print" */ '@/components/homepage/CaraPrint.vue')
+const NotFound = () => import(/* webpackChunkName: "page-not-found" */ '@/components/PageNotFound.vue')
 
-import Home from '@/components/homepage/Home'
-import TentangKami from '@/components/homepage/TentangKami'
-import CaraPrint from '@/components/homepage/CaraPrint'
-import NotFound from '@/components/PageNotFound'
-
-import DashboardCustomer from '@/components/customer/DashboardCustomer'
-import PilihVendor from '@/components/customer/PilihVendor'
+/* import DashboardCustomer from '@/components/customer/DashboardCustomer' */
+const PilihVendor = () => import(/* webpackChunkName: "pilih-vendor" */ '@/components/customer/PilihVendor')
 
 Vue.use(Router)
 
-const router = new Router({
-  mode: 'history',
-  routes: [
-    {
-      path: '*',
-      redirect: '/page-not-found'
-    },
-    {
-      path: '/page-not-found',
-      component: NotFound
-    },
-    { 
-      path: '/', 
-      name: 'based',
-      component: Based,
-      children: [
+export function createRouter(){
+  return new Router({
+    mode: 'history',
+    routes: [
+      {
+        path: '*',
+        redirect: '/page-not-found'
+      },
+      {
+        path: '/page-not-found',
+        component: NotFound,
+        name: 'page-not-found'
+      },
+      { 
+        path: '/', 
+        name: 'based',
+        component: Based,
+        children: [
+            {
+                path: '',
+                component: Home,
+                name: 'home'
+            },
+            {
+                path: '/home',
+                component: Home,
+                name: 'home'
+            },
+            { 
+                path: '/tentang', 
+                component: TentangKami,
+                name: 'tentang-kami' 
+            },
+            { 
+                path: '/cara', 
+                component: CaraPrint,
+                name: 'cara-print' 
+            },
+            { 
+              path: '/dashboard-customer', 
+              component: PilihVendor,
+              name: 'pilih-vendor'
+            },
+        ]
+      },
+      /*
+      {
+        path: '/dashboard-customer',
+        name: 'DashboardCustomer',
+        component: DashboardCustomer,
+        children: [
           {
-              path: '',
-              component: Home
-          },
-          {
-              path: '/home',
-              component: Home
-          },
-          { 
-              path: '/tentang', 
-              component: TentangKami 
-          },
-          { 
-              path: '/cara', 
-              component: CaraPrint 
-          },
-          { 
-            path: '/dashboard-customer', 
+            path: '',
             component: PilihVendor
           },
-      ]
-    },
-    // {
-    //   path: '/dashboard-customer',
-    //   name: 'DashboardCustomer',
-    //   component: DashboardCustomer,
-    //   children: [
-    //     {
-    //       path: '',
-    //       component: PilihVendor
-    //     },
-    //     {
-    //       path: '/pilih-vendor',
-    //       component: PilihVendor
-    //     }
-    //   ]
-    // },
-  ]
-})
-
-export default router
+          {
+            path: '/pilih-vendor',
+            component: PilihVendor
+          }
+        ]
+      }, 
+      */
+    ]
+  })
+}

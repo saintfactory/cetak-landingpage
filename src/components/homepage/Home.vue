@@ -1,6 +1,11 @@
 <template>
+<<<<<<< HEAD
 	<div class="container-fluid">
 		<!-- <loading :active.sync="isLoading" :can-cancel="true" :is-full-page="fullPage"></loading>  -->
+=======
+	<div class="container-fluid"> 
+		<loading :active.sync="isLoading" :can-cancel="true" :is-full-page="fullPage"></loading> 
+>>>>>>> beta-v1
 		<div class="hero cover row justify-content-md-center">
 			<div class="hero-part col-md-5 text-left">
 				<p class="font-hero text-light mb-0">Cetak dokumen kamu,</p>
@@ -19,8 +24,13 @@
 					<router-link to='/dashboard-customer' class="btn-based btn font-weight-bold text-dark">Cetak Sekarang</router-link>
 				</a>
 			</div>
+<<<<<<< HEAD
 			<div class="hero-paid col-md-7">
 				<img src="../../assets/img/homePaid.svg" alt="">
+=======
+			<div class="hero-paid col-md-6">
+				<img src="../../assets/img/home-paid.svg" alt="Hero image">
+>>>>>>> beta-v1
 			</div>
 		</div>
 
@@ -29,6 +39,7 @@
 				<p class="font-title font-weight-bold">Proses Dokumen Anda Sendiri</p>
 				<hr>
 			</div>
+<<<<<<< HEAD
 			<div class="row justify-content-md-center cardList">
 					<div class="col-md-3 col-sm-6 carder">
 						<div class="card shadow m-2">
@@ -38,6 +49,12 @@
 								<p class="text-desc">Pilih salah satu vendor yang tersedia</p>
 							</div>
 						</div>
+=======
+
+				<div class="col-md-4 text-center ">
+					<div class="col-md-12">
+						<img class="gmbr" src="../../assets/img/benefit1.svg" alt="Upload Dokumen di Cetakk.id">
+>>>>>>> beta-v1
 					</div>
 					<div class="col-md-3 col-sm-6 carder">
 						<div class="card shadow m-2">
@@ -57,6 +74,7 @@
 							</div>
 						</div>
 					</div>
+<<<<<<< HEAD
 					<div class="col-md-3 col-sm-6 carder">
 						<div class="card shadow m-2">
 							<div class="card-body text-light p-4">
@@ -65,6 +83,13 @@
 								<p class="text-desc">Ambil hasil dokumen di lokasi vendor dan lakukan pembayaran</p>
 							</div>
 						</div>
+=======
+				</div>
+
+				<div class="col-md-4 text-center ">
+					<div class="col-md-12">
+						<img class="gmbr" src="../../assets/img/benefit2.svg" alt="Upload Dokumen di Cetakkid">
+>>>>>>> beta-v1
 					</div>
 			</div>
 		</div>
@@ -81,8 +106,12 @@
 				</div>
 				<div class="col-md-6 text-left">
 					<div class="col-md-12">
+<<<<<<< HEAD
 						<p>Kamu dapat mencetak seluruh dokumenmu menggunakan platform kami. 
 							Dengan segala kemudahan yang diberikan, Anda dapat menyelesaikan aktifitas lainnya ! </p>
+=======
+						<img class="gmbr" src="../../assets/img/benefit3.svg" alt="Upload Dokumen di Cetakk.id">
+>>>>>>> beta-v1
 					</div>
 					<div class="col-md-10">
 						<p class="m-0"><i class="fas fa-check-circle mr-2 text-success"></i> Pilihan vendor yang beragam</p>
@@ -107,6 +136,28 @@
 				<p class="font-primary text-light mb-4 font-italic">Banyak pengguna semakin mudah dan cepat<br>
 						mencetak dokumen setelah menggunakan Cetakk.id
 				</p>
+<<<<<<< HEAD
+=======
+				<a v-on:click="getStarted" class="rounded-pill btn-outline-warning btn mt-3 mb-5">
+					<router-link to='/dashboard-customer' class="btn text-button font-weight-bold text-white">Cetak Sekarang</router-link>
+				</a>
+			</div>
+		</div>
+		
+		<div class="super-foot bg-dark cover row justify-content-md-center copyrights">
+			<div class="col-md-8 p-4">
+				<img src="../../assets/img/LogoteksPutih.png" alt="" class="mb-3 footerCredit">
+				<p class="text-light font-primary">Copyright Cetakk.Id 2019</p>
+			</div>
+
+			<div class="col-md-4 p-4 medsos">
+				<a href="https://www.instagram.com/cetakkid.official/">
+                    <img class="img-tumbs" src="../../assets/img/instagramwhite.svg" alt="Instagram Profile">
+                </a>
+				<a href="https://www.linkedin.com/company/cetakk-id/">
+                    <img class="img-tumbs" src="../../assets/img/linkedinwhite.svg" alt="LinkedIn Profile">
+                </a>
+>>>>>>> beta-v1
 			</div>
 		</div>
 	</div>
@@ -114,8 +165,12 @@
 
 <script>
 /* eslint-disable */
+<<<<<<< HEAD
 import JQuery from 'jquery'
 import Loading from 'vue-loading-overlay'
+=======
+const Loading = () => import('vue-loading-overlay')
+>>>>>>> beta-v1
 import 'vue-loading-overlay/dist/vue-loading.css'
 import Typed from '../../assets/typed/typed.min.js'
 
@@ -140,6 +195,7 @@ export default {
 		this.isLoading = true
 		setTimeout(() => {
 			this.isLoading = false
+<<<<<<< HEAD
 		}, 3000)
 
 		if ($('.text-slider').length == 1) {
@@ -152,6 +208,42 @@ export default {
 					backSpeed: 30
 				});
 			}
+=======
+		}, 1000)
+		// Set the date we're counting down to
+		var countDownDate = new Date("Nov 28, 2010 01:40:00").getTime();
+
+		// Update the count down every 1 second
+		var x = setInterval(function() {
+
+		// Get today's date and time
+		var now = new Date().getTime();
+			
+		// Find the distance between now and the count down date
+		var t = countDownDate + now;
+
+		// var t = Date.parse(endtime) - Date.parse(new Date());
+			
+		// Time calculations for days, hours, minutes and seconds
+		// var ribuan = Math.floor((distance % (10 * 10 * 10 * 10 * 10)) / (10 * 10 * 10 * 10));
+		// var ratusan = Math.floor((distance % (100000 * 10 * 10 * 10)) / (100000 * 10 * 10));
+		// var puluhan = Math.floor((distance % (100000 * 10 * 10)) / (100000 * 10));
+		// var satuan = Math.floor((distance % (100000 * 10)) / 100000);
+		
+		var satuan = Math.floor((t / 176190790) % 10);
+		var puluhan = Math.floor((t / 176190790 / 10) % 10);
+		var ratusan = Math.floor((t / (176190790 * 10 * 10)) % 10);
+		var ribuan = Math.floor(t / (176190790 * 10 * 10 * 10));
+
+		// Output the result in an element with id="demo"
+		document.getElementById("ribuan").innerHTML = 0;
+		document.getElementById("ratusan").innerHTML = ratusan;
+		document.getElementById("puluhan").innerHTML = puluhan;
+		document.getElementById("satuan").innerHTML = satuan;
+
+		
+		}, 1000);
+>>>>>>> beta-v1
 	}
 }
 </script>
@@ -187,7 +279,11 @@ strong{
 }
 
 .hero {
+<<<<<<< HEAD
     /* background:url('../../assets/img/vectorBg.png') no-repeat center; */
+=======
+    background:url('../../assets/img/vectorBg.svg') no-repeat center;
+>>>>>>> beta-v1
     background-size: cover;
     min-height: 50rem;
 	background-color: #0D7BE5;
@@ -347,6 +443,7 @@ hr{
 	.hero-paid{
 		display: none;
 	}
+<<<<<<< HEAD
 	.use-part {
 		height: 90rem;
 		padding: 30px 0rem 0 0rem;
@@ -380,6 +477,19 @@ hr{
 		width: 100px;
 		background: #F4BE0B;
 		border-radius: 50px;
+=======
+	.gmbr{
+		min-height: 180px;
+		max-height: 180px;
+		max-width: 100%;
+		margin-bottom: 20px;
+	}	
+	.footer{
+		background: url('../../assets/img/footer.svg') no-repeat center;
+		background-size: cover;
+		min-height: 40vh;
+		background-color: #0065C2;
+>>>>>>> beta-v1
 	}
 
 	.btn-outline-warning{
