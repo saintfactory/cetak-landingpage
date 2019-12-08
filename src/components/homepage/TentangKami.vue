@@ -68,25 +68,10 @@
             </div>
             <div class="col-md-12 text-left">
 
-<<<<<<< HEAD
             </div>
         </div>
 
         
-=======
-            <div class="row m-3 mt-5">
-                <a href="https://www.instagram.com/cetakkid.official/">
-                    <img class="img-tumbs" src="../../assets/img/instagram.svg" alt="instagram">
-                </a>
-                <a href="https://www.linkedin.com/company/cetakk-id/">
-                    <img class="img-tumbs" src="../../assets/img/linkedin.svg" alt="instagram">
-                </a>
-            </div>
-        </div>
-        <div class="col-md-6 m-3">
-            <img src="../../assets/img/home-paid.svg" alt="Tentang Kami" class="img-about" >
-        </div>  
->>>>>>> beta-v1
     </div>
 
     <div class="row partisipasi" id="fitur">
