@@ -17,7 +17,7 @@
                         <a class="closer"><router-link to="" class="nav-link menus-expand text-light"><i class="fas fa-times-circle"></i></router-link></a>
                     </li>
                     <li class="nav-item">
-                        <a><router-link to="/home" class="rounded-pill nav-link menus-expand text-light">Halaman Utama</router-link></a>
+                        <a class="homepage"><router-link to="/home" class="rounded-pill nav-link menus-expand text-light">Halaman Utama</router-link></a>
                     </li>
                     <li class="nav-item">
                         <a><router-link to="/cara" class="rounded-pill nav-link menus-expand text-light">Cara Kerja</router-link></a>
@@ -45,18 +45,18 @@
 					<img src="../../assets/img/LogoteksPutih.png" alt="" class="mb-3 footerCredit">
 					<h6>Hubungi Kami</h6>
 					<ul class="footer-links">
-                        <li><i class="fas fa-home mr-2"></i> <a href="">Jl.Kaliurang, Km.14, Umbulmartani, Ngemplak, Sleman</a></li>
-                        <li><i class="fas fa-phone mr-2"></i> <a href="">9103124891</a></li>
+            <li><i class="fas fa-home mr-2"></i> <a href="">Jl.Kaliurang, Km.14, Umbulmartani, Ngemplak, Sleman</a></li>
+            <li><i class="fas fa-phone mr-2"></i> <a href="">9103124891</a></li>
 					</ul>
 				</div>
 
 				<div class="col-xs-6 col-md-3">
 					<h6>Navigasi</h6>
 					<ul class="footer-links">
-                        <li><a><router-link to="/home">Halaman Utama</router-link></a></li>
-                        <li><a><router-link to="/cara">Cara Kerja</router-link></a></li>
-                        <li><a><router-link to="/tentang">Tentang Kami</router-link></a></li>
-                        <li><a><router-link to="/dashboard-customer">Mulai Cetak</router-link></a></li>
+            <li><a><router-link to="/home">Halaman Utama</router-link></a></li>
+            <li><a><router-link to="/cara">Cara Kerja</router-link></a></li>
+            <li><a><router-link to="/tentang">Tentang Kami</router-link></a></li>
+            <li><a><router-link to="/dashboard-customer">Mulai Cetak</router-link></a></li>
                         
 					</ul>
 				</div>
@@ -65,10 +65,10 @@
 					<h6>Ikuti Kami</h6>
 					<ul class="footer-links">
 						<li>
-                            <a href="https://www.instagram.com/cetakkid.official/"><img class="img-tumbs" src="../../assets/img/instagramwhite.png" alt=""></a>
-                            <a href="https://www.linkedin.com/company/cetakk-id/"><img class="img-tumbs" src="../../assets/img/linkedinwhite.png" alt=""></a>
-                        </li>
-                    </ul>
+                <a href="https://www.instagram.com/cetakkid.official/"><img class="img-tumbs" src="../../assets/img/instagramwhite.png" alt=""></a>
+                <a href="https://www.linkedin.com/company/cetakk-id/"><img class="img-tumbs" src="../../assets/img/linkedinwhite.png" alt=""></a>
+            </li>
+          </ul>
 				</div>
 				</div>
 				<hr>
@@ -92,15 +92,19 @@
 import JQuery from 'jquery'
 import '../../firebase'
 export default {
-    name: 'Based',
+  name: 'Based',
     
-    mounted(){
+  mounted(){
 	let $ = JQuery
     $('.navbar-nav>li>a').on('click', function(){
         $('.navbar-collapse').collapse('hide');
     });
 
     $('.navbar-brand').on('click', function(){
+        $('.navbar-collapse').collapse('hide');
+    });
+
+    $('.homepage').on('click', function(){
         $('.navbar-collapse').collapse('hide');
     });
 	},
@@ -140,6 +144,9 @@ export default {
     /* transition: transform .2s !important;
     transform: scale(1.01) !important; */
     font-weight: 600 !important;
+}
+.homepage{
+  display: none;
 }
 .closer{
     display: none;
@@ -185,6 +192,9 @@ export default {
         display: block;
         color: azure;
     }
+    .homepage{
+      display: block;
+    }
     .navbar-collapse .nav-item .nav-link{
         border: 2px solid #dddddd39;
         border-radius: 10px;
@@ -212,7 +222,9 @@ export default {
         left: 0;
         overflow: hidden;
     }
-
+    .homepage{
+      display: block;
+    }
     .navbar-collapse .close{
         color: azure;
         display: block !important;
@@ -231,9 +243,6 @@ export default {
         background-color: transparent;
     }
 }
-
-
-
 
 .site-footer
 {

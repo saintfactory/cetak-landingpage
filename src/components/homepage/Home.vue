@@ -9,7 +9,7 @@
 					<strong class="text-slider"></strong>
 				</p>
 				
-				<p class="text-light mb-2">Cetakk.id memudahkan anda untuk melakukan percetakan <br>
+				<p class="text-light mb-2">Cetakk.id memudahkan anda untuk melakukan percetakan
 					dengan vendor pilihan Anda ! Saat ini kami hadir di Yogyakarta. <br>
 					Dikejar <span class="font-weight-bold">Deadline?</span>
 					Tenang, ada <span class="font-weight-bold">Cetakk.id</span>
@@ -29,43 +29,43 @@
 				<p class="font-title font-weight-bold">Proses Dokumen Anda Sendiri</p>
 				<hr>
 			</div>
-			<div class="row col-10 p-0 cardList">
-				<div class="col-md-3 carder">
-					<div class="card shadow m-1">
-						<div class="card-body text-light p-4">
-							<img class="gmbr" src="../../assets/img/benefit1.png" alt="Upload Dokumen di Cetakk.id">
-						<p class="font-weight-bold">PILIH VENDOR</p>
-							<p class="text-desc">Pilih salah satu vendor yang tersedia</p>
+			<div class="row justify-content-md-center cardList">
+					<div class="col-md-3 col-sm-6 carder">
+						<div class="card shadow m-2">
+							<div class="card-body text-light p-4">
+								<img class="gmbr" src="../../assets/img/benefit1.png" alt="Upload Dokumen di Cetakk.id">
+							<p class="font-weight-bold">PILIH VENDOR</p>
+								<p class="text-desc">Pilih salah satu vendor yang tersedia</p>
+							</div>
 						</div>
 					</div>
-				</div>
-				<div class="col-md-3 carder">
-					<div class="card shadow m-1">
-						<div class="card-body text-light p-4">
-							<img class="gmbr" src="../../assets/img/benefit1.png" alt="Upload Dokumen di Cetakk.id">
-							<p class="font-weight-bold">CEK HARGA</p>
-							<p class="text-desc">Gunakan fitur cek harga untuk memastikan estimasi harga</p>
+					<div class="col-md-3 col-sm-6 carder">
+						<div class="card shadow m-2">
+							<div class="card-body text-light p-4">
+								<img class="gmbr" src="../../assets/img/benefit1.png" alt="Upload Dokumen di Cetakk.id">
+								<p class="font-weight-bold">CEK HARGA</p>
+								<p class="text-desc">Gunakan fitur cek harga untuk memastikan estimasi harga</p>
+							</div>
 						</div>
 					</div>
-				</div>
-				<div class="col-md-3 carder">
-					<div class="card shadow m-1">
-						<div class="card-body text-light p-4">
-							<img class="gmbr" src="../../assets/img/benefit2.png" alt="Upload Dokumen di Cetakk.id">
-							<p class="font-weight-bold">KIRIM FILE</p>
-							<p class="text-desc">Dokumen pesanan Anda akan dicetak oleh vendor pilihan Anda</p>
+					<div class="col-md-3 col-sm-6 carder">
+						<div class="card shadow m-2">
+							<div class="card-body text-light p-4">
+								<img class="gmbr" src="../../assets/img/benefit2.png" alt="Upload Dokumen di Cetakk.id">
+								<p class="font-weight-bold">KIRIM FILE</p>
+								<p class="text-desc">Dokumen pesanan Anda akan dicetak oleh vendor pilihan Anda</p>
+							</div>
 						</div>
 					</div>
-				</div>
-				<div class="col-md-3 carder">
-					<div class="card shadow m-1">
-						<div class="card-body text-light p-4">
-							<img class="gmbr" src="../../assets/img/benefit3.png" alt="Upload Dokumen di Cetakk.id">
-							<p class="font-weight-bold">AMBIL PESANAN</p>
-							<p class="text-desc">Ambil hasil dokumen di lokasi vendor dan lakukan pembayaran</p>
+					<div class="col-md-3 col-sm-6 carder">
+						<div class="card shadow m-2">
+							<div class="card-body text-light p-4">
+								<img class="gmbr" src="../../assets/img/benefit3.png" alt="Upload Dokumen di Cetakk.id">
+								<p class="font-weight-bold">AMBIL PESANAN</p>
+								<p class="text-desc">Ambil hasil dokumen di lokasi vendor dan lakukan pembayaran</p>
+							</div>
 						</div>
 					</div>
-				</div>
 			</div>
 		</div>
 
@@ -80,7 +80,7 @@
 					<img src="../../assets/img/bg-ease.svg" alt="">
 				</div>
 				<div class="col-md-6 text-left">
-					<div class="col-md-10">
+					<div class="col-md-12">
 						<p>Kamu dapat mencetak seluruh dokumenmu menggunakan platform kami. 
 							Dengan segala kemudahan yang diberikan, Anda dapat menyelesaikan aktifitas lainnya ! </p>
 					</div>
@@ -90,8 +90,8 @@
 						<p class="m-0"><i class="fas fa-check-circle mr-2 text-success"></i> Kemudahan Pemesanan</p>
 						<p class="m-0"><i class="fas fa-check-circle mr-2 text-success"></i> Kemudahan Transaksi</p>
 					</div>
-					<div class="col-md-10">
-						<a v-on:click="getStarted" class="rounded-pill btn-warning btn mt-5">
+					<div class="col-md-10 btn-start">
+						<a v-on:click="getStarted" class="rounded-pill btn-warning btn">
 							<router-link to='/dashboard-customer' class="btn text-button font-weight-bold">Cetak Sekarang</router-link>
 						</a>
 					</div>
@@ -100,7 +100,7 @@
 			</div>
 		</div>
 
-		<div class="footer cover row justify-content-md-center ">
+		<div class="footer row justify-content-md-center ">
 			<div class="col-sm-12 part-foot">
 				<h1 class="font-hero text-warning mb-3">300+ Dokumen</h1>
 				<h2 class="font-subhero text-light mb-3">Sudah berhasil dicetak</h2>
@@ -185,6 +185,7 @@ strong{
 .font-primary{
     font-size: 14px;
 }
+
 .hero {
     /* background:url('../../assets/img/vectorBg.png') no-repeat center; */
     background-size: cover;
@@ -246,7 +247,7 @@ strong{
     background-size: cover;
     height: 40rem;
 	background-color: #ffffff;
-	padding-top: 100px;
+	padding: 100px 5rem 0 5rem;
 	background-position-y: -20rem;
 }
 .use-part-title{
@@ -269,6 +270,9 @@ strong{
 }
 .ease img{
 	width: 80%;
+}
+.btn-start{
+	margin-top: 20px;
 }
 
 hr{
@@ -327,44 +331,92 @@ hr{
 @media (max-width: 900px) {
 	.font-hero{
 		font-weight: 700;
-		font-size: 40px;
+		font-size: 30px;
 	}
-	.hero{
-		padding-top: 100px;
-		min-height: 40em;
-		background-position-y: 0vh;
+	.font-title{
+		font-size: 20px;
 	}
+	.hero {
+		min-height: 30rem;
+		background-color: #0D7BE5;
+		padding: 5em 0 0 0;
+}
 	.hero-part{
     	padding: 30px;
 	}
 	.hero-paid{
-		display: none
+		display: none;
 	}
-	.gmbr{
-		min-height: 120px;
-		max-height: 120px;
-		max-width: 100%;
-	}	
+	.use-part {
+		height: 90rem;
+		padding: 30px 0rem 0 0rem;
+		background-position-y: 0rem;
+	}
+	.use-part-title{
+		margin-bottom: 0px;
+	}
+
+	.cardList{
+		margin-bottom: 150px;
+	}
+	.carder{
+		padding: 0 50px 0 50px;
+	}
+
+	.ease{
+		height: 25rem;
+		padding: 1rem;
+		margin-bottom: 5rem;
+	}
+	.ease-title{
+		height: 5rem;
+	}
+	.ease img{
+		display: none;
+	}
+
+	hr{
+		height: 5px;
+		width: 100px;
+		background: #F4BE0B;
+		border-radius: 50px;
+	}
+
+	.btn-outline-warning{
+		border: 2px solid #F4BE0B;
+	}
+
+	.text-white{
+		color: #fff !important;
+	}
+
+	.text-white:hover{
+		color: #222 !important;
+	}
+
+
+	.card{
+		background-color: #0D7BE5;
+		border-radius: 10px;
+		min-height: 50px;
+	}
+	
+	.card:hover{
+		transition: transform .6s !important;
+		transform: scale(1.01) !important;
+	}
+
+	.font-smaller:hover{
+		color: #F4BE0B !important;
+		text-decoration: none;
+		transform: scale(1.02) !important;
+	}
 	.footer{
-		background: url('../../assets/footer.png') no-repeat center;
 		background-size: cover;
-		background-position-x: -280px;
-		min-height: 40vh;
+		min-height: 20rem;
 	}
 	.part-foot{
     	padding-top: 100px;
-	}
-	.copyrights{
-		text-align: center !important;
-		padding-bottom: 0px !important
-	}
-
-	.medsos{
-		text-align: center !important;
-		padding-top: 0px !important
-	}
-	.card{
-		min-height: 200px;
 	}
 
 }
