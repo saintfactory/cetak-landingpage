@@ -1,7 +1,7 @@
 /* eslint-disable */
 import Vue from 'vue'
-/* const Router = () => import('vue-router') */
 import Router from 'vue-router'
+
 const Based = () => import(/* webpackChunkName: "based" */ '@/components/layouter/Based')
 
 const Home = () => import(/* webpackChunkName: "home" */ '@/components/homepage/Home.vue')
@@ -9,8 +9,8 @@ const TentangKami = () => import(/* webpackChunkName: "tentang-kami" */ '@/compo
 const CaraPrint = () => import(/* webpackChunkName: "cara-print" */ '@/components/homepage/CaraPrint.vue')
 const NotFound = () => import(/* webpackChunkName: "page-not-found" */ '@/components/PageNotFound.vue')
 
-/* import DashboardCustomer from '@/components/customer/DashboardCustomer' */
 const PilihVendor = () => import(/* webpackChunkName: "pilih-vendor" */ '@/components/customer/PilihVendor')
+const OrderForm = () => import(/* webpackChunkName: "pilih-vendor" */ '@/components/customer/OrderForm.vue')
 
 Vue.use(Router)
 
@@ -57,25 +57,13 @@ export function createRouter(){
               component: PilihVendor,
               name: 'pilih-vendor'
             },
+            {
+              path:'/dashboard-customer/order',
+              component: OrderForm,
+              name: 'order-form'
+            }
         ]
       },
-      /*
-      {
-        path: '/dashboard-customer',
-        name: 'DashboardCustomer',
-        component: DashboardCustomer,
-        children: [
-          {
-            path: '',
-            component: PilihVendor
-          },
-          {
-            path: '/pilih-vendor',
-            component: PilihVendor
-          }
-        ]
-      }, 
-      */
     ]
   })
 }

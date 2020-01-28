@@ -6,15 +6,16 @@
                 <span class="superFont font-weight-bold mb-2"><i class="fas fa-question mr-2"></i> Tentang Kami</span>
                 <p>Platform percetakan online di Indonesia yang memberikan manfaat serta kenyamanan dalam proses cetak dokumen secara efektif dan efisien.
                 Juga memberikan dampak dalam aspek sosial khususnya dalam pertumbuhan ekonomi.
-                Dalam perjalananya cetakk.id juga terus berusaha untuk meningkatkan performa layanan dari sebuah platform yang menghubungkan 
+                Dalam perjalanannya Cetakk.id juga terus berusaha untuk meningkatkan performa layanan dari sebuah platform yang menghubungkan 
                 pengguna terhadap mitra-mitra bisnis kami yaitu vendor percetakan dan pengguna.</p>
             </div>
 
             <div class="row m-3">
                 <span class="superFont font-weight-bold mb-2"><i class="fas fa-thumbs-up mr-2"></i> Keuntungan</span>
-                <p>Meminimalisir rusaknya dokumen dan infeksi virus, efisiensi dalam proses cetak dokumen,
-                dan turut serta meningkatkan ekonomi Indonesia di bidang percetakan
-                khususnya untuk individu yang mempunyai mesin printer.</p>
+                <p>Meminimalisir rusaknya dokumen dan file yang terinfeksi virus, serta efisien dalam proses cetak dokumen. 
+                    Cetakk.id juga ikut serta dalam meningkatkan perekonomian di Indonesia khusunya dalam bidang percetakan 
+                    bagi masyarakat yang memiliki printer pribadi agar menjadi vendor Cetakk.id.
+                </p>
             </div>
 
             <div class="row m-3 mt-5">

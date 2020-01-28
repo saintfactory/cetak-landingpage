@@ -5,11 +5,12 @@
         <input type="text" class="d-block form-control searchbar rounded-pill" placeholder="Cari Vendor ..." v-model="search" id="search" />
       </div>
     </div>
-    <div class="row pr-5 pl-5 text-left" v-for="vendor in filteredList" :key="vendor.id">
-      <div class="col-md-3 col-sm-6 mb-2" v-for="vendor in vendors" :key="vendor.id">
+    <div class="row pr-5 pl-5 text-left">
+      <div class="col-md-3 col-sm-6 mb-2" v-for="vendor in filteredList" :key="vendor.id">
+        <div v-for="vendor in vendors" :key="vendor.id">
           <div class="card card-block">
             <div class="card-body p-2">
-              <img src="../../assets/keylacopier.jpeg" alt="Photo of sunset">
+              <img src="../../assets/keylacopier.jpeg" alt="Vendor"> 
             </div>
             <div class="card-body p-2">
               <h3 class="font-weight-bold">{{ vendor.name }}</h3>
@@ -22,7 +23,9 @@
               <button class="btn btn-warning btn-sm text-light linked" data-toggle="modal" data-target="#pesan">Cek Harga</button> 
             </div>
           </div>
+        </div>
       </div>
+      
       <div class="col-md-3 col-sm-6 mb-2" v-for="vendor in Coming_soons" :key="vendor.id">
         <div class="card card-block card-Coming-soon">
           <div class="card-body p-2">
@@ -56,7 +59,7 @@ export default {
           name: 'Keylacopier • Owner',
           address: 'Jl. Kaliurang KM.13 Besi, Sukoharjo, Ngaglik, Sleman',
           openOrder: '07.00 - 23.00 WIB',
-          orderLink: 'https://s.id/vendor1'
+          orderLink: 'https://s.id/vendor1',
         },
       ],
       Coming_soons: [
@@ -71,6 +74,9 @@ export default {
         }
       ]
     }
+  },
+  async mounted(){
+    this.vendors = await Object.freeze(this.vendors)
   },
   computed: {
     /*
@@ -87,7 +93,7 @@ export default {
         /* return vendor.name.startsWith(this.search) */
       })
     }
-	}
+  }
 }
 
 </script>

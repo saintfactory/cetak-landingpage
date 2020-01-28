@@ -1,4 +1,4 @@
-# cetak-landingpage
+# cetakk-landingpage
 
 ## Project setup
 ```

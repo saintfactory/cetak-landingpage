@@ -2,7 +2,7 @@
     <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header mb-2">
-                <h2 class="modal-title text-left" ><img src="../../assets/Logo.png" alt="Logo Cetak" class="img-fluid logo" /></h2>
+                <h2 class="modal-title text-left" ><img src="../../assets/Logo.png" alt="Logo Cetakk" class="img-fluid logo" /></h2>
                 <!-- <p class="modal-title modplus text-left" >Daftar Harga</p> -->
                 <button type="button" class="align-center close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>

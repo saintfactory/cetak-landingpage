@@ -60,7 +60,7 @@
 						<h5 class="text center font-subhero">CETAK</h5>
 					</div>
 					<div class="col-md-12">
-						<p class="font-primary black lh-copy">Dokumen pesanan Anda akan <br> dicetak oleh vendor pilihan Anda
+						<p class="font-primary black lh-copy">Dokumen pesanan Kamu akan <br> dicetak oleh vendor pilihan Kamu
 						</p>
 					</div>
 				</div>
