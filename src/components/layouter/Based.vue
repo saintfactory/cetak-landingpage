@@ -38,51 +38,51 @@
             <router-view></router-view>
         </div>
 
-        <footer class="site-footer text-left">
-			<div class="container text-left">
-				<div class="row">
-				<div class="col-sm-12 col-md-6">
-					<img src="../../assets/img/LogoteksPutih.png" alt="" class="mb-3 footerCredit">
-					<h6>Hubungi Kami</h6>
-					<ul class="footer-links">
-            <li><i class="fas fa-home mr-2"></i> <a href="">Jl.Kaliurang, Km.14, Umbulmartani, Ngemplak, Sleman</a></li>
-            <li><i class="fas fa-phone mr-2"></i> <a href="">9103124891</a></li>
-					</ul>
-				</div>
+      <footer class="site-footer text-left">
+        <div class="footer-part text-left">
+          <div class="row">
+            <div class="col-sm-12 col-md-6">
+              <img src="../../assets/img/LogoteksPutih.png" alt="" class="mb-3 footerCredit">
+              <h6>Hubungi Kami</h6>
+              <ul class="footer-links">
+                <li><i class="fas fa-home mr-2"></i> <a href="">Jl.Kaliurang, Km.14, Umbulmartani, Ngemplak, Sleman</a></li>
+                <li><i class="fas fa-phone mr-2"></i> <a href="">9103124891</a></li>
+              </ul>
+            </div>
 
-				<div class="col-xs-6 col-md-3">
-					<h6>Navigasi</h6>
-					<ul class="footer-links">
-            <li><a><router-link to="/home">Halaman Utama</router-link></a></li>
-            <li><a><router-link to="/cara">Cara Kerja</router-link></a></li>
-            <li><a><router-link to="/tentang">Tentang Kami</router-link></a></li>
-            <li><a><router-link to="/dashboard-customer">Mulai Cetak</router-link></a></li>
-                        
-					</ul>
-				</div>
+            <div class="col-xs-6 col-md-3">
+              <h6>Navigasi</h6>
+              <ul class="footer-links">
+                <li><a><router-link to="/home">Halaman Utama</router-link></a></li>
+                <li><a><router-link to="/cara">Cara Kerja</router-link></a></li>
+                <li><a><router-link to="/tentang">Tentang Kami</router-link></a></li>
+                <li><a><router-link to="/dashboard-customer">Mulai Cetak</router-link></a></li>
+                            
+              </ul>
+            </div>
 
-				<div class="col-xs-6 col-md-3">
-					<h6>Ikuti Kami</h6>
-					<ul class="footer-links">
-						<li>
-                <a href="https://www.instagram.com/cetakkid.official/"><img class="img-tumbs" src="../../assets/img/instagramwhite.png" alt=""></a>
-                <a href="https://www.linkedin.com/company/cetakk-id/"><img class="img-tumbs" src="../../assets/img/linkedinwhite.png" alt=""></a>
-            </li>
-          </ul>
-				</div>
-				</div>
-				<hr>
-			</div>
+            <div class="col-xs-6 col-md-3">
+              <h6>Ikuti Kami</h6>
+              <ul class="footer-links">
+                <li>
+                    <a href="https://www.instagram.com/cetakkid.official/"><img class="img-tumbs" src="../../assets/img/instagramwhite.svg" alt=""></a>
+                    <a href="https://www.linkedin.com/company/cetakk-id/"><img class="img-tumbs" src="../../assets/img/linkedinwhite.svg" alt=""></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <hr>
+        </div>
 
-			<div class="container">
-				<div class="row">
-                    <div class="col-md-8 col-sm-6 col-xs-12">
-                        <p class="copyright-text">Copyright &copy; 2019 All Rights Reserved by 
-                            <a href="https://cetakk.id">Cetakk.id Developer</a>.
-                        </p>
-                    </div>
-				</div>
-			</div>
+        <div class="footer-part ">
+          <div class="row">
+            <div class="col-md-8 col-sm-6 col-xs-12">
+              <p class="copyright-text">Copyright &copy; 2019 All Rights Reserved by 
+                  <a href="https://cetakk.id">Cetakk.id Developer</a>.
+              </p>
+            </div>
+          </div>
+        </div>
 		</footer>
     </div>
     
@@ -90,8 +90,8 @@
 
 <script>
 import JQuery from 'jquery'
+import '../../firebase'
 export default {
-<<<<<<< HEAD
   name: 'Based',
     
   mounted(){
@@ -107,19 +107,6 @@ export default {
     $('.homepage').on('click', function(){
         $('.navbar-collapse').collapse('hide');
     });
-=======
-    name: 'Based',   
-    async mounted(){
-        let $ = JQuery
-        
-        $('.navbar-nav>li>a').on('click', function(){
-            $('.navbar-collapse').collapse('hide');
-        });
-
-        $('.navbar-brand').on('click', function(){
-            $('.navbar-collapse').collapse('hide');
-        });
->>>>>>> beta-v1
 	},
 }
 </script>
@@ -138,6 +125,7 @@ export default {
     background: #0D7BE5;
     z-index: 200;
     height: 70px;
+    padding: 0 3rem 0 3rem;
 }
 .navbar-nav li{
     margin: 10px;
@@ -185,6 +173,7 @@ export default {
         background: #0D7BE5;
         z-index: 200;
         height: 50px;
+        padding: 0 1rem 0 1rem;
     }
     button .navbar-toggler{
         padding-top: 0 !important;
@@ -255,6 +244,12 @@ export default {
     .menus-expand{
         background-color: transparent;
     }
+    .nav-content{
+      background: #0D7BE5;
+      z-index: 200;
+      height: 50px;
+      padding: 0 1rem 0 1rem;
+    }
 }
 
 .site-footer
@@ -264,6 +259,9 @@ export default {
   font-size:15px;
   line-height:24px;
   color:#737373;
+}
+.footer-part{
+  padding: 0rem 5rem 0rem 5rem;
 }
 .footerCredit{
 	width: 150px;
@@ -349,6 +347,10 @@ export default {
   .site-footer [class^=col-]
   {
     margin-bottom:30px
+  }
+
+  .footer-part{
+    padding: 0rem 2rem 0rem 2rem;
   }
 }
 @media (max-width:767px)

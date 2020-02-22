@@ -2,15 +2,14 @@
 	<div class="container-fluid">
 		<!-- <loading :active.sync="isLoading" :can-cancel="true" :is-full-page="fullPage"></loading>  -->
 		<div class="hero cover row justify-content-md-center">
-			<div class="hero-part col-md-5 text-left">
+			<div class="hero-part col-md-6 text-left">
 				<p class="font-hero text-light mb-0">Cetak dokumen kamu,</p>
 				<p class="font-hero text-light mb-3">
 					<span class="text-slider-items">lebih cepat, lebih mudah,bisa dimana saja</span>
 					<strong class="text-slider"></strong>
 				</p>
 				
-				<p class="text-light mb-2">Cetakk.id memudahkan anda untuk melakukan percetakan
-					dengan vendor pilihan Anda ! Saat ini kami hadir di Yogyakarta. <br>
+				<p class="text-light mb-2">Cetakk.id menawarkan kemudahan dalam mencetak dokumen Anda sendiri ! <br> Saat ini kami hadir di Yogyakarta. <br>
 					Dikejar <span class="font-weight-bold">Deadline?</span>
 					Tenang, ada <span class="font-weight-bold">Cetakk.id</span>
 				</p>
@@ -19,7 +18,7 @@
 					<router-link to='/dashboard-customer' class="btn-based btn font-weight-bold text-dark">Cetak Sekarang</router-link>
 				</a>
 			</div>
-			<div class="hero-paid col-md-7">
+			<div class="hero-paid col-md-6">
 				<img src="../../assets/img/homePaid.svg" alt="">
 			</div>
 		</div>
@@ -33,7 +32,7 @@
 					<div class="col-md-3 col-sm-6 carder">
 						<div class="card shadow m-2">
 							<div class="card-body text-light p-4">
-								<img class="gmbr" src="../../assets/img/benefit1.png" alt="Upload Dokumen di Cetakk.id">
+								<img class="gmbr" src="../../assets/img/benefit1.svg" alt="Upload Dokumen di Cetakk.id">
 							<p class="font-weight-bold">PILIH VENDOR</p>
 								<p class="text-desc">Pilih salah satu vendor yang tersedia</p>
 							</div>
@@ -42,7 +41,7 @@
 					<div class="col-md-3 col-sm-6 carder">
 						<div class="card shadow m-2">
 							<div class="card-body text-light p-4">
-								<img class="gmbr" src="../../assets/img/benefit1.png" alt="Upload Dokumen di Cetakk.id">
+								<img class="gmbr" src="../../assets/img/benefit1.svg" alt="Upload Dokumen di Cetakk.id">
 								<p class="font-weight-bold">CEK HARGA</p>
 								<p class="text-desc">Gunakan fitur cek harga untuk memastikan estimasi harga</p>
 							</div>
@@ -51,7 +50,7 @@
 					<div class="col-md-3 col-sm-6 carder">
 						<div class="card shadow m-2">
 							<div class="card-body text-light p-4">
-								<img class="gmbr" src="../../assets/img/benefit2.png" alt="Upload Dokumen di Cetakk.id">
+								<img class="gmbr" src="../../assets/img/benefit2.svg" alt="Upload Dokumen di Cetakk.id">
 								<p class="font-weight-bold">KIRIM FILE</p>
 								<p class="text-desc">Dokumen pesanan Anda akan dicetak oleh vendor pilihan Anda</p>
 							</div>
@@ -60,7 +59,7 @@
 					<div class="col-md-3 col-sm-6 carder">
 						<div class="card shadow m-2">
 							<div class="card-body text-light p-4">
-								<img class="gmbr" src="../../assets/img/benefit3.png" alt="Upload Dokumen di Cetakk.id">
+								<img class="gmbr" src="../../assets/img/benefit3.svg" alt="Upload Dokumen di Cetakk.id">
 								<p class="font-weight-bold">AMBIL PESANAN</p>
 								<p class="text-desc">Ambil hasil dokumen di lokasi vendor dan lakukan pembayaran</p>
 							</div>
@@ -159,7 +158,7 @@ export default {
 <style scoped>
 .font-hero{
     font-weight: 700 !important;
-    font-size: 40px;
+    font-size: 50px;
 }
 strong{
 	font-weight: 700 !important
@@ -235,7 +234,7 @@ strong{
 }
 
 .hero-paid img{
-	width: 45rem;
+	width: 100%;
 }
 
 .home-image{
