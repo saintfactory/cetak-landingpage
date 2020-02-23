@@ -52,7 +52,7 @@
 			</div> -->
 			<div class="custom-file w-75 m-auto pb-3">
 				<label for="file" class="custom-file-label">Upload dokumen yang ingin dicetak (PDF)</label>
-				<input type="file" id="file" name="file" ref="file" class="custom-file-input w-50 d-block">
+				<input type="file" id="file" name="file" ref="file" class="custom-file-input w-50 d-block" @change="handleDocument()">
 			</div>
 			<div class="form-group w-75 m-auto pb-3 pt-3">
 				<label for="catatan">Tambahkan catatan untuk vendor</label>
@@ -111,7 +111,11 @@ export default {
 	},
 	methods: {
 		handleDocument: function(){
-			this.file = this.$refs.file.files[0]
+			//this.file = this.$refs.file.files[0]
+			var file = this.$refs.file.files[0];
+        var fr = new FileReader();
+        fr.fileName = file.name;
+        fr.readAsDataURL(file);
 		},
 		onSubmit: function() {
 			/*
