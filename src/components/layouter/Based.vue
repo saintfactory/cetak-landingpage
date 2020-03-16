@@ -90,7 +90,7 @@
 
 <script>
 import JQuery from 'jquery'
-import '../../firebase'
+// import '../../firebase'
 export default {
   name: 'Based',
     

@@ -2,14 +2,15 @@
   <div class="pilihVendor">
     <div class="row p-5">
       <div class="col-md-12">
-        <input type="text" class="d-block form-control searchbar rounded-pill" placeholder="Cari Vendor ..." v-model="search" id="search" />
+        <input type="text" class="d-block form-control searchbar rounded-pill" placeholder="Cari Vendor ..." :keyup="filteredList" v-model="search" id="search" />
       </div>
     </div>
-    <div class="row pr-5 pl-5 text-left" v-for="vendor in filteredList" :key="vendor.id">
-      <div class="col-md-3 col-sm-6 mb-2" v-for="vendor in vendors" :key="vendor.id">
+    <!-- <div class="row pr-5 pl-5 text-left" v-for="vendor in filteredList" :key="vendor.id"> -->
+    <div class="row pr-5 pl-5 text-left">
+      <div class="col-md-3 col-sm-6 mb-2" id="vendorCard" v-for="vendor in filteredList" :key="vendor.id">
           <div class="card card-block">
             <div class="card-body p-2">
-              <img src="../../assets/keylacopier.jpeg" alt="Photo of sunset">
+              <img :src="vendor.imgLink" :alt="vendor.alt">
             </div>
             <div class="card-body p-2">
               <h3 class="font-weight-bold">{{ vendor.name }}</h3>
@@ -23,14 +24,6 @@
             </div>
           </div>
       </div>
-      <div class="col-md-3 col-sm-6 mb-2" v-for="vendor in Coming_soons" :key="vendor.id">
-        <div class="card card-block card-Coming-soon">
-          <div class="card-body p-2">
-            <img src="../../assets/img/coming-soon.svg" alt="Coming Soon" class="mt-4" style="opacity: 0.2;">
-            <h2 class="font-weight-bold text-center caption-Coming-soon">{{ vendor.name }}</h2>
-          </div>
-        </div>
-      </div>
     </div>
 
     <!-- Modal Order -->
@@ -42,6 +35,12 @@
 
 <script>
 import PriceList from './PriceList'
+import imgKeylaCopierFc from '../../assets/keylacopier.jpeg'
+import imgFazaFc from '../../assets/img/FC_Faza.png'
+import imgNusantaraFc from '../../assets/img/FC_Nusantara.png'
+import imgGrahaFc from '../../assets/img/FC_Graha.png'
+import imgMataramFc from '../../assets/img/FC_Mataram.png'
+
 export default {
   name: 'PilihVendor',
   components : {
@@ -54,37 +53,58 @@ export default {
         {
           id: 1,
           name: 'Keylacopier • Owner',
-          address: 'Jl. Kaliurang KM.13 Besi, Sukoharjo, Ngaglik, Sleman',
+          address: 'Jl. Kaliurang KM 13,5, Besi, Sukoharjo, Sleman (Depan Olive Chicken Jakal KM 13,5)',
           openOrder: '07.00 - 23.00 WIB',
-          orderLink: 'https://s.id/vendor1'
+          orderLink: 'https://s.id/vendor1',
+          imgLink: imgKeylaCopierFc,
+          alt: 'Keyla FC image'
+        },
+        {
+          id: 2,
+          name: 'Graha FC • Owner',
+          address: 'Besi, Sukoharjo, Kec. Ngaglik, Kabupaten Sleman, Daerah Istimewa Yogyakarta 55581 (Depan Rumah Makan Padang Mentari Pagi)',
+          openOrder: '07.00 - 20.00 WIB',
+          orderLink: 'https://s.id/vendor1',
+          imgLink: imgGrahaFc,
+          alt: 'Graha FC image'
+        },
+        {
+          id: 3,
+          name: 'Mataram FC • Owner',
+          address: 'Jl. Besi Jaya No.B3, Besi, Sukoharjo, Kec. Ngaglik, Kabupaten Sleman, Daerah Istimewa Yogyakarta 55581 (Depan Kost Putri Orange)',
+          openOrder: '07.00 - 21.00 WIB',
+          orderLink: 'https://s.id/vendor1',
+          imgLink: imgMataramFc,
+          alt: 'Mataram FC image'
+        },
+        {
+          id: 4,
+          name: 'Nusantara FC • Owner',
+          address: 'Gg. Kanguru, Tj. Manding, Umbulmartani, Kec. Ngemplak, Kabupaten Sleman, Daerah Istimewa Yogyakarta 55584 (Sebelah Hokkaido Ice Cream Corner)',
+          openOrder: '07.00 - 21.00 WIB',
+          orderLink: 'https://s.id/vendor1',
+          imgLink: imgNusantaraFc,
+          alt: 'Nusantara FC image'
+        },
+        {
+          id: 5,
+          name: 'Faza FC • Owner',
+          address: 'Jl. Pandanaran - UII, Candi Winangun, Sardonoharjo, Kec. Ngaglik, Kabupaten Sleman, Daerah Istimewa Yogyakarta 55581 (Sebelah Ayam Jalapeno)',
+          openOrder: '07.00 - 21.00 WIB',
+          orderLink: 'https://s.id/vendor1',
+          imgLink: imgFazaFc,
+          alt: 'Faza FC image'
         },
       ],
-      Coming_soons: [
-        {
-          name: 'Coming Soon',
-        },
-        {
-          name: 'Coming Soon',
-        },
-        {
-          name: 'Coming Soon',
-        }
-      ]
+      
     }
   },
+
   computed: {
-    /*
-		filteredList(){
-			return this.vendors.filter((vendor) => {
-        //vendor.name.toLowerCase().includes(input.value.toLowerCase())
-        return vendor.name.match(this.search)
-			})
-    }
-    */
     filteredList(){
       return this.vendors.filter(vendor => {
         return vendor.name.toLowerCase().includes(this.search.toLowerCase())
-        /* return vendor.name.startsWith(this.search) */
+        //return vendor.name.startsWith(this.search) 
       })
     }
 	}
